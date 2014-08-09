@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140808193204) do
     t.integer  "menu_item_id"
     t.integer  "order_id"
     t.integer  "qunatity"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

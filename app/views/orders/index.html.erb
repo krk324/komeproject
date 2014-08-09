@@ -1,35 +1,39 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-6 col-md-4 pull-right">
-        <%=link_to "Checkout", order_new_path, class: "page-scroll btn btn-danger pull-right"%>
+        <%=link_to "Checkout", new_order_path, class: "page-scroll btn btn-danger pull-right"%>
       </div>
     </div>
         <br>
     <div class="row">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg" alt="...">
+          <img src=<%=@menuitems.find(1).image_url%> alt="<%=@menuitems.find(1).description%>">
           <div class="caption">
-            <h4>Sushi</h4>
-            <p>...</p>
+            <h4><%=@menuitems.find(1).name%> <small><%=@menuitems.find(1).price%><small></h4>
+
+            <hr>
+            <p><%=@menuitems.find(1).description%></p>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg" alt="...">
+          <img src=<%=@menuitems.find(2).image_url%> alt="<%=@menuitems.find(2).description%>">
           <div class="caption">
-            <h4>Makimono</h4>
-            <p>...</p>
+            <h4><%=@menuitems.find(2).name%> <small><%=@menuitems.find(2).price%><small></h4>
+            <hr>
+            <p><%=@menuitems.find(2).description%></p>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg" alt="...">
+          <img src=<%=@menuitems.find(3).image_url%> alt="<%=@menuitems.find(3).description%>">
           <div class="caption">
-            <h4>Donburi</h4>
-            <p>...</p>
+            <h4><%=@menuitems.find(3).name%> <small><%=@menuitems.find(3).price%><small></h4>
+            <hr>
+            <p><%=@menuitems.find(3).description%></p>
           </div>
         </div>
       </div>
@@ -38,28 +42,31 @@
     <div class="row">
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://imgfp.hotp.jp/IMGH/20/37/P013642037/P013642037_480.jpg" alt="...">
+          <img src=<%=@menuitems.find(4).image_url%> alt="<%=@menuitems.find(4).description%>">
           <div class="caption">
-            <h4>Sushi</h4>
-            <p>...</p>
+            <h4><%=@menuitems.find(4).name%> <small><%=@menuitems.find(4).price%><small></h4>
+            <hr>
+            <p><%=@menuitems.find(4).description%></p>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://imgfp.hotp.jp/IMGH/20/37/P013642037/P013642037_480.jpg" alt="...">
+          <img src=<%=@menuitems.find(5).image_url%> alt="<%=@menuitems.find(5).description%>">
           <div class="caption">
-            <h4>Makimono</h4>
-            <p>...</p>
+            <h4><%=@menuitems.find(5).name%> <small><%=@menuitems.find(5).price%><small></h4>
+            <hr>
+            <p><%=@menuitems.find(5).description%></p>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://imgfp.hotp.jp/IMGH/20/37/P013642037/P013642037_480.jpg" alt="...">
+          <img src=<%=@menuitems.find(6).image_url%> alt="<%=@menuitems.find(6).description%>">
           <div class="caption">
-            <h4>Donburi</h4>
-            <p>...</p>
+            <h4><%=@menuitems.find(6).name%> <small><%=@menuitems.find(6).price%><small></h4>
+            <hr>
+            <p><%=@menuitems.find(6).description%></p>
           </div>
         </div>
       </div>
