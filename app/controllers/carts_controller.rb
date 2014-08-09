@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  #before_action :set_cart, only: [:new, :create]
+  before_action :set_order, only: [:new, :create]
 
   def default_serializer_options
     { root: false }
@@ -8,10 +8,8 @@ class CartsController < ApplicationController
   respond_to :json, :html
 
   def create
-    @cart_item = @order.cart.new(cart_item_params)
-    @cart_item.user_id = current_user
-
-    binding.pry
+    @cart_item = @order.carts.new(cart_item_params)
+    @cart_item.user_id = current_or_guest_user.id
 
     if @cart_item.save!
       respond_with(@cart_item)

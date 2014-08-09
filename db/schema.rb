@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140808193204) do
     t.decimal  "price",        precision: 8, scale: 2
     t.integer  "menu_item_id"
     t.integer  "order_id"
-    t.integer  "qunatity"
+    t.integer  "quantity"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -51,7 +51,8 @@ ActiveRecord::Schema.define(version: 20140808193204) do
 
   create_table "orders", force: true do |t|
     t.integer "user_id"
-    t.decimal "price",   precision: 8, scale: 2
+    t.decimal "price",        precision: 8, scale: 2
+    t.boolean "is_purchased"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -77,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140808193204) do
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "username"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
