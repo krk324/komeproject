@@ -8,12 +8,13 @@ class CartsController < ApplicationController
   respond_to :json, :html
 
   def create
+    p = params
+    binding.pry
     @cart_item = @order.carts.new(cart_item_params)
     @cart_item.user_id = current_or_guest_user.id
 
-    if @cart_item.save!
-      respond_with(@cart_item)
-    end
+    @cart_item.save!
+
   end
 
   def destroy

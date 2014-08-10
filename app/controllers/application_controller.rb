@@ -71,6 +71,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_order
+    @order = Order.find(session[:order_id])
+    if @order.is_purchased
+      @order = Order.create(user_id: current_or_guest_user.id, price: 0, is_purchased: false)
+      session[:order_id] = @order.id
+    end
+  rescue ActiveRecord::RecordNotFound
     @order = Order.create(user_id: current_or_guest_user.id, price: 0, is_purchased: false)
+    session[:order_id] = @order.id
   end
 end

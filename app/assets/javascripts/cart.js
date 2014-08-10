@@ -52,10 +52,12 @@ var Hackmai = Hackmai || {};
   },
   CreateCart: function(event){
     JSON.stringify({cart: CartItems});
+    debugger;
       $.ajax({
         type: "POST",
         url: '/carts',
-        data:    {"cart": {"menu_item_id": 1, "quantity": 10}},
+        data:    JSON.stringify({cart: CartItems}),
+        contentType: 'application/json',
         dataType: 'json'
       })
     .done();
