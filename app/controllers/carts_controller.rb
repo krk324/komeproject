@@ -16,8 +16,6 @@ class CartsController < ApplicationController
       items << @cart_item if @cart_item.save!
     end
 
-    respond_with(@cart_item)
-
   end
 
   def destroy
