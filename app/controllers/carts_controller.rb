@@ -8,12 +8,14 @@ class CartsController < ApplicationController
   respond_to :json, :html
 
   def create
-    p = params
-    binding.pry
-    @cart_item = @order.carts.new(cart_item_params)
-    @cart_item.user_id = current_or_guest_user.id
+    items = []
 
-    @cart_item.save!
+    cart_item_params.each do |item|
+      @cart_item = @order.carts.new(item)
+      @cart_item.user_id = current_or_guest_user.id
+      items << @cart_item if @cart_item.save!
+      respond_with(@cart_item)
+    end
 
   end
 
@@ -25,7 +27,9 @@ class CartsController < ApplicationController
   private
 
   def cart_item_params
-    params.require(:cart).permit(:menu_item_id, :quantity)
+    params.require(:cart).map do |item|
+      ActionController::Parameters.new(item.to_hash).permit(:menu_item_id, :quantity)
+    end
   end
 
 end

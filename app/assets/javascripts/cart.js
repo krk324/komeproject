@@ -9,7 +9,7 @@ var Hackmai = Hackmai || {};
 
     var flag = 0;
     for (var i = CartItems.length - 1; i >= 0; i--) {
-      if (CartItems[i].id === Id) {
+      if (CartItems[i].menu_item_id === Id) {
         CartItems[i].quantity += 1;
         flag = 1;
       }
@@ -33,7 +33,7 @@ var Hackmai = Hackmai || {};
 
       var flag = 0;
       for (var i = CartItems.length - 1; i >= 0; i--) {
-        if (CartItems[i].id === Id) {
+        if (CartItems[i].menu_item_id === Id) {
           CartItems[i].quantity -= 1;
           flag = 1;
         }
@@ -51,8 +51,6 @@ var Hackmai = Hackmai || {};
     event.preventDefault();
   },
   CreateCart: function(event){
-    JSON.stringify({cart: CartItems});
-    debugger;
       $.ajax({
         type: "POST",
         url: '/carts',
