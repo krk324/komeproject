@@ -51,13 +51,13 @@ class ApplicationController < ActionController::Base
   # called (once) when the user logs in, insert any code your application needs
   # to hand off from guest_user to current_user.
   def logging_in
+    guest_orders = guest_user.orders.all
+    guest_orders.each do |order|
+      order.user_id = current_user.id
+      order.save!
+    end
     guest_cart_items = guest_user.carts.all
     guest_cart_items.each do |cart_item|
-      cart_item.user_id = current_user.id
-      cart_item.save!
-    end
-    guest_carts = guest_user.carts.all
-    guest_carts.each do |cart_item|
       cart_item.user_id = current_user.id
       cart_item.save!
     end

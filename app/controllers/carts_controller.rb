@@ -14,8 +14,9 @@ class CartsController < ApplicationController
       @cart_item = @order.carts.new(item)
       @cart_item.user_id = current_or_guest_user.id
       items << @cart_item if @cart_item.save!
-      respond_with(@cart_item)
     end
+
+    respond_with(@cart_item)
 
   end
 
