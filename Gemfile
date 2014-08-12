@@ -47,6 +47,7 @@ end
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem "font-awesome-rails"
+gem 'simple_form'
 
 gem 'active_model_serializers'
 
@@ -61,6 +62,8 @@ gem 'devise'
 gem 'rails_12factor', group: "production"
 
 gem 'bullet', group: :development
+
+gem 'rack-mini-profiler'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
