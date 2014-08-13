@@ -61,6 +61,10 @@ var Hackmai = Hackmai || {};
     .done(window.location.href = "/carts/new");
     event.preventDefault();
   },
+  showOrder: function() {
+    $(HandlebarsTemplates.orderForm()).hide().appendTo('body').fadeIn();
+    $('html, body').animate({ scrollTop: 0 }, 0);
+  },
   initializer: function(event){
      $('[id="delete-button"]').on('click', this.deleteItem);
      $('[id="add-button"]').on('click', this.addItem);

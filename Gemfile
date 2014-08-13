@@ -68,7 +68,8 @@ gem "font-awesome-rails"
 
 gem 'active_model_serializers'
 
-# Access Rails routes in JavaScript
+# Access Rails routes in your JavaScript
+# (run `rake tmp:cache:clear` after changing routes)
 gem 'js-routes'
 
 # Add Handlebars template support
