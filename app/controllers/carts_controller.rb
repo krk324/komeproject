@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :set_order, only: [:new, :create]
+  before_action :set_order, only: [:create]
   before_action :authenticate_user!
 
   def default_serializer_options

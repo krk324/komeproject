@@ -50,7 +50,7 @@ var Hackmai = Hackmai || {};
 
     event.preventDefault();
   },
-  CreateCart: function(event){
+  createCart: function(event){
       $.ajax({
         type: "POST",
         url: '/carts',
@@ -64,7 +64,7 @@ var Hackmai = Hackmai || {};
   initializer: function(event){
      $('[id="delete-button"]').on('click', this.deleteItem);
      $('[id="add-button"]').on('click', this.addItem);
-     $('#checkout').on('click', this.CreateCart);
+     $('#checkout').on('click', this.createCart);
 
 
 
