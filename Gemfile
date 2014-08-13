@@ -47,7 +47,6 @@ end
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem "font-awesome-rails"
-gem 'simple_form'
 
 gem 'active_model_serializers'
 

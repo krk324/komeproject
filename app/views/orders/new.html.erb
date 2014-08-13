@@ -1,1 +1,45 @@
-<p>hello</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+
+      <h3 class="section-heading">Confirm Order</h3>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <table class='table-condensed col-centered'>
+              <tr>
+                <th>Quantity</th>
+                <th>Bowls</th>
+                <th>Price</th>
+              </tr>
+              <tr>
+              <% current_or_guest_user.orders.last.carts.each do |cart| %>
+                <td><%= cart.quantity %></td>
+                <td><%= cart.menu_item.name %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table class='table-condensed col-centered'>
+              <tr>
+                <th>Quantity</th>
+                <th>Bowls</th>
+                <th>Price</th>
+              </tr>
+              <tr>
+              <% current_or_guest_user.orders.last.carts.each do |cart| %>
+                <td><%= cart.quantity %></td>
+                <td><%= cart.menu_item.name %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
