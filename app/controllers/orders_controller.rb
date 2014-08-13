@@ -5,6 +5,4 @@ class OrdersController < ApplicationController
     @menuitems = MenuItem.all
   end
 
-  def new
-  end
 end

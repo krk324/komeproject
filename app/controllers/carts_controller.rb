@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_order, only: [:new, :create]
+  before_action :authenticate_user!
 
   def default_serializer_options
     { root: false }
@@ -16,6 +17,9 @@ class CartsController < ApplicationController
       items << @cart_item if @cart_item.save!
     end
 
+  end
+
+  def new
   end
 
   def destroy

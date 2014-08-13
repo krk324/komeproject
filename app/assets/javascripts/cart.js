@@ -58,7 +58,7 @@ var Hackmai = Hackmai || {};
         contentType: 'application/json',
         dataType: 'json'
       })
-    .done(window.location.href = "/orders/new");
+    .done(window.location.href = "/carts/new");
     event.preventDefault();
   },
   initializer: function(event){
