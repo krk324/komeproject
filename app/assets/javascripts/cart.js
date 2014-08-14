@@ -62,8 +62,11 @@ var Hackmai = Hackmai || {};
     event.preventDefault();
   },
   showOrder: function() {
-    $(HandlebarsTemplates.orderForm()).appendTo('.modal-body');
+    var theData = {customers:[{firstName:"Michael", lastName:"Alexander", age:20}, {firstName:"John", lastName:"Allen", age:29}]};
+    $('.modal-body').empty();
+    $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
     $('html, body').animate({ scrollTop: 0 }, 0);
+
   },
   initializer: function(event){
      $('[id="delete-button"]').on('click', this.deleteItem);
