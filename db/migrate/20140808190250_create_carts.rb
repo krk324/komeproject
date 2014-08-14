@@ -5,7 +5,7 @@ class CreateCarts < ActiveRecord::Migration
       t.references :menu_item, index: true
       t.references :order, index: true
       t.integer :quantity
-      t.references :user
+      t.references :user, index: true
 
       t.timestamps
     end
