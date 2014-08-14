@@ -6,6 +6,10 @@ var Hackmai = Hackmai || {};
   addItem: function(event){
     var Id = event.currentTarget.getAttribute('data-id');
     var quantity = parseInt(event.currentTarget.parentElement.nextElementSibling.textContent);
+    var price = event.currentTarget.getAttribute('data-price');
+    var name = event.currentTarget.getAttribute('data-name');
+
+
 
     var flag = 0;
     for (var i = CartItems.length - 1; i >= 0; i--) {
@@ -16,7 +20,7 @@ var Hackmai = Hackmai || {};
     }
 
     if (flag === 0) {
-      var newCartItem = new CartItem(Id,1);
+      var newCartItem = new CartItem(Id,1,price,name);
       CartItems.push(newCartItem);
     }
 
@@ -36,6 +40,10 @@ var Hackmai = Hackmai || {};
         if (CartItems[i].menu_item_id === Id) {
           CartItems[i].quantity -= 1;
           flag = 1;
+          if (CartItems[i].quantity === 0){
+            var index = CartItems.indexOf(i);
+            CartItems.splice(index, 1);
+          }
         }
       }
 
@@ -62,7 +70,6 @@ var Hackmai = Hackmai || {};
     event.preventDefault();
   },
   showOrder: function() {
-    var theData = {customers:[{firstName:"Michael", lastName:"Alexander", age:20}, {firstName:"John", lastName:"Allen", age:29}]};
     $('.modal-body').empty();
     $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
     $('html, body').animate({ scrollTop: 0 }, 0);
