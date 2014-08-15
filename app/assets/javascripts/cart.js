@@ -37,11 +37,10 @@ var Hackmai = Hackmai || {};
       for (var i = CartItems.length - 1; i >= 0; i--) {
         if (CartItems[i].menu_item_id === Id) {
           CartItems[i].quantity -= 1;
-          CartItems.total = CartItems.total - CartItems[i].price;
 
           if (CartItems[i].quantity === 0){
             //fix problem where wrong array get spliced.
-            var index = CartItems.indexOf(i);
+            var index = CartItems.indexOf(CartItems[i]);
             CartItems.splice(index, 1);
           }
         }
