@@ -1,6 +1,8 @@
 var Hackmai = Hackmai || {};
 
   var CartItems = CartItems || [];
+  CartItems.total = 0;
+
   Hackmai.CartApp = {
 
   addItem: function(event){
@@ -15,6 +17,7 @@ var Hackmai = Hackmai || {};
     for (var i = CartItems.length - 1; i >= 0; i--) {
       if (CartItems[i].menu_item_id === Id) {
         CartItems[i].quantity += 1;
+        CartItems.total = CartItems.total + CartItems[i].price;
         flag = 1;
       }
     }
@@ -22,6 +25,7 @@ var Hackmai = Hackmai || {};
     if (flag === 0) {
       var newCartItem = new CartItem(Id,1,price,name);
       CartItems.push(newCartItem);
+      CartItems.total = CartItems.total + CartItems[0].price;
     }
 
     quantity += 1;
@@ -35,21 +39,17 @@ var Hackmai = Hackmai || {};
 
     if ( quantity > 0){
 
-      var flag = 0;
       for (var i = CartItems.length - 1; i >= 0; i--) {
         if (CartItems[i].menu_item_id === Id) {
           CartItems[i].quantity -= 1;
-          flag = 1;
+          CartItems.total = CartItems.total - CartItems[i].price;
+
           if (CartItems[i].quantity === 0){
+            //fix problem where wrong array get spliced.
             var index = CartItems.indexOf(i);
             CartItems.splice(index, 1);
           }
         }
-      }
-
-      if (flag === 0) {
-        var newCartItem = new CartItem(Id,0);
-        CartItems.push(newCartItem);
       }
 
       quantity -= 1;
