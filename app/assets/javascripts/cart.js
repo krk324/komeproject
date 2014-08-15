@@ -1,7 +1,6 @@
 var Hackmai = Hackmai || {};
 
   var CartItems = CartItems || [];
-  CartItems.total = 0;
 
   Hackmai.CartApp = {
 
@@ -11,13 +10,10 @@ var Hackmai = Hackmai || {};
     var price = event.currentTarget.getAttribute('data-price');
     var name = event.currentTarget.getAttribute('data-name');
 
-
-
     var flag = 0;
     for (var i = CartItems.length - 1; i >= 0; i--) {
       if (CartItems[i].menu_item_id === Id) {
         CartItems[i].quantity += 1;
-        CartItems.total = CartItems.total + CartItems[i].price;
         flag = 1;
       }
     }
@@ -25,7 +21,6 @@ var Hackmai = Hackmai || {};
     if (flag === 0) {
       var newCartItem = new CartItem(Id,1,price,name);
       CartItems.push(newCartItem);
-      CartItems.total = CartItems.total + CartItems[0].price;
     }
 
     quantity += 1;
@@ -70,14 +65,19 @@ var Hackmai = Hackmai || {};
     event.preventDefault();
   },
   showOrder: function() {
+    //Calculate total
+    CartItems.total = 0;
+    for (var i = CartItems.length - 1; i >= 0; i--) {
+      CartItems.total = CartItems.total + (CartItems[i].price * CartItems[i].quantity);
+    }
     $('.modal-body').empty();
     $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
     $('html, body').animate({ scrollTop: 0 }, 0);
 
   },
   initializer: function(event){
-     $('[id="delete-button"]').on('click', this.deleteItem);
-     $('[id="add-button"]').on('click', this.addItem);
+     $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
+     $('[id="add-button"]').on('click', this.addItem.bind(this));
      $('#checkout').on('click', this.showOrder.bind(this));
 
 
