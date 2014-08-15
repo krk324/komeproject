@@ -1,1 +1,14 @@
-<p>aa{{cart.0.quantity}} {{cart.0.name}}</p>
+ <div class="row text-center">
+  <div class="col-md-6">
+    <h4>Some More Input</h4>
+    <p><input class="form-control" type="text"></p>
+    <p><input class="form-control" type="text"></p>
+  </div>
+   <div class="col-md-6">
+    {{#each cart}}
+    <h4>{{name}}:<small>${{price}} x {{quantity}} = {{total}}</small></h4>
+    {{/each}}
+    <hr>
+    <h4>Total: $20</h4>
+  </div>
+</div>
