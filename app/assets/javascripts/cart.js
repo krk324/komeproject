@@ -78,7 +78,7 @@ var Hackmai = Hackmai || {};
      $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
      $('[id="add-button"]').on('click', this.addItem.bind(this));
      $('#checkout').on('click', this.showOrder.bind(this));
-
+     $('.stripe-button-el').on('click', this.createCart.bind(this));
 
 
   }
