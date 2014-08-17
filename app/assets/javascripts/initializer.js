@@ -3,9 +3,5 @@ var Hackmai = Hackmai || {};
 
   Hackmai.CartApp.initializer();
 
-  window.currentUser = {
-      id : "<%=current_user.id%>"
-  };
-
 };
 

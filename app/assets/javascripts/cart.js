@@ -60,7 +60,7 @@ var Hackmai = Hackmai || {};
         contentType: 'application/json',
         dataType: 'json'
       })
-    .done(window.location.href = "/carts/new");
+    .done();
     event.preventDefault();
   },
   showOrder: function() {

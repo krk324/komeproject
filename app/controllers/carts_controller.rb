@@ -16,7 +16,7 @@ class CartsController < ApplicationController
       @cart_item.user_id = current_or_guest_user.id
       #items << @cart_item if @cart_item.save!
     end
-
+    respond_with(@cart_item)
   end
 
   def new
@@ -31,7 +31,7 @@ class CartsController < ApplicationController
 
   def cart_item_params
     params.require(:cart).map do |item|
-      ActionController::Parameters.new(item.to_hash).permit(:menu_item_id, :quantity)
+      params = ActionController::Parameters.new(item.to_hash).permit(:menu_item_id, :quantity)
     end
   end
 
