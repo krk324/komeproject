@@ -9,12 +9,12 @@ class CartsController < ApplicationController
   respond_to :json, :html
 
   def create
-    items = []
+    #items = []
 
     cart_item_params.each do |item|
       @cart_item = @order.carts.new(item)
       @cart_item.user_id = current_or_guest_user.id
-      items << @cart_item if @cart_item.save!
+      #items << @cart_item if @cart_item.save!
     end
 
   end

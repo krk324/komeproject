@@ -107,6 +107,19 @@
 
       </div>
       <div class="modal-footer">
+        <!-- ADD STRIP API IN HERE -->
+        <%= form_tag charges_path do %>
+          <article>
+            <label class="amount">
+              <span>Amount: $5.00</span>
+            </label>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="500"></script>
+        <% end %>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
