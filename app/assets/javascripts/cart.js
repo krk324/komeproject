@@ -26,6 +26,8 @@ var Hackmai = Hackmai || {};
     quantity += 1;
     $(event.currentTarget.parentElement.nextElementSibling).text(quantity);
 
+    //enable button when clicked
+    $('#checkout').prop('disabled', false);
     event.preventDefault();
   },
   deleteItem: function(event){
@@ -47,6 +49,9 @@ var Hackmai = Hackmai || {};
       }
 
       quantity -= 1;
+      if (CartItems.length === 0){
+        $('#checkout').prop('disabled', true);
+      }
       $(event.currentTarget.parentElement.nextElementSibling).text(quantity);
     }
 
