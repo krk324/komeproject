@@ -72,13 +72,14 @@ var Hackmai = Hackmai || {};
     $('.modal-body').empty();
     $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
     $('html, body').animate({ scrollTop: 0 }, 0);
+    this.createCart();
 
   },
   initializer: function(event){
      $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
      $('[id="add-button"]').on('click', this.addItem.bind(this));
      $('#checkout').on('click', this.showOrder.bind(this));
-     $('.stripe-button-el').on('click', this.createCart.bind(this));
+     //$('.stripe-button-el').on('click', this.createCart.bind(this));
 
 
   }
