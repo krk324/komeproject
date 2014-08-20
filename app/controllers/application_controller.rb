@@ -8,11 +8,9 @@ class ApplicationController < ActionController::Base
 
   #before_action :set_order
 
-  #redirect to the path
-  # def after_sign_in_path_for(resource_or_scope)
-  #   current_or_guest_user.orders.last
-  #   new_order_path
-  # end
+  def after_sign_in_path_for(resource_or_scope)
+    orders_path
+  end
 
   # if user is logged in, return current_user, else return guest_user
   def current_or_guest_user
