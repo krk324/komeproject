@@ -4,6 +4,7 @@
 	<title>Hakumai</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
 	<%= csrf_meta_tags %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,7 +60,7 @@
 										<li>
 						          <div>
 						             <% if user_signed_in? %>
-						              <strong id="navbar-text">Logged in as <%= current_user.email %></strong>.
+						              <strong id="navbar-text"><%= current_user.email %></strong>.
 						              <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-info navbar-btn"%> |
 						              <%= link_to "Logout", destroy_user_session_path, class: "btn btn-info navbar-btn", method: :delete %>
 						            <% else %>

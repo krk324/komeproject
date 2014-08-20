@@ -64,9 +64,8 @@ var Hackmai = Hackmai || {};
         data:    JSON.stringify({cart: CartItems}),
         contentType: 'application/json',
         dataType: 'json'
-      })
-    .done();
-    event.preventDefault();
+      });
+    //event.preventDefault();
   },
   showOrder: function() {
     //Calculate total
@@ -84,6 +83,7 @@ var Hackmai = Hackmai || {};
      $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
      $('[id="add-button"]').on('click', this.addItem.bind(this));
      $('#checkout').on('click', this.showOrder.bind(this));
+     $("#address").geocomplete();
      //$('.stripe-button-el').on('click', this.createCart.bind(this));
 
 
