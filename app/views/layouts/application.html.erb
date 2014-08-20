@@ -59,11 +59,11 @@
 										<li>
 						          <div>
 						             <% if user_signed_in? %>
-						              Logged in as <strong><%= current_user.email %></strong>.
+						              <strong id="navbar-text">Logged in as <%= current_user.email %></strong>.
 						              <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-info navbar-btn"%> |
 						              <%= link_to "Logout", destroy_user_session_path, class: "btn btn-info navbar-btn", method: :delete %>
 						            <% else %>
-						              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info navbar-btn"%> |
+						              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info navbar-btn"%>
 						              <%= link_to "Login", new_user_session_path, class: "btn btn-info navbar-btn"%>
 						            <% end %>
 						          </div>
@@ -74,7 +74,6 @@
 				</div>
 				<!-- /.container-fluid -->
 		</nav>
-		</br></br></br></br>
 
  <% flash.each do |name, msg| %>
 	 <% if msg.is_a?(String) %>

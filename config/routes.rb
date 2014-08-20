@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :orders, only:[:index, :show, :create]
   resources :carts, except: [:index, :show]
-  resources :charges
+  resources :charges, only:[:new, :create]
 end

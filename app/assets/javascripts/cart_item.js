@@ -5,4 +5,11 @@ var CartItem = function(id,quantity,price,name){
     this.name = name;
   };
 
+  CartItem.prototype = {
+    itemTotalAmount: function() {
+      Amount  = this.price * this.quantity;
+      return Amount;
+    },
+  };
+
 

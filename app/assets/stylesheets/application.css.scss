@@ -176,6 +176,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     //border-color: transparent;
     background-color: #222;
+    margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -216,10 +217,12 @@ fieldset[disabled] .btn-xl.active {
     color: #fff;
 }
 
+//change color of nav-bar hover color.
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: #fed136;
+    color: red;
+    //color: #fed136; yellow now its red
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -261,6 +264,11 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default.navbar-shrink .navbar-brand {
         font-size: 1.5em;
     }
+}
+
+//change log-in name color
+#navbar-text{
+  color:white;
 }
 
 header {
@@ -866,14 +874,4 @@ body {
 .col-centered{
     float: none;
     margin: 0 auto;
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #FFFFF4;
-  opacity: 0.90;
 }

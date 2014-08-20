@@ -4,10 +4,11 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 500
+    @order = current_user.orders.last
+    @amount = (@order.total_amount*100).to_i
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => current_user.email,
       :card  => params[:stripeToken]
     )
 
@@ -17,6 +18,9 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+
+    @order.is_purchased = true
+    @order.save
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
