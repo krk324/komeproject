@@ -63,17 +63,20 @@
 												<!-- <a class="page-scroll" href="#team">Contact</a> -->
 										</li>
 										<li>
-						          <div>
-						             <% if user_signed_in? %>
-						              <strong id="navbar-text"><%= current_user.email %></strong>.
-						              <%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-info navbar-btn"%> |
-						              <%= link_to "Logout", destroy_user_session_path, class: "btn btn-info navbar-btn", method: :delete %>
-						            <% else %>
-						              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info navbar-btn"%>
-						              <%= link_to "Login", new_user_session_path, class: "btn btn-info navbar-btn"%>
-						            <% end %>
-						          </div>
-					        	</li>
+								 		<li class="dropdown">
+								 				<% if user_signed_in? %>
+								        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><strong id="navbar-text"><%= current_user.email %></strong>. <b class="caret"></b></a>
+								        <ul class="dropdown-menu">
+								            <li><%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-info navbar-btn"%></li>
+								            <li><%= link_to "Logout", destroy_user_session_path, class: "btn btn-info navbar-btn", method: :delete %></li>
+								        <% else %>
+								        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Sign-up/Login <b class="caret"></b></a>
+								        	<ul class="dropdown-menu">
+									        	<li><%= link_to "Login", new_user_session_path, class: "btn btn-info navbar-btn"%></li>
+										        <li><%= link_to "Sign up", new_user_registration_path, class: "btn btn-info navbar-btn"%></li>
+												<% end %>
+								        </ul>
+								    </li>
 								</ul>
 						</div>
 						<!-- /.navbar-collapse -->
