@@ -883,3 +883,10 @@ body {
     float: none;
     margin: 0 auto;
 }
+
+.vcenter {
+    margin-top:50px;
+    display:table !important;
+    border:2px solid gray;
+    height:300px;
+}
