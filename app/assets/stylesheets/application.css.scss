@@ -238,6 +238,14 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
+.dropdown-menu li {
+  background-color: black;
+  border-color: black;
+}
+
+//dropdown menu hover color.
+//.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a
+
 @media(min-width:768px) {
     .navbar-default {
         border: 0;
