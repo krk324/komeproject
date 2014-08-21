@@ -65,7 +65,9 @@
 										<li>
 								 		<li class="dropdown">
 								 				<% if user_signed_in? %>
-								        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= current_user.email %> <b class="caret"></b></a>
+								        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+								        <%= current_user.username.present? ? current_user.username : current_user.email%>
+												<b class="caret"></b></a>
 								        <ul class="dropdown-menu">
 								            <li><%= link_to 'Edit profile', edit_user_registration_path, id: "drop-down-list"%></li>
 								            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "drop-down-list" %></li>
@@ -93,4 +95,32 @@
 <%= yield %>
 
 </body>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; HACKMAI 2014</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="#">Privacy Policy</a>
+                    </li>
+                    <li><a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
