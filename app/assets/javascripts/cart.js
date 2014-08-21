@@ -69,12 +69,19 @@ var Hackmai = Hackmai || {};
   },
   showOrder: function() {
     if ($('#address').val() === "" ){
-      alert("Enter your full delivery address");
+      //alert under searchbox.
+      $("#alert-address").remove();
+      $('#address').after("<h5 id='alert-address'>Enter your full delivery address</h5>");
+
+      //prevent modal showing up.
       $('#checkout').removeAttr("data-toggle");
     }
     else {
-      //Calculate total
+      $("#alert-address").remove();
+      //add back modal attributes to show the pop-up.
       $('#checkout').attr("data-toggle","modal");
+
+      //Calculate total
       CartItems.total = 0;
       for (var i = CartItems.length - 1; i >= 0; i--) {
         CartItems.total = CartItems.total + (CartItems[i].price * CartItems[i].quantity);
@@ -82,6 +89,12 @@ var Hackmai = Hackmai || {};
       $('.modal-body').empty();
       $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
       $('html, body').animate({ scrollTop: 0 }, 0);
+
+      //add address to the order confirmation pop-up.
+      var address = $('#address').val();
+      $('#address-confirm').after("<p>"+address+"</p>");
+
+      //add items to the Cart.
       this.createCart();
     }
 

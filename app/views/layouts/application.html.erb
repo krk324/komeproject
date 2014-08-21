@@ -53,10 +53,14 @@
 												<a href="#page-top"></a>
 										</li>
 										<li>
-												<a class="page-scroll" href="#about">About</a>
+												<%= link_to "About", root_path+"#about", class: "page-scroll"%>
 										</li>
 										<li>
-												<a class="page-scroll" href="#team">Team</a>
+												<%= link_to "Order", orders_path%>
+										</li>
+										<li>
+												<%= link_to "Contact", root_path+"#contact", class: "page-scroll"%>
+												<!-- <a class="page-scroll" href="#team">Contact</a> -->
 										</li>
 										<li>
 						          <div>
