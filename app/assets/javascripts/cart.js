@@ -88,6 +88,12 @@ var Hackmai = Hackmai || {};
       }
       $('.modal-body').empty();
       $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
+
+      //apply phoneinput format to the hadlebar templates.
+      $('#phone-input').formatter({
+      'pattern': '({{999}}) {{999}}-{{9999}}',
+      'persistent': true
+      });
       $('html, body').animate({ scrollTop: 0 }, 0);
 
       //add address to the order confirmation pop-up.
