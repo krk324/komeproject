@@ -68,7 +68,7 @@ var Hackmai = Hackmai || {};
     //event.preventDefault();
   },
   showOrder: function() {
-    if ($('#address').val() === "" ){
+    if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
       //alert under searchbox.
       $("#alert-address").remove();
       $('#address').after("<h5 id='alert-address'>Enter your full delivery address</h5>");
@@ -88,12 +88,6 @@ var Hackmai = Hackmai || {};
       }
       $('.modal-body').empty();
       $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
-
-      //apply phoneinput format to the hadlebar templates.
-      $('#phone-input').formatter({
-      'pattern': '({{999}}) {{999}}-{{9999}}',
-      'persistent': true
-      });
       $('html, body').animate({ scrollTop: 0 }, 0);
 
       //add address to the order confirmation pop-up.
@@ -110,6 +104,11 @@ var Hackmai = Hackmai || {};
     $('[id="add-button"]').on('click', this.addItem.bind(this));
     $('#checkout').on('click', this.showOrder.bind(this));
     $("#address").geocomplete();
+    //apply phoneinput format to the hadlebar templates.
+    $('#phone-input').formatter({
+      'pattern': '({{999}}) {{999}}-{{9999}}',
+      'persistent': true
+    });
     //$('.stripe-button-el').on('click', this.createCart.bind(this));
   }
 };

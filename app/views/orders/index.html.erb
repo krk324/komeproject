@@ -2,10 +2,14 @@
   <div class="container">
       <br>
       <div class="row">
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="address" placeholder="Enter Delivery Address">
+            <div class="col-sm-6 col-md-5">
+              <h5>Enter Full Delivery Address: </h5><input type="text" class="form-control" id="address" placeholder="Ex: 417 River Road, Des Plaines, IL, United States">
             </div>
-            <div class="col-sm-6 col-md-4 pull-right">
+            <div class="col-sm-4 col-md-3">
+              <h5>Enter Phone Number: </h5><input class="form-control" id="phone-input" type="tel" placeholder="Enter Phone Number">
+            </div>
+            <div class="col-sm-2 col-md-3 pull-right">
+              <br>
               <% if user_signed_in? %>
               <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal" disabled>Checkout</button>
               <% else %>
