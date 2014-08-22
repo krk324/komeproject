@@ -57,7 +57,7 @@ var Hackmai = Hackmai || {};
 
     event.preventDefault();
   },
-  createCart: function(event){
+  createCart: function(){
       $.ajax({
         type: "POST",
         url: '/carts',
@@ -65,7 +65,6 @@ var Hackmai = Hackmai || {};
         contentType: 'application/json',
         dataType: 'json'
       });
-    //event.preventDefault();
   },
   showOrder: function() {
     if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){

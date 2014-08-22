@@ -11,7 +11,6 @@
 
 class Order < ActiveRecord::Base
   belongs_to :user
-  belongs_to :address
   has_many :carts, dependent: :destroy
 
   def total_amount

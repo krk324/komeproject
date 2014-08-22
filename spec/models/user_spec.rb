@@ -19,6 +19,7 @@
 #  provider               :string(255)
 #  uid                    :string(255)
 #  phone                  :string(255)
+#  address                :string(255)
 #
 
 require 'rails_helper'
