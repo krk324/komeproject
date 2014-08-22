@@ -66,6 +66,15 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });
   },
+  createAddress: function(){
+      $.ajax({
+        type: "POST",
+        url: '/users',
+        data:    JSON.stringify({cart: CartItems}),
+        contentType: 'application/json',
+        dataType: 'json'
+      });
+  },
   showOrder: function() {
     if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
       //alert under searchbox.
