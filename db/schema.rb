@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140821172451) do
   enable_extension "plpgsql"
 
   create_table "carts", force: true do |t|
-    t.decimal  "price",        precision: 8, scale: 2
     t.integer  "menu_item_id"
     t.integer  "order_id"
     t.integer  "quantity"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140821172451) do
 
   add_index "carts", ["menu_item_id"], name: "index_carts_on_menu_item_id", using: :btree
   add_index "carts", ["order_id"], name: "index_carts_on_order_id", using: :btree
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
 
   create_table "menu_items", force: true do |t|
     t.text     "name",                                null: false
