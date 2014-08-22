@@ -18,6 +18,7 @@
 #  updated_at             :datetime
 #  provider               :string(255)
 #  uid                    :string(255)
+#  phone                  :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
