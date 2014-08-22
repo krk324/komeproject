@@ -292,7 +292,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(http://static.pexels.com/wp-content/uploads/2014/06/blur-chilling-city-1698.jpg);
+    background-image: url(http://static.pexels.com/wp-content/uploads/2014/06/abstract-blur-blurred-1079.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -899,3 +899,21 @@ body {
     border:2px solid gray;
     height:300px;
 }
+
+.order-index{
+    background-attachment: scroll;
+    //background-image: url(http://www.hdwallpapersinn.com/wp-content/uploads/2014/08/Rice.jpg);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.thumbnail{
+    border: 0 none;
+    box-shadow: none;
+    background-color: rgba(255,255,255,0.5);
+}
+

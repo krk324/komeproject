@@ -1,109 +1,112 @@
-<div class="container">
-    <br>
-    <div class="row">
-          <div class="col-sm-6">
-            <input type="text" class="form-control" id="address" placeholder="Enter Delivery Address">
-          </div>
-          <div class="col-sm-6 col-md-4 pull-right">
-            <% if user_signed_in? %>
-            <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal" disabled>Checkout</button>
-            <% else %>
-            <p class="pull-right">Sign-in/Sign-up and order tasty donburi!<p>
-            <% end %>
-          </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src=<%=@menuitems[0].image_url%> alt="<%=@menuitems[0].description%>">
-          <div class="caption">
-            <h4><%=@menuitems[0].name%> <small><%=@menuitems[0].price%></small></h4>
-            <div class="pull-right">
-              <button data-id="1" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="1" id="add-button" data-name="<%=@menuitems[0].name%>" data-price ="<%=@menuitems[0].price%>" class="btn-lg btn-success">+</button>
+<div class="order-index">
+  <div class="container">
+      <br>
+      <div class="row">
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="address" placeholder="Enter Delivery Address">
             </div>
-            <p id="quantity">0</p>
-            <hr>
-            <p><%=@menuitems[0].description%></p>
+            <div class="col-sm-6 col-md-4 pull-right">
+              <% if user_signed_in? %>
+              <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal" disabled>Checkout</button>
+              <% else %>
+              <p class="pull-right">Sign-in/Sign-up and order tasty donburi!<p>
+              <% end %>
+            </div>
+      </div>
+      <hr>
+      <br>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src=<%=@menuitems[0].image_url%> alt="<%=@menuitems[0].description%>">
+            <div class="caption">
+              <h4><%=@menuitems[0].name%> <small><%=@menuitems[0].price%></small></h4>
+              <div class="pull-right">
+                <button data-id="1" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="1" id="add-button" data-name="<%=@menuitems[0].name%>" data-price ="<%=@menuitems[0].price%>" class="btn-lg btn-success">+</button>
+              </div>
+              <p id="quantity">0</p>
+              <hr>
+              <p><%=@menuitems[0].description%></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src=<%=@menuitems[1].image_url%> alt="<%=@menuitems[1].description%>">
+            <div class="caption">
+              <h4><%=@menuitems[1].name%> <small><%=@menuitems[1].price%></small></h4>
+              <div class="pull-right">
+                <button data-id="2" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="2" id="add-button" data-name="<%=@menuitems[1].name%>" data-price ="<%=@menuitems[1].price%>" class="btn-lg btn-success">+</button>
+              </div>
+              <p id="quantity">0</p>
+              <hr>
+              <p><%=@menuitems[1].description%></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src=<%=@menuitems[2].image_url%> alt="<%=@menuitems[2].description%>">
+            <div class="caption">
+              <h4><%=@menuitems[2].name%> <small><%=@menuitems[2].price%></small></h4>
+              <div class="pull-right">
+                <button data-id="3" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="3" id="add-button" data-name="<%=@menuitems[2].name%>" data-price ="<%=@menuitems[2].price%>" class="btn-lg btn-success">+</button>
+              </div>
+              <p id="quantity">0</p>
+              <hr>
+              <p><%=@menuitems[2].description%></p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src=<%=@menuitems[1].image_url%> alt="<%=@menuitems[1].description%>">
-          <div class="caption">
-            <h4><%=@menuitems[1].name%> <small><%=@menuitems[1].price%></small></h4>
-            <div class="pull-right">
-              <button data-id="2" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="2" id="add-button" data-name="<%=@menuitems[1].name%>" data-price ="<%=@menuitems[1].price%>" class="btn-lg btn-success">+</button>
-            </div>
-            <p id="quantity">0</p>
-            <hr>
-            <p><%=@menuitems[1].description%></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src=<%=@menuitems[2].image_url%> alt="<%=@menuitems[2].description%>">
-          <div class="caption">
-            <h4><%=@menuitems[2].name%> <small><%=@menuitems[2].price%></small></h4>
-            <div class="pull-right">
-              <button data-id="3" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="3" id="add-button" data-name="<%=@menuitems[2].name%>" data-price ="<%=@menuitems[2].price%>" class="btn-lg btn-success">+</button>
-            </div>
-            <p id="quantity">0</p>
-            <hr>
-            <p><%=@menuitems[2].description%></p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src=<%=@menuitems[3].image_url%> alt="<%=@menuitems[3].description%>">
-          <div class="caption">
-            <h4><%=@menuitems[3].name%> <small><%=@menuitems[3].price%></small></h4>
-            <div class="pull-right">
-              <button data-id="4" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="4" id="add-button" data-name="<%=@menuitems[3].name%>" data-price ="<%=@menuitems[3].price%>" class="btn-lg btn-success">+</button>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src=<%=@menuitems[3].image_url%> alt="<%=@menuitems[3].description%>">
+            <div class="caption">
+              <h4><%=@menuitems[3].name%> <small><%=@menuitems[3].price%></small></h4>
+              <div class="pull-right">
+                <button data-id="4" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="4" id="add-button" data-name="<%=@menuitems[3].name%>" data-price ="<%=@menuitems[3].price%>" class="btn-lg btn-success">+</button>
+              </div>
+              <p id="quantity">0</p>
+              <hr>
+              <p><%=@menuitems[3].description%></p>
             </div>
-            <p id="quantity">0</p>
-            <hr>
-            <p><%=@menuitems[3].description%></p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src=<%=@menuitems[4].image_url%> alt="<%=@menuitems[4].description%>">
+            <div class="caption">
+              <h4><%=@menuitems[4].name%> <small><%=@menuitems[4].price%></small></h4>
+              <div class="pull-right">
+                <button data-id="5" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="5" id="add-button" data-name="<%=@menuitems[4].name%>" data-price ="<%=@menuitems[4].price%>" class="btn-lg btn-success">+</button>
+              </div>
+              <p id="quantity">0</p>
+              <hr>
+              <p><%=@menuitems[4].description%></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src=<%=@menuitems[5].image_url%> alt="<%=@menuitems[5].description%>">
+            <div class="caption">
+              <h4><%=@menuitems[5].name%> <small><%=@menuitems[5].price%></small></h4>
+              <div class="pull-right">
+                <button data-id="6" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="6" id="add-button" data-name="<%=@menuitems[5].name%>" data-price ="<%=@menuitems[5].price%>" class="btn-lg btn-success">+</button>
+              </div>
+              <p id="quantity">0</p>
+              <hr>
+              <p><%=@menuitems[5].description%></p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src=<%=@menuitems[4].image_url%> alt="<%=@menuitems[4].description%>">
-          <div class="caption">
-            <h4><%=@menuitems[4].name%> <small><%=@menuitems[4].price%></small></h4>
-            <div class="pull-right">
-              <button data-id="5" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="5" id="add-button" data-name="<%=@menuitems[4].name%>" data-price ="<%=@menuitems[4].price%>" class="btn-lg btn-success">+</button>
-            </div>
-            <p id="quantity">0</p>
-            <hr>
-            <p><%=@menuitems[4].description%></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src=<%=@menuitems[5].image_url%> alt="<%=@menuitems[5].description%>">
-          <div class="caption">
-            <h4><%=@menuitems[5].name%> <small><%=@menuitems[5].price%></small></h4>
-            <div class="pull-right">
-              <button data-id="6" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="6" id="add-button" data-name="<%=@menuitems[5].name%>" data-price ="<%=@menuitems[5].price%>" class="btn-lg btn-success">+</button>
-            </div>
-            <p id="quantity">0</p>
-            <hr>
-            <p><%=@menuitems[5].description%></p>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 </div>
-
+<hr>
 <footer>
     <div class="container">
         <div class="row">
