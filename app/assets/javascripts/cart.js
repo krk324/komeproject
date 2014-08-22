@@ -90,7 +90,7 @@ var Hackmai = Hackmai || {};
       $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
       $('html, body').animate({ scrollTop: 0 }, 0);
 
-      //add address to the order confirmation pop-up.
+      //add address and phonenumber to the order confirmation pop-up.
       var address = $('#address').val();
       $('#address-confirm').after("<p>"+address+"</p>");
       var phone = $('#phone-input').val();
