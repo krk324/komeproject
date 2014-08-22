@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821172451) do
+ActiveRecord::Schema.define(version: 20140822172419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: true do |t|
+    t.text     "street",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "carts", force: true do |t|
     t.integer  "menu_item_id"
@@ -51,10 +57,12 @@ ActiveRecord::Schema.define(version: 20140821172451) do
 
   create_table "orders", force: true do |t|
     t.integer "user_id"
+    t.integer "address_id"
     t.decimal "price",        precision: 8, scale: 2
     t.boolean "is_purchased"
   end
 
+  add_index "orders", ["address_id"], name: "index_orders_on_address_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "selections", force: true do |t|
