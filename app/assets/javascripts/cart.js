@@ -71,7 +71,7 @@ var Hackmai = Hackmai || {};
     if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
       //alert under searchbox.
       $("#alert-address").remove();
-      $('#address').after("<h5 id='alert-address'>Enter your full delivery address</h5>");
+      $('#address').after("<h5 id='alert-address'>Enter your delivery address and phone number</h5>");
 
       //prevent modal showing up.
       $('#checkout').removeAttr("data-toggle");
@@ -93,6 +93,8 @@ var Hackmai = Hackmai || {};
       //add address to the order confirmation pop-up.
       var address = $('#address').val();
       $('#address-confirm').after("<p>"+address+"</p>");
+      var phone = $('#phone-input').val();
+      $('#phone-confirm').after("<p>"+phone+"</p>");
 
       //add items to the Cart.
       this.createCart();
