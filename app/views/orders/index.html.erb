@@ -3,10 +3,10 @@
       <br>
       <div class="row">
             <div class="col-sm-6 col-md-5">
-              <h5>Enter Full Delivery Address: </h5><input type="text" class="form-control" id="address" placeholder="Ex: 417 River Road, Des Plaines, IL, United States" value="<%=current_user.address%>">
+              <h5>Enter Full Delivery Address: </h5><input type="text" class="form-control" id="address" placeholder="Ex: 417 River Road, Des Plaines, IL, United States" value="<%=current_user.address if current_user%>">
             </div>
             <div class="col-sm-4 col-md-3">
-              <h5>Enter Phone Number: </h5><input class="form-control" id="phone-input" type="tel" placeholder="Enter Phone Number" value="<%=current_user.phone%>">
+              <h5>Enter Phone Number: </h5><input class="form-control" id="phone-input" type="tel" placeholder="Enter Phone Number" value="<%=current_user.phone if current_user%>">
             </div>
             <div class="col-sm-2 col-md-3 pull-right">
               <br>
