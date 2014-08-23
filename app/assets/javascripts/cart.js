@@ -1,6 +1,8 @@
 var Hackmai = Hackmai || {};
 
   var CartItems = CartItems || [];
+  var initAddress = "";
+  var initPhone = "";
 
   Hackmai.CartApp = {
 
@@ -66,14 +68,14 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });
   },
-  createAddress: function(){
+  createAddress: function(address){
+      if (initAddress !== address) {
       $.ajax({
-        type: "POST",
+        type: "PUT",
         url: '/users',
-        data:    JSON.stringify({cart: CartItems}),
-        contentType: 'application/json',
+        data: { user: { address: address } },
         dataType: 'json'
-      });
+      });}
   },
   showOrder: function() {
     if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
@@ -106,6 +108,9 @@ var Hackmai = Hackmai || {};
 
       //add items to the Cart.
       this.createCart();
+
+      //add address to user
+      this.createAddress(address);
     }
 
   },
@@ -119,6 +124,8 @@ var Hackmai = Hackmai || {};
       'pattern': '({{999}}) {{999}}-{{9999}}',
       'persistent': true
     });
+    initAddress = $('#address').val();
+    initPhone = $('#phone-input').val();
     //$('.stripe-button-el').on('click', this.createCart.bind(this));
   }
 };
