@@ -68,12 +68,19 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });
   },
-  createAddress: function(address){
+  updateUserInfo: function(address,phone){
       if (initAddress !== address) {
       $.ajax({
         type: "PUT",
         url: '/users',
         data: { user: { address: address } },
+        dataType: 'json'
+      });}
+      if (initPhone !== phone) {
+      $.ajax({
+        type: "PUT",
+        url: '/users',
+        data: { user: { phone: phone } },
         dataType: 'json'
       });}
   },
@@ -110,7 +117,7 @@ var Hackmai = Hackmai || {};
       this.createCart();
 
       //add address to user
-      this.createAddress(address);
+      this.updateUserInfo(address,phone);
     }
 
   },
@@ -124,6 +131,8 @@ var Hackmai = Hackmai || {};
       'pattern': '({{999}}) {{999}}-{{9999}}',
       'persistent': true
     });
+
+    //git initial address and phone number.
     initAddress = $('#address').val();
     initPhone = $('#phone-input').val();
     //$('.stripe-button-el').on('click', this.createCart.bind(this));
