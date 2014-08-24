@@ -135,6 +135,13 @@ var Hackmai = Hackmai || {};
     //git initial address and phone number.
     initAddress = $('#address').val();
     initPhone = $('#phone-input').val();
+
+    //Refresh page and then redirect to the orderpage.
+    //To clear the javascript array.
+    $('[id="order-link"]').click(function() {
+    location.reload();
+    window.location.href="http://localhost:3000/orders";
+    });
     //$('.stripe-button-el').on('click', this.createCart.bind(this));
   }
 };
