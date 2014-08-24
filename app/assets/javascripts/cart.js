@@ -140,7 +140,7 @@ var Hackmai = Hackmai || {};
     //To clear the javascript array.
     $('[id="order-link"]').click(function() {
     location.reload();
-    window.location.href="http://localhost:3000/orders";
+    window.location.href="/orders";
     });
     //$('.stripe-button-el').on('click', this.createCart.bind(this));
   }
