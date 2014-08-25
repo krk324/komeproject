@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "slidebars.min";
 
 /*!
  * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
@@ -949,4 +950,8 @@ body {
     border-color: rgba(0,0,0,0.1);
     color: rgba(0,0,0,0.1);
 }
+
+.navbar-fixed-top {
+margin-top: -50px;
+position: relative;}
 
