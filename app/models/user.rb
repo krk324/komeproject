@@ -31,6 +31,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  after_create :send_new_user_mail
+
+  def send_new_user_mail
+    UserMailer.send_welcome_mail(self).deliver
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.email = auth.info.email
