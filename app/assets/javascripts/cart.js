@@ -85,6 +85,12 @@ var Hackmai = Hackmai || {};
       });}
   },
   showOrder: function() {
+
+    //check if logout link exist in the navbar.(check if user is logged in)
+    if ($('.dropdown').attr('data-method') !== 'delete'){
+      window.location.replace("/users/sign_in");
+    }
+
     if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
       //alert under searchbox.
       $("#alert-address").remove();
@@ -139,8 +145,8 @@ var Hackmai = Hackmai || {};
     //Refresh page and then redirect to the orderpage.
     //To clear the javascript array.
     $('[id="order-link"]').click(function() {
-    location.reload();
-    window.location.href="/orders";
+      location.reload();
+      window.location.replace("/orders");
     });
     //$('.stripe-button-el').on('click', this.createCart.bind(this));
   }
