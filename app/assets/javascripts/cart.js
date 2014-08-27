@@ -144,7 +144,7 @@ var Hackmai = Hackmai || {};
     initPhone = $('#phone-input').val();
 
     //Refresh page and then redirect to the orderpage.
-    //To clear the javascript array.
+    //clear the javascript array.
     $('[id="order-link"]').click(function() {
       location.reload();
       window.location.replace("/orders");

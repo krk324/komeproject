@@ -21,6 +21,7 @@ class ChargesController < ApplicationController
 
     @order.is_purchased = true
     @order.save
+    UserMailer.send_order_confirmation(@order,current_user).deliver
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
