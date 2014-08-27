@@ -87,7 +87,7 @@ var Hackmai = Hackmai || {};
   showOrder: function() {
 
     //check if logout link exist in the navbar.(check if user is logged in)
-    if ($('.dropdown').attr('data-method') !== 'delete'){
+    if ($('.dropdown-menu li a').last().attr('data-method') !== 'delete'){
       window.location.replace("/users/sign_in");
       return;
     }
