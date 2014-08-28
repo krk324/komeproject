@@ -27,14 +27,14 @@ class User < ActiveRecord::Base
   has_many :orders, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :async,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
   after_create :send_new_user_mail
 
   def send_new_user_mail
-    UserMailer.send_welcome_mail(self).deliver
+    UserMailer.send_welcome_mail(self.id).deliver
   end
 
   def self.from_omniauth(auth)

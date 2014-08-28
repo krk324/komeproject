@@ -87,6 +87,10 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'omniauth-facebook'
 
+gem "resque"
+gem 'resque_mailer'
+gem 'devise-async'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
