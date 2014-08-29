@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "animsition";
 
 /*!
  * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
@@ -190,7 +191,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default {
-    //border-color: transparent;
+    border-color: transparent;
     background-color: #222;
     margin-bottom: 0px;
 }
@@ -409,7 +410,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/map-image.png);
+    //background-image: url(../img/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
 }
