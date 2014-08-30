@@ -3,10 +3,10 @@ var Hackmai = Hackmai || {};
 
   Hackmai.CartApp.initializer();
 
-  $('#d1').contenthover({
-    overlay_background:'#000',
-    overlay_opacity:0.7,
-  });
+  // $('#d1').contenthover({
+  //   overlay_background:'#000',
+  //   overlay_opacity:0.7,
+  // });
   // $(".animsition").animsition({
   //   inClass               :   'zoom-in',
   //   outClass              :   'zoom-out',
