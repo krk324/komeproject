@@ -5,6 +5,8 @@ class CreateOrders < ActiveRecord::Migration
       t.references :address, index: true
       t.decimal :price, precision: 8, scale: 2
       t.boolean :is_purchased
+
+      t.timestamps
     end
   end
 end

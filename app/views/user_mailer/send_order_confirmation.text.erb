@@ -1,0 +1,33 @@
+Thank you for using Hackmai.
+For changes or questions about this order, please contact
+Hackmai: (666) 666-6667 or email us at contat@hackmai.com.
+
+Tell us how you liked your experience, and win free bowl by answering the survey.
+After your meal, submit your survey.
+
+===========================================
+
+Your Order #<%=@order.id%>
+
+processed <%=@order.updated_at%>
+
+<% @order.carts.each do |cart| %>
+<%=cart.quantity%> x <%=cart.menu_item.name%> <%=cart.menu_item.price%>
+<% end %>
+Total: <%=@order.total_amount%>
+
+Will be delivered to
+<%=current_user.username%> on Friday, August 15 at 12:30pm.
+51 Melcher Street
+Boston, MA 02210
+(215) 839-9428
+Go to WeWork on the 1st floor and tell them that you have a delivery for General Assembly.
+Again, thank you for using Foodler, and we hope you enjoy your food.
+
+Order again?
+Recreate Order
+Get the app: iPhone iPad Android
+
+Follow us for a chance to win $100 in free delivery every day!
+Facebook Twitter Instagram
+© 2004-2014 Hackmai, Inc.

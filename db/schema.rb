@@ -50,10 +50,12 @@ ActiveRecord::Schema.define(version: 20140821172451) do
   add_index "options", ["topping_id"], name: "index_options_on_topping_id", using: :btree
 
   create_table "orders", force: true do |t|
-    t.integer "user_id"
-    t.integer "address_id"
-    t.decimal "price",        precision: 8, scale: 2
-    t.boolean "is_purchased"
+    t.integer  "user_id"
+    t.integer  "address_id"
+    t.decimal  "price",        precision: 8, scale: 2
+    t.boolean  "is_purchased"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "orders", ["address_id"], name: "index_orders_on_address_id", using: :btree
