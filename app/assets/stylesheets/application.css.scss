@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import "animsition";
 
 /*!
  * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
@@ -611,5 +610,18 @@ body {
 
 #checkout {
     margin-top: 5px;
+}
+
+//Menu item hover effect
+.contenthover {
+    padding:20px 20px 10px 20px;
+}
+.contenthover, .contenthover h3, contenthover a {
+    color:#fff;
+}
+.contenthover h3, .contenthover p {
+    margin:0 0 10px 0;
+    line-height:1.4em;
+    padding:0;
 }
 
