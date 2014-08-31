@@ -11,13 +11,13 @@ class UserMailer < ActionMailer::Base
     @greeting = "Hi"
 
     @user = User.find(user_id)
-    mail(:to => "#{@user.username} <#{@user.email}>", :subject => "Registered")
+    mail(:to => "<#{@user.email}>", :subject => "Registered")
   end
 
   def send_order_confirmation(order_id,user_id)
     @order = Order.find(order_id)
     @user = User.find(user_id)
 
-    mail(:to => "#{@user.username} <#{@user.email}>", :subject => "Order Confirmation")
+    mail(:to => "<#{@user.email}>", :subject => "Order Confirmation")
   end
 end
