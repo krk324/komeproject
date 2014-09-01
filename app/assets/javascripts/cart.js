@@ -96,7 +96,6 @@ var Hackmai = Hackmai || {};
       //alert under searchbox.
       $("#alert-address").remove();
       $('#address').after("<h5 id='alert-address'>Enter your delivery address and phone number</h5>");
-
       //prevent modal showing up.
       $('#checkout').removeAttr("data-toggle");
     }
@@ -150,7 +149,6 @@ var Hackmai = Hackmai || {};
       window.location.href = "/orders";
       //window.location.replace("/orders");
     });
-    //$('.stripe-button-el').on('click', this.createCart.bind(this));
   }
 };
 
