@@ -18,6 +18,6 @@ class UserMailer < ActionMailer::Base
     @order = Order.find(order_id)
     @user = User.find(user_id)
 
-    mail(:to => "<#{@user.email}>", :subject => "Order Confirmation")
+    mail(:to => "<#{@user.email}>", :subject => "Welcome to Hackmai <%=@user.email%>.")
   end
 end

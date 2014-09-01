@@ -9,7 +9,7 @@ After your meal, submit your survey.
 
 Your Order #<%=@order.id%>
 
-processed <%=@order.updated_at%>
+processed <%=@order.updated_at.localtime%>
 
 <% @order.carts.each do |cart| %>
 <%=cart.quantity%> x <%=cart.menu_item.name%> <%=cart.menu_item.price%>
@@ -17,11 +17,12 @@ processed <%=@order.updated_at%>
 Total: $<%=@order.total_amount%>
 
 Will be delivered to
-on Friday, August 15 at 12:30pm.
 <%=@user.address%>
 <%=@user.phone%>
-Again, thank you for using Foodler, and we hope you enjoy your food.
+in 30-45 minutes.
 
-Follow us for a chance to win $100 in free delivery every day!
+Again, thank you for using Hackmai, and we hope you enjoy your food.
+
+Follow us for a chance to win $100 worth of bowls every day!
 Facebook Twitter Instagram
 © 2014 Hackmai
