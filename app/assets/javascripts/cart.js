@@ -147,7 +147,8 @@ var Hackmai = Hackmai || {};
     //clear the javascript array.
     $('[id="order-link"]').click(function() {
       location.reload();
-      window.location.replace("/orders");
+      window.location.href = "/orders";
+      //window.location.replace("/orders");
     });
     //$('.stripe-button-el').on('click', this.createCart.bind(this));
   }
