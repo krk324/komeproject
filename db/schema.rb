@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20140903004210) do
     t.integer  "address_id"
     t.decimal  "price",        precision: 8, scale: 2
     t.boolean  "is_purchased"
+    t.boolean  "is_delivered"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

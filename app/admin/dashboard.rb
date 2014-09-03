@@ -9,8 +9,10 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Orders" do
           table_for Order.where(is_purchased: true).order('id desc').limit(20) do
+            column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
             column("Customer"){|order| order.user.email }
             column("Total")   {|order| number_to_currency order.total_amount }
+            column("Delivery_Status") {|order| status_tag(order.is_delivered)}
             column("Order_Date")   {|order| order.updated_at.localtime}
           end
         end

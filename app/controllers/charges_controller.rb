@@ -5,7 +5,8 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     @order = current_user.orders.last
-    @amount = (@order.total_amount*100).to_i
+    total_amount = @order.total_amount
+    @amount = (total_amount*100).to_i
 
     customer = Stripe::Customer.create(
       :email => current_user.email,
@@ -19,7 +20,7 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
-    @order.price = @amount
+    @order.price = total_amount
     @order.is_purchased = true
     @order.save!
     UserMailer.send_order_confirmation(@order.id,current_user.id).deliver
