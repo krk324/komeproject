@@ -76,6 +76,8 @@ gem 'js-routes'
 gem 'handlebars_assets'
 
 gem 'devise'
+gem 'cancan'
+gem 'activeadmin'
 
 gem 'rails_12factor', group: "production"
 
