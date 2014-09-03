@@ -77,7 +77,7 @@ gem 'handlebars_assets'
 
 gem 'devise'
 gem 'cancan'
-gem 'activeadmin'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'rails_12factor', group: "production"
 

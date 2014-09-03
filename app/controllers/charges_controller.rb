@@ -19,6 +19,7 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
+    @order.price = @amount
     @order.is_purchased = true
     @order.save!
     UserMailer.send_order_confirmation(@order.id,current_user.id).deliver
