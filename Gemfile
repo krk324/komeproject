@@ -52,6 +52,8 @@ group :development, :test do
   # Show a rails panel in Chrome. Requires a Chrome extension.
   # https://github.com/dejan/rails_panel
   gem 'meta_request'
+
+  gem 'bullet'
 end
 
 group :test do
@@ -80,8 +82,6 @@ gem 'cancan'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'rails_12factor', group: "production"
-
-gem 'bullet', group: :development
 
 gem 'rack-mini-profiler'
 
