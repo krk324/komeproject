@@ -102,11 +102,11 @@ var Hackmai = Hackmai || {};
       if (status == google.maps.GeocoderStatus.OK) {
         if (!bounds.contains(results[0].geometry.location)){
           flag2 = 1;
-          alert("We currently don't delivery to your area. Will expand soon!");
+          alertify.error("We currently don't delivery to your area. Will expand soon!");
         }
       }
       else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        alertify.error('Please enter valid address-' + status);
         flag2 = 1;
       }
       Hackmai.CartApp.showCheckout();
