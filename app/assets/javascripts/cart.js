@@ -91,32 +91,60 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });}
   },
-  addressBound: function(){
+  checkAddress: function(){
+    //get user address.
+    var address = $('#address').val();
     //prevent modal showing up.
     $('#checkout').removeAttr("data-toggle");
 
-    //get user address.
-    var address = $('#address').val();
-    // figure out way to not display modal.
     geocoder.geocode( { 'address': address }, function(results, status) {
+      flag2 = 0;
       if (status == google.maps.GeocoderStatus.OK) {
-        console.log('hello');
         if (!bounds.contains(results[0].geometry.location)){
           flag2 = 1;
           alert("We currently don't delivery to your area. Will expand soon!");
         }
-      } else {
+      }
+      else {
         alert('Geocode was not successful for the following reason: ' + status);
         flag2 = 1;
       }
+      Hackmai.CartApp.showCheckout();
     });
-
+  },
+  showCheckout : function(){
+    // if input address is not valid or out of bound it will end the function.
     if (flag2 === 1){
-      return false;
+      return;
     }
 
+    $("#alert-address").remove();
+
+    //Calculate total
+    CartItems.total = 0;
+    for (var i = CartItems.length - 1; i >= 0; i--) {
+      CartItems.total = CartItems.total + (CartItems[i].price * CartItems[i].quantity);
+    }
+    $('.modal-body').empty();
+    $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
+    $('html, body').animate({ scrollTop: 0 }, 0);
+
+    //add address and phonenumber to the order confirmation pop-up.
+    var address = $('#address').val();
+    $('#address-confirm').after("<p>"+address+"</p>");
+    var phone = $('#phone-input').val();
+    $('#phone-confirm').after("<p>"+phone+"</p>");
+
+    //add items to the Cart.
+    this.createCart();
+
+    //add address to user
+    this.updateUserInfo(address,phone);
+
+    //show the checkout modal.
+    $('#myModal').modal('show');
   },
-  showOrder: function() {
+  evalInputs: function() {
 
     //check if logout link exist in the navbar.(check if user is logged in)
     if ($('.dropdown-menu li a').last().attr('data-method') !== 'delete'){
@@ -132,43 +160,16 @@ var Hackmai = Hackmai || {};
       $('#checkout').removeAttr("data-toggle");
     }
     else {
-
       // if user input address is unknown or out of area it will pop-up error.
-      if(this.addressBound()===false){
-        return;
-      }
-
-      $("#alert-address").remove();
-      //add back modal attributes to show the pop-up.
-      $('#checkout').attr("data-toggle","modal");
-
-      //Calculate total
-      CartItems.total = 0;
-      for (var i = CartItems.length - 1; i >= 0; i--) {
-        CartItems.total = CartItems.total + (CartItems[i].price * CartItems[i].quantity);
-      }
-      $('.modal-body').empty();
-      $(HandlebarsTemplates.orderForm({cart:CartItems})).appendTo('.modal-body');
-      $('html, body').animate({ scrollTop: 0 }, 0);
-
-      //add address and phonenumber to the order confirmation pop-up.
-      var address = $('#address').val();
-      $('#address-confirm').after("<p>"+address+"</p>");
-      var phone = $('#phone-input').val();
-      $('#phone-confirm').after("<p>"+phone+"</p>");
-
-      //add items to the Cart.
-      this.createCart();
-
-      //add address to user
-      this.updateUserInfo(address,phone);
+      // showCheckout function is inside this function.
+      this.checkAddress();
     }
 
   },
   initializer: function(event){
     $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
     $('[id="add-button"]').on('click', this.addItem.bind(this));
-    $('#checkout').on('click', this.showOrder.bind(this));
+    $('#checkout').on('click', this.evalInputs.bind(this));
     $("#address").geocomplete();
     //apply phoneinput format to the hadlebar templates.
     $('#phone-input').formatter({
