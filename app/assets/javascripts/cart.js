@@ -4,6 +4,13 @@ var Hackmai = Hackmai || {};
   var initAddress = "";
   var initPhone = "";
 
+  //geocoding delivery boundary
+  var geocoder = new google.maps.Geocoder();
+  var SW = new google.maps.LatLng(41.867840, -87.634306);
+  var NE = new google.maps.LatLng(41.897682, -87.618191);
+  var bounds = new google.maps.LatLngBounds(SW,NE);
+  var flag2 = 0;
+
   Hackmai.CartApp = {
 
   addItem: function(event){
@@ -84,6 +91,31 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });}
   },
+  addressBound: function(){
+    //prevent modal showing up.
+    $('#checkout').removeAttr("data-toggle");
+
+    //get user address.
+    var address = $('#address').val();
+    // figure out way to not display modal.
+    geocoder.geocode( { 'address': address }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        console.log('hello');
+        if (!bounds.contains(results[0].geometry.location)){
+          flag2 = 1;
+          alert("We currently don't delivery to your area. Will expand soon!");
+        }
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+        flag2 = 1;
+      }
+    });
+
+    if (flag2 === 1){
+      return false;
+    }
+
+  },
   showOrder: function() {
 
     //check if logout link exist in the navbar.(check if user is logged in)
@@ -100,6 +132,12 @@ var Hackmai = Hackmai || {};
       $('#checkout').removeAttr("data-toggle");
     }
     else {
+
+      // if user input address is unknown or out of area it will pop-up error.
+      if(this.addressBound()===false){
+        return;
+      }
+
       $("#alert-address").remove();
       //add back modal attributes to show the pop-up.
       $('#checkout').attr("data-toggle","modal");
@@ -138,7 +176,7 @@ var Hackmai = Hackmai || {};
       'persistent': true
     });
 
-    //git initial address and phone number.
+    //set initial address and phone number.
     initAddress = $('#address').val();
     initPhone = $('#phone-input').val();
 
