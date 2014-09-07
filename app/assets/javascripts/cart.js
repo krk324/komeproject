@@ -94,7 +94,7 @@ var Hackmai = Hackmai || {};
   checkAddress: function(){
     //get user address.
     var address = $('#address').val();
-    //prevent modal showing up.
+    //prevent modal from showing up.
     $('#checkout').removeAttr("data-toggle");
 
     geocoder.geocode( { 'address': address }, function(results, status) {
