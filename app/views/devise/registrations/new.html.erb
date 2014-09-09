@@ -9,13 +9,21 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
 
-            <div><%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true %></div>
+            <div>
+            <%= f.label :email do %>
+              <i class="fa fa-envelope-o fa-fw"></i>
+              <%= User.human_attribute_name :email %>
+            <%- end -%><br />
+              <%= f.email_field :email, autofocus: true %></div>
 
-            <div><%= f.label :password %><br />
-              <%= f.password_field :password, autocomplete: "off" %></div>
+            <div>
+            <%= f.label :password do %>
+              <i class="fa fa-key fa-fw"></i>
+              <%= User.human_attribute_name :password %>
+            <%- end -%><br />
+              <%= f.password_field :password, autocomplete: "off" %></div><br />
 
-            <div><%= f.submit "Sign up" %></div>
+            <div><%= f.submit "Sign up", class: "btn btn-default" %></div>
           <% end %>
 
           <%= render "devise/shared/links" %>
