@@ -91,6 +91,28 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });}
   },
+  evalInputs: function() {
+
+    //check if logout link exist in the navbar.(check if user is logged in)
+    if ($('.dropdown-menu li a').last().attr('data-method') !== 'delete'){
+      window.location.replace("/users/sign_in");
+      return;
+    }
+
+    if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
+      //alert under searchbox.
+      $("#alert-address").remove();
+      $('#address').after("<h5 id='alert-address'>Enter your delivery address and phone number</h5>");
+      //prevent modal showing up.
+      $('#checkout').removeAttr("data-toggle");
+    }
+    else {
+      // if user input address is unknown or out of area it will pop-up error.
+      // showCheckout function is inside this function.
+      this.checkAddress();
+    }
+
+  },
   checkAddress: function(){
     //get user address.
     var address = $('#address').val();
@@ -142,34 +164,16 @@ var Hackmai = Hackmai || {};
     this.updateUserInfo(address,phone);
 
     //show the checkout modal.
-    $('#myModal').modal('show');
+    $('#checkoutModal').modal('show');
   },
-  evalInputs: function() {
-
-    //check if logout link exist in the navbar.(check if user is logged in)
-    if ($('.dropdown-menu li a').last().attr('data-method') !== 'delete'){
-      window.location.replace("/users/sign_in");
-      return;
-    }
-
-    if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
-      //alert under searchbox.
-      $("#alert-address").remove();
-      $('#address').after("<h5 id='alert-address'>Enter your delivery address and phone number</h5>");
-      //prevent modal showing up.
-      $('#checkout').removeAttr("data-toggle");
-    }
-    else {
-      // if user input address is unknown or out of area it will pop-up error.
-      // showCheckout function is inside this function.
-      this.checkAddress();
-    }
-
+  showAboutus: function(){
+    $('#aboutModal').modal('show');
   },
   initializer: function(event){
     $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
     $('[id="add-button"]').on('click', this.addItem.bind(this));
     $('#checkout').on('click', this.evalInputs.bind(this));
+    $('#about-link').on('click', this.showAboutus.bind(this));
     $("#address").geocomplete();
     //apply phoneinput format to the hadlebar templates.
     $('#phone-input').formatter({

@@ -53,7 +53,7 @@
 												<a href="#page-top"></a>
 										</li>
 										<li>
-												<a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">About us</a>
+												<a href="javascript:void(0)" id="about-link">About us</a>
 										</li>
 										<li>
 												<a href="javascript:void(0)" id="order-link">Order</a>
@@ -94,7 +94,7 @@
 <%= yield %>
 
 <!-- Large modal -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bs-example-modal-lg" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <!-- About Section -->
