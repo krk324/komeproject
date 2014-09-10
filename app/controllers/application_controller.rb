@@ -15,7 +15,10 @@ class ApplicationController < ActionController::Base
   # add username to devise standard setup
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :username
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password, :address, :phone) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
+      :email, :password,
+      :password_confirmation, :current_password,
+      :address, :latitude, :longitude, :phone) }
   end
 
   private

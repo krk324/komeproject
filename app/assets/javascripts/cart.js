@@ -10,6 +10,8 @@ var Hackmai = Hackmai || {};
   var NE = new google.maps.LatLng(41.897682, -87.618191);
   var bounds = new google.maps.LatLngBounds(SW,NE);
   var flag2 = 0;
+  var latitude = 0;
+  var longitude = 0;
 
   Hackmai.CartApp = {
 
@@ -75,12 +77,12 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });
   },
-  updateUserInfo: function(address,phone){
+  updateUserInfo: function(address,phone,latitude,longitude){
       if (initAddress !== address) {
       $.ajax({
         type: "PUT",
         url: '/users',
-        data: { user: { address: address } },
+        data: { user: { address: address, latitude: latitude, longitude: longitude } },
         dataType: 'json'
       });}
       if (initPhone !== phone) {
@@ -131,6 +133,9 @@ var Hackmai = Hackmai || {};
         alertify.error('Please enter valid address-' + status);
         flag2 = 1;
       }
+      //set coordinates
+      latitude = results[0].geometry.location.k;
+      longitude = results[0].geometry.location.B;
       Hackmai.CartApp.showCheckout();
     });
   },
@@ -161,7 +166,7 @@ var Hackmai = Hackmai || {};
     this.createCart();
 
     //add address to user
-    this.updateUserInfo(address,phone);
+    this.updateUserInfo(address,phone,latitude,longitude);
 
     //show the checkout modal.
     $('#checkoutModal').modal('show');
