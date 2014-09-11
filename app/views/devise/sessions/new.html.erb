@@ -2,7 +2,7 @@
   <div class="form-signin">
     <h2 class="form-signin-heading">Log In</h2>
 
-    <%= link_to image_tag('http://i.stack.imgur.com/Vk9SO.png'), user_omniauth_authorize_path(:facebook)%>
+    <%= link_to image_tag('http://i.stack.imgur.com/Vk9SO.png', class: "img-responsive"), user_omniauth_authorize_path(:facebook)%>
     <hr>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
