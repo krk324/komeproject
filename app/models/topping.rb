@@ -10,7 +10,6 @@
 #
 
 class Topping < ActiveRecord::Base
-  has_many :options, dependent: :destroy
-  has_many :menu_items, through: :options
+  has_many :carts, dependent: :destroy
   validates :name, presence: true
 end

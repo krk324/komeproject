@@ -25,6 +25,10 @@
 class User < ActiveRecord::Base
   has_many :carts, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :managed_discounts, class_name: 'ManagedDiscount'
+
+  # has many through
+  has_many :discounts, through: :managed_discounts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :async,
