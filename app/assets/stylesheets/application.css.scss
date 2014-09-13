@@ -660,6 +660,14 @@ h4.vege{
     margin-top: 5px;
 }
 
+.confirmed h4{
+    color: #222;
+    font-weight : normal;
+    font-style : normal;
+    text-transform: none;
+    line-height: 2em;
+}
+
 .modal-content{
     background: -webkit-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Chrome 10+, Saf5.1+ */
     background:    -moz-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* FF3.6+ */
