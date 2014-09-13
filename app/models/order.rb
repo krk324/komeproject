@@ -12,6 +12,7 @@
 class Order < ActiveRecord::Base
   belongs_to :user
   has_many :carts, dependent: :destroy
+  has_many :discounts
 
   scope :purchased, -> {where("orders.is_purchased IS TRUE")}
 
