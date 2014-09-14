@@ -170,9 +170,20 @@ var Hackmai = Hackmai || {};
 
     //show the checkout modal.
     $('#checkoutModal').modal('show');
+
+    //initialize Tip button after adding template to the modal
+    this.initializeTipButton();
   },
   showAboutus: function(){
     $('#aboutModal').modal('show');
+  },
+  initializeTipButton: function(event){
+    $("#tip").children().on('click', this.calculateTip.bind(this));
+  },
+  calculateTip: function(event){
+    var tipAmount = parseFloat(event.currentTarget.id);
+    var newCartItemsTotal = tipAmount * CartItems.total;
+    $('#total-amount').text('Total: $'+ newCartItemsTotal.toFixed(2));
   },
   initializer: function(event){
     $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
