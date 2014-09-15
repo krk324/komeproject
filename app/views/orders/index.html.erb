@@ -136,4 +136,9 @@
   </div>
 </div>
 <hr>
+<script>
+    //address autocomplete google map
+    var addressInput = $('#address')[0];
+    new google.maps.places.Autocomplete(addressInput);
+</script>
 <%= render "shared/mainfooter"%>

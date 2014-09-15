@@ -174,9 +174,6 @@ var Hackmai = Hackmai || {};
     //initialize Tip button after adding template to the modal
     this.initializeTipButton();
   },
-  showAboutus: function(){
-    $('#aboutModal').modal('show');
-  },
   initializeTipButton: function(event){
     $("#tip").children().on('click', this.calculateTip.bind(this));
   },
@@ -196,11 +193,6 @@ var Hackmai = Hackmai || {};
     $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
     $('[id="add-button"]').on('click', this.addItem.bind(this));
     $('#checkout').on('click', this.evalInputs.bind(this));
-    $('#about-link').on('click', this.showAboutus.bind(this));
-
-    //address autocomplete google map
-    var addressInput = $('#address')[0];
-    new google.maps.places.Autocomplete(addressInput);
 
     //apply phoneinput format to the hadlebar templates.
     $('#phone-input').formatter({
