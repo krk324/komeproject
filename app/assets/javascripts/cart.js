@@ -183,6 +183,13 @@ var Hackmai = Hackmai || {};
   calculateTip: function(event){
     var tipAmount = parseFloat(event.currentTarget.id);
     var newCartItemsTotal = tipAmount * CartItems.total;
+    //figure out way to update order's tip amount.
+    $.ajax({
+        type: "PUT",
+        url: '/orders/1',
+        data: { order: { tip: tipAmount } },
+        dataType: 'json'
+      });
     $('#total-amount').text('Total: $'+ newCartItemsTotal.toFixed(2));
   },
   initializer: function(event){

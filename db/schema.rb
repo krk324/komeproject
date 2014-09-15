@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20140913142342) do
     t.integer  "user_id"
     t.integer  "address_id"
     t.decimal  "price",        precision: 8, scale: 2
+    t.decimal  "tip",          precision: 8, scale: 2, default: 1.0
     t.boolean  "is_purchased"
     t.string   "deli_status"
     t.datetime "created_at"
