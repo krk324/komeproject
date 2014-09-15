@@ -197,7 +197,11 @@ var Hackmai = Hackmai || {};
     $('[id="add-button"]').on('click', this.addItem.bind(this));
     $('#checkout').on('click', this.evalInputs.bind(this));
     $('#about-link').on('click', this.showAboutus.bind(this));
-    $('#address').geocomplete();
+
+    //address autocomplete google map
+    var addressInput = $('#address')[0];
+    new google.maps.places.Autocomplete(addressInput);
+
     //apply phoneinput format to the hadlebar templates.
     $('#phone-input').formatter({
       'pattern': '({{999}}) {{999}}-{{9999}}',
