@@ -349,6 +349,11 @@ header .intro-text .intro-heading {
     line-height: 50px;
 }
 
+header .intro-text .intro-desc{
+    margin-top: 25px;
+    background: rgba(#222,0.4)
+    }
+
 @media(min-width:768px) {
     header {
         position:relative;
@@ -356,7 +361,7 @@ header .intro-text .intro-heading {
     }
     header .intro-text {
         padding-top: 300px;
-        padding-bottom: 200px;
+        padding-bottom: 150px;
     }
 
     header .intro-text .intro-lead-in {
@@ -374,6 +379,11 @@ header .intro-text .intro-heading {
         font-size: 75px;
         font-weight: 700;
         line-height: 75px;
+    }
+
+    header .intro-text .intro-desc{
+        margin-top: 50px;
+        background: rgba(#222,0.4)
     }
 }
 
