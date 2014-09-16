@@ -43,6 +43,12 @@
 								</button>
 								<%=link_to "HACKMAI", root_path, class: "navbar-brand"%>
 								<h1 class="hidden">Hackmai</h1>
+								<!-- Flash message -->
+								<% flash.each do |name, msg| %>
+								 <% if msg.is_a?(String) %>
+									 <%= content_tag :div, msg, :class => "flash_#{name}" %>
+								 <% end %>
+								<% end %>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
@@ -79,12 +85,6 @@
 				</div>
 				<!-- /.container-fluid -->
 		</nav>
-
-	<% flash.each do |name, msg| %>
-	 <% if msg.is_a?(String) %>
-		 <%= content_tag :div, msg, :class => "flash_#{name}" %>
-	 <% end %>
-	<% end %>
 
 <%= yield %>
 
