@@ -676,12 +676,17 @@ h4.menu-title{
     margin-top: 5px;
 }
 
+//order confirmation page.
 .confirmed h4{
     color: #222;
     font-weight : normal;
     font-style : normal;
     text-transform: none;
     line-height: 2em;
+}
+
+.policy h3, h4, h5{
+    color: #222;
 }
 
 .modal-content{
