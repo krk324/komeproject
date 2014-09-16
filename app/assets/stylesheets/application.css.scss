@@ -634,8 +634,12 @@ h4.vege{
 }
 
 h4.menu-title{
-    color:#222;
-    font-style:oblique;
+    text-align:center;
+    color:#fff;
+}
+
+.menuname-back{
+    background-color:#222;
 }
 
 .btn-success {
@@ -681,7 +685,7 @@ h4.menu-title{
 }
 
 #list ol{
-    margin-left: 10px;
+    margin-left: 15px;
     display:inline-block;
     text-align:left;
 }
@@ -695,7 +699,7 @@ h4.menu-title{
     line-height: 2em;
 }
 
-.policy h3, h4, h5{
+.policy h3, .policy h4, .policy h5{
     color: #222;
 }
 
