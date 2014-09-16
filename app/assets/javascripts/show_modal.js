@@ -8,9 +8,18 @@ var Hackmai = Hackmai || {};
   showContact: function(){
     $('#contactModal').modal('show');
   },
+  showPrivacy: function(){
+    $('#privacyModal').modal('show');
+  },
+  showTerms: function(){
+    $('#termsModal').modal('show');
+  },
   initializer: function(event){
     $('#about-link').on('click', this.showAboutus.bind(this));
     $('#contact-link').on('click', this.showContact.bind(this));
+    $('#privacy-link').on('click', this.showPrivacy.bind(this));
+    $('#terms-link').on('click', this.showTerms.bind(this));
+
   }
 };
 

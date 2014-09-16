@@ -358,10 +358,11 @@ header .intro-text .intro-desc{
     header {
         position:relative;
         top:-51px;
+        margin-bottom:-51px;
     }
     header .intro-text {
         padding-top: 300px;
-        padding-bottom: 150px;
+        padding-bottom: 100px;
     }
 
     header .intro-text .intro-lead-in {
@@ -630,6 +631,11 @@ h4.beef{
 
 h4.vege{
     color:#7dd10d;
+}
+
+h4.menu-title{
+    color:#222;
+    font-style:oblique;
 }
 
 .btn-success {
