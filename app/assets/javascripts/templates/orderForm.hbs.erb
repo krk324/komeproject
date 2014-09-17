@@ -6,24 +6,28 @@
     <br />
     <h5 id='phone-confirm'>Phone Number</h5>
   </div>
-   <div class="col-md-6">
+  <div class="col-md-6">
     <h3>Order Information</h3>
     <hr>
-    {{#each cart}}
-    <h5>{{quantity}} <small>x</small> {{name}} <small>${{itemTotalAmount}}</small></h5>
-    {{/each}}
-    <br />
-    TIP:
-    <div class="btn-group" id="tip">
-      <button type="button" class="btn btn-default" id="1.0">0%</button>
-      <button type="button" class="btn btn-default" id="1.05">5%</button>
-      <button type="button" class="btn btn-default" id="1.10">10%</button>
-      <button type="button" class="btn btn-default" id="1.15">15%</button>
-      <button type="button" class="btn btn-default" id="1.20">20%</button>
-      <button type="button" class="btn btn-default" id="1.25">25%</button>
+    <div class="orderinfo-wrapper ">
+      <div class="orderinfo-content">
+        {{#each cart}}
+        <h5>{{quantity}} <small>x</small> {{name}} <small>${{itemTotalAmount}}</small></h5>
+        {{/each}}
+      </div>
+      <br />
+      <div class="btn-group" id="tip">
+        <button type="button" class="btn btn-default" id="1.0">0%</button>
+        <button type="button" class="btn btn-default" id="1.05">5%</button>
+        <button type="button" class="btn btn-default" id="1.10">10%</button>
+        <button type="button" class="btn btn-default" id="1.15">15%</button>
+        <button type="button" class="btn btn-default" id="1.20">20%</button>
+        <button type="button" class="btn btn-default" id="1.25">25%</button>
+      </div>
+      <p id="tip-amount">TIP:0</p>
+      <hr>
+      <h5 id="total-amount">Total: ${{cart.total}}</h5>
+      <h6>(Tax and delivery fees included)</h6>
     </div>
-    <hr>
-    <h5 id="total-amount">Total: ${{cart.total}}</h5>
-    <h6>(Tax and delivery fees included)<h6>
   </div>
 </div>

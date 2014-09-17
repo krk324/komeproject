@@ -1,12 +1,12 @@
 MenuItem.create(
   name: 'HAKUMAI (WHITE RICE)',
-  image_url:'http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg',
+  image_url:'http://cache5.amana.jp/preview640/11002022132.jpg',
   price: 10,
   description: 'Kagayaki Brand - Preminum white rice')
 
 MenuItem.create(
   name: 'GENMAI (BROWN RICE)',
-  image_url:'http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg',
+  image_url:'http://image.excite.co.jp/jp/erecipe/recipe/0/e/0e781709457ccb82663838894ed9bd26/11ac2be96e83ed2d6ec64ad3b0ee26cd.jpeg',
   price: 10,
   description: 'Akitakomachi Brand - Premium brown rice')
 
@@ -18,19 +18,19 @@ MenuItem.create(
 
 MenuItem.create(
   name: 'Tuna & Avocado',
-  image_url:'http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg',
+  image_url:'http://pds.exblog.jp/pds/1/201403/23/42/e0227942_22494005.jpg',
   price: 10,
   description: 'Tasty Japanese bowl')
 
 MenuItem.create(
-  name: 'Beef Asparagus',
-  image_url:'http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg',
+  name: 'Katsu Don(Chicken & Egg Bowl)',
+  image_url:'http://huge.cdn.ycloud.jp/skmd/img/item/9518/4571218819518/20140625142456937/4571218819518_1_500.jpg',
   price: 10,
   description: 'Tasty Japanese bowl')
 
 MenuItem.create(
-  name: 'Yuzu & Baby leaf',
-  image_url:'http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg',
+  name: 'ChukaDon(Vegge Bowl)',
+  image_url:'https://www.misbit.com/recipe/printable/600_420/2828.jpg',
   price: 10,
   description: 'Tasty Japanese bowl')
 
