@@ -24,7 +24,7 @@ MenuItem.create(
 
 MenuItem.create(
   name: 'Katsu Don(Chicken & Egg Bowl)',
-  image_url:'http://huge.cdn.ycloud.jp/skmd/img/item/9518/4571218819518/20140625142456937/4571218819518_1_500.jpg',
+  image_url:'http://pic.pimg.tw/sezna627/1367852552-3738217747.jpg',
   price: 10,
   description: 'Tasty Japanese bowl')
 
