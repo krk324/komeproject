@@ -77,6 +77,9 @@
 									        	<li><%= link_to "Login", new_user_session_path, id: "drop-down-list"%></li>
 										        <li><%= link_to "Sign up", new_user_registration_path, id: "drop-down-list"%></li>
 												<% end %>
+ 												<li><% if can? :update, @user %>
+														| <%= link_to "Admin", admin_root_path %>
+														<% end %></li>
 								        </ul>
 								    </li>
 								</ul>

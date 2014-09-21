@@ -1,6 +1,6 @@
 class AddRoleToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :role, :string
+    add_column :users, :role, :string, default: 'customer'
 
     User.create! do |u|
       u.email = "hackmaino1@example.com"
