@@ -2,7 +2,7 @@ MenuItem.create(
   name: 'HAKUMAI (WHITE RICE)',
   image_url:'http://cache5.amana.jp/preview640/11002022132.jpg',
   price: 10,
-  description: 'Kagayaki Brand - Preminum white rice')
+  description: 'Kagayaki Brand - Premium white rice')
 
 MenuItem.create(
   name: 'GENMAI (BROWN RICE)',
