@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
 
   after_create :send_new_user_mail
 
+  def role?(r)
+    role.include? r.to_s
+  end
+
   def send_new_user_mail
     UserMailer.send_welcome_mail(self.id).deliver
   end

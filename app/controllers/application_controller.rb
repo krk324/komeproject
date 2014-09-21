@@ -16,9 +16,17 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :username
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
-      :email, :password,
-      :password_confirmation, :current_password,
-      :address, :latitude, :longitude, :phone) }
+        :email, :password,
+        :password_confirmation, :current_password,
+    :address, :latitude, :longitude, :phone) }
+  end
+
+  def authenticate_active_admin_user!
+    authenticate_user!
+    unless current_user.role?(:administrator)
+      flash[:alert] = "You are not authorized to access this resource!"
+      redirect_to root_path
+    end
   end
 
   private
