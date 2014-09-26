@@ -1,11 +1,13 @@
 ActiveAdmin.register Order do
+  permit_params :user_id,:deli_status
+
   batch_action :destroy, :confirm => "Are you sure you want to delete all of these?" do |selection|
     Order.find(selection).each do |order|
       order.destroy
       redirect_to :back
     end
   end
-  actions :index, :show
+  actions :index, :show, :edit, :update
 
   filter :user
   filter :updated_at
@@ -14,14 +16,6 @@ ActiveAdmin.register Order do
   scope :not_purchased
   scope :purchased, :default => true
 
-  form do |f|
-    f.inputs 'Details' do
-      f.input :is_delivered
-    end
-    f.inputs 'Content', :body
-    f.actions
-  end
-
   index do
     selectable_column
     column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
@@ -29,9 +23,18 @@ ActiveAdmin.register Order do
     column("Delivery_Status")               {|order| status_tag(order.deli_status)}
     column("Customer", :user, :sortable => :user_id) {|order| order.user.email }
     column("Total")                   {|order| number_to_currency order.price }
+    actions
+  end
+
+  form do |f|
+    f.inputs "Order Details" do
+      f.input :deli_status, as: :radio, collection: {Delivered: "delivered", Ontheway: "ontheway", Pending: "pending"}
+    end
+    f.actions
   end
 
   show do
+    h3 "Delivery Status: " + order.deli_status
     panel "Invoice" do
       table_for(order.carts) do |t|
         t.column("Product") {|item| auto_link item.menu_item}

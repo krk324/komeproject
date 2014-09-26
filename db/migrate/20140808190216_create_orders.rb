@@ -6,7 +6,7 @@ class CreateOrders < ActiveRecord::Migration
       t.decimal :price, precision: 8, scale: 2
       t.decimal :tip, precision:8, scale: 2, default: 1
       t.boolean :is_purchased
-      t.string :deli_status
+      t.string :deli_status, default: 'pending'
 
       t.timestamps
     end
