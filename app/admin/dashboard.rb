@@ -12,7 +12,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
             column("Customer"){|order| order.user.email }
             column("Total")   {|order| number_to_currency order.total_amount }
-            column("Delivery_Status") {|order| status_tag(order.is_delivered)}
+            column("Delivery_Status") {|order| status_tag(order.deli_status)}
             column("Order_Date")   {|order| order.updated_at.localtime}
           end
         end

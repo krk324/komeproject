@@ -1,10 +1,17 @@
 ActiveAdmin.register Order do
+  batch_action :destroy, :confirm => "Are you sure you want to delete all of these?" do |selection|
+    Order.find(selection).each do |order|
+      order.destroy
+      redirect_to :back
+    end
+  end
   actions :index, :show
 
   filter :user
   filter :updated_at
 
   scope :all
+  scope :not_purchased
   scope :purchased, :default => true
 
   form do |f|
@@ -16,6 +23,7 @@ ActiveAdmin.register Order do
   end
 
   index do
+    selectable_column
     column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
     column("Date", :updated_at)
     column("Delivery_Status")               {|order| status_tag(order.deli_status)}

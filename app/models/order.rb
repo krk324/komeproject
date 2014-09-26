@@ -19,6 +19,7 @@ class Order < ActiveRecord::Base
   has_many :discounts
 
   scope :purchased, -> {where("orders.is_purchased IS TRUE")}
+  scope :not_purchased, -> {where("orders.is_purchased IS FALSE")}
 
   def total_amount
     total_amount = self.carts.map{|item| item.menu_item.price * item.quantity}.reduce{|sum,price| sum + price}
