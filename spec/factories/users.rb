@@ -20,6 +20,9 @@
 #  uid                    :string(255)
 #  phone                  :string(255)
 #  address                :string(255)
+#  latitude               :float
+#  longitude              :float
+#  role                   :string(255)      default("customer")
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

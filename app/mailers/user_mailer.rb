@@ -8,7 +8,6 @@ class UserMailer < ActionMailer::Base
   #   en.user_mailer.send_welcome_mail.subject
   #
   def send_welcome_mail(user_id)
-    @greeting = "Hi"
     @user = User.find(user_id)
     @username = check_username(@user)
     mail(:to => "<#{@user.email}>", :subject => "Welcome to Hackmai #{@username}!")

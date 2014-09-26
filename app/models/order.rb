@@ -6,7 +6,11 @@
 #  user_id      :integer
 #  address_id   :integer
 #  price        :decimal(8, 2)
+#  tip          :decimal(8, 2)    default(1.0)
 #  is_purchased :boolean
+#  deli_status  :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 
 class Order < ActiveRecord::Base

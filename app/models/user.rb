@@ -20,6 +20,9 @@
 #  uid                    :string(255)
 #  phone                  :string(255)
 #  address                :string(255)
+#  latitude               :float
+#  longitude              :float
+#  role                   :string(255)      default("customer")
 #
 
 class User < ActiveRecord::Base

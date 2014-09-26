@@ -1,5 +1,5 @@
 ActiveAdmin.register Order do
- actions :index, :show
+  actions :index, :show
 
   filter :user
   filter :updated_at
@@ -18,7 +18,7 @@ ActiveAdmin.register Order do
   index do
     column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
     column("Date", :updated_at)
-    column("Delivery_Status")               {|order| status_tag(order.is_delivered)}
+    column("Delivery_Status")               {|order| status_tag(order.deli_status)}
     column("Customer", :user, :sortable => :user_id) {|order| order.user.email }
     column("Total")                   {|order| number_to_currency order.price }
   end
