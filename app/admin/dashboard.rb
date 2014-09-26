@@ -20,7 +20,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Recent Customers" do
-          table_for User.order('id desc').limit(10).each do |customer|
+          table_for User.where(role: 'customer').order('id desc').limit(10).each do |customer|
             column(:email)    {|customer| customer.email }
           end
         end
@@ -42,7 +42,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Engaged Customers" do
-          table_for User.order('id desc').limit(10).each do |customer|
+          table_for User.where(role: 'customer').order('id desc').limit(10).each do |customer|
             column(:email)    {|customer| customer.email }
             column("Order_count")    {|customer| customer.orders.where(is_purchased: true).size }
           end
