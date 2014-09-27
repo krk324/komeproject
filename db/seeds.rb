@@ -1,30 +1,30 @@
 MenuItem.create(
   name: 'HAKUMAI (WHITE RICE)',
-  image_url:'http://cache5.amana.jp/preview640/11002022132.jpg',
+  image_url:'/assets/hakumai.jpg',
   price: 10,
   description: 'Kagayaki Brand - Premium white rice')
 
 MenuItem.create(
   name: 'GENMAI (BROWN RICE)',
-  image_url:'http://image.excite.co.jp/jp/erecipe/recipe/0/e/0e781709457ccb82663838894ed9bd26/11ac2be96e83ed2d6ec64ad3b0ee26cd.jpeg',
+  image_url:'/assets/genmai.jpeg',
   price: 10,
   description: 'Akitakomachi Brand - Premium brown rice')
 
 MenuItem.create(
   name: 'Tuna & Avocado',
-  image_url:'http://pds.exblog.jp/pds/1/201403/23/42/e0227942_22494005.jpg',
+  image_url:'/assets/tunaavocado.jpg',
   price: 10,
   description: 'Tasty Japanese bowl')
 
 MenuItem.create(
   name: 'Katsu Don(Chicken & Egg Bowl)',
-  image_url:'http://pic.pimg.tw/sezna627/1367852552-3738217747.jpg',
+  image_url:'/assets/gyudon.jpg',
   price: 10,
   description: 'Tasty Japanese bowl')
 
 MenuItem.create(
   name: 'ChukaDon(Vegge Bowl)',
-  image_url:'https://www.misbit.com/recipe/printable/600_420/2828.jpg',
+  image_url:'/assets/chukadon.jpg',
   price: 10,
   description: 'Tasty Japanese bowl')
 
