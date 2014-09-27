@@ -7,7 +7,13 @@ class ApplicationController < ActionController::Base
   #helper_method :current_or_guest_user
 
   def after_sign_in_path_for(resource_or_scope)
-    orders_path
+    if current_user.role == "administrator"
+      admin_root_path
+    elsif current_user.role == "customer"
+      orders_path
+    elsif current_user.role == "driver"
+      drivers_path
+    end
   end
 
   protected
