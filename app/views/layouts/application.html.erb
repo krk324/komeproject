@@ -61,7 +61,7 @@
 												<a href="javascript:void(0)" id="about-link">About us</a>
 										</li>
 										<li>
-												<% if current_user.role == "driver" %>
+												<% if user_signed_in? && current_user.role == "driver" %>
 													<a href="javascript:void(0)" id="driver-link">Application</a>
 												<% else %>
 													<a href="javascript:void(0)" id="order-link">Order</a>
