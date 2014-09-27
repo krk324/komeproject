@@ -1,4 +1,4 @@
-if Rails.env == 'development' || Rails.env == 'staging'
+if Rails.env == 'development' || Rails.env == 'staging' || Rails.env == 'test'
   Rails.configuration.stripe = {
     :publishable_key => ENV['PUBLISHABLE_KEY'],
     :secret_key      => ENV['SECRET_KEY']
