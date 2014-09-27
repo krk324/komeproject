@@ -74,17 +74,15 @@ ActiveRecord::Schema.define(version: 20140927035125) do
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
-    t.integer  "address_id"
     t.decimal  "price",        precision: 8, scale: 2
     t.decimal  "tip",          precision: 8, scale: 2, default: 1.0
     t.boolean  "is_purchased"
-    t.string   "deli_status"
+    t.string   "deli_status",                          default: "pending"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "driver_id"
   end
 
-  add_index "orders", ["address_id"], name: "index_orders_on_address_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "toppings", force: true do |t|

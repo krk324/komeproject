@@ -105,17 +105,13 @@
 
       </div>
       <div class="modal-footer">
+      <!-- Stripe Payment -->
         <%= form_tag charges_path do %>
-          <article>
-            <label class="amount">
-              <span></span>
-            </label>
-          </article>
-
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Hackmai Order"
-                  data-email="<%=current_user.email if current_user%>"></script>
+                  data-name="HACKMAI 白米"
+                  data-email="<%=current_user.email if current_user%>"
+                  data-image="<%=asset_path('hackmai-logo.png')%>"></script>
         <% end %>
       </div>
     </div>
