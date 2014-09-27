@@ -11,12 +11,6 @@ MenuItem.create(
   description: 'Akitakomachi Brand - Premium brown rice')
 
 MenuItem.create(
-  name: 'BLACK RICE',
-  image_url:'http://www.cafecompany.co.jp/brands/2011/11/29/wC_ueno_20111126/negitoro_web.jpg',
-  price: 10,
-  description: 'Tasty Japanese bowl')
-
-MenuItem.create(
   name: 'Tuna & Avocado',
   image_url:'http://pds.exblog.jp/pds/1/201403/23/42/e0227942_22494005.jpg',
   price: 10,

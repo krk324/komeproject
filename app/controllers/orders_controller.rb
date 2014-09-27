@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   #before_action :current_or_guest_user
   respond_to :json,:html
   def index
-    @menuitems = MenuItem.all
+    @menuitems = MenuItem.all.sort
   end
 
   def update
