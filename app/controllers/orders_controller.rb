@@ -7,17 +7,10 @@ class OrdersController < ApplicationController
 
   def update
     @order = current_user.orders.last
-    @order.update(order_params)
-    respond_with(@order)
+    if @order.update(order_params)
+      render :json=>'{}', :status => :ok
+    end
   end
-
-  # def update
-  # @book = Book.find(params[:id])
-  # if @book.update(book_params)
-  #   redirect_to(@book)
-  # else
-  #   render "edit"
-  # end
 
   def order_params
     params.require(:order).permit(:tip)

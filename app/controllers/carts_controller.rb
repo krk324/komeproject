@@ -17,7 +17,7 @@ class CartsController < ApplicationController
 
       @cart_item.save!
     end
-    respond_with(@cart_item)
+    render :json=>'{}', :status => :ok
   end
 
   def new
