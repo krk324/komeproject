@@ -33,6 +33,11 @@
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
+					<% flash.each do |name, msg| %>
+					 <% if msg.is_a?(String) %>
+						 <%= content_tag :div, msg, :class => "flash_#{name} flash-alert" %>
+					 <% end %>
+					<% end %>
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header page-scroll">
 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -44,11 +49,6 @@
 								<%=link_to "HACKMAI", root_path, class: "navbar-brand"%>
 								<h1 class="hidden">Hackmai</h1>
 								<!-- Flash message -->
-								<% flash.each do |name, msg| %>
-								 <% if msg.is_a?(String) %>
-									 <%= content_tag :div, msg, :class => "flash_#{name}" %>
-								 <% end %>
-								<% end %>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
