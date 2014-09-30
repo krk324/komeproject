@@ -9,11 +9,16 @@
         <div class="col-sm-4 col-md-3">
           <h5>Enter Phone Number: </h5><input class="form-control" id="phone-input" type="tel" placeholder="Enter Phone Number" value="<%=current_user.phone if current_user%>">
         </div>
-      <% end %>
         <div class="col-sm-1 col-md-2 pull-right">
           <br>
           <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal" disabled>Checkout</button>
         </div>
+      <% else %>
+        <div class="col-sm-1 col-md-2 pull-right">
+          <br>
+          <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal">Sign-Up/Login</button>
+        </div>
+      <% end %>
       </div>
       <h5 class="text-right">Open: 12:00PM - 2:00PM</h5>
       <hr>
@@ -25,7 +30,7 @@
             <div class="caption">
               <h4><%=@menuitems[0].name%> <small><%=@menuitems[0].price%></small></h4>
               <div class="pull-right">
-                <button data-id="1" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="1" id="add-button" data-name="<%=@menuitems[0].name%>" data-price ="<%=@menuitems[0].price%>" class="btn-lg btn-success">+</button>
+                <button data-id="1" id="delete-button" class="btn-lg btn-success">-</button><button data-id="1" id="add-button" data-name="<%=@menuitems[0].name%>" data-price ="<%=@menuitems[0].price%>" class="btn-lg btn-success">+</button>
               </div>
               <p id="quantity">0</p>
               <hr>
@@ -39,7 +44,7 @@
             <div class="caption">
               <h4 class="beef"><%=@menuitems[1].name%> <small><%=@menuitems[1].price%></small></h4>
               <div class="pull-right">
-                <button data-id="2" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="2" id="add-button" data-name="<%=@menuitems[1].name%>" data-price ="<%=@menuitems[1].price%>" class="btn-lg btn-success">+</button>
+                <button data-id="2" id="delete-button" class="btn-lg btn-success">-</button><button data-id="2" id="add-button" data-name="<%=@menuitems[1].name%>" data-price ="<%=@menuitems[1].price%>" class="btn-lg btn-success">+</button>
               </div>
               <p id="quantity">0</p>
               <hr>
@@ -53,7 +58,7 @@
             <div class="caption">
               <h4 class="beef"><%=@menuitems[2].name%> <small><%=@menuitems[2].price%></small></h4>
               <div class="pull-right">
-                <button data-id="3" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="3" id="add-button" data-name="<%=@menuitems[2].name%>" data-price ="<%=@menuitems[2].price%>" class="btn-lg btn-success">+</button>
+                <button data-id="3" id="delete-button" class="btn-lg btn-success">-</button><button data-id="3" id="add-button" data-name="<%=@menuitems[2].name%>" data-price ="<%=@menuitems[2].price%>" class="btn-lg btn-success">+</button>
               </div>
               <p id="quantity">0</p>
               <hr>
@@ -70,7 +75,7 @@
             <div class="caption">
               <h4><%=@menuitems[3].name%> <small><%=@menuitems[3].price%></small></h4>
               <div class="pull-right">
-                <button data-id="4" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="4" id="add-button" data-name="<%=@menuitems[3].name%>" data-price ="<%=@menuitems[3].price%>" class="btn-lg btn-success">+</button>
+                <button data-id="4" id="delete-button" class="btn-lg btn-success">-</button><button data-id="4" id="add-button" data-name="<%=@menuitems[3].name%>" data-price ="<%=@menuitems[3].price%>" class="btn-lg btn-success">+</button>
               </div>
               <p id="quantity">0</p>
               <hr>
@@ -84,7 +89,7 @@
             <div class="caption">
               <h4 class="beef"><%=@menuitems[4].name%> <small><%=@menuitems[4].price%></small></h4>
               <div class="pull-right">
-                <button data-id="5" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="5" id="add-button" data-name="<%=@menuitems[4].name%>" data-price ="<%=@menuitems[4].price%>" class="btn-lg btn-success">+</button>
+                <button data-id="5" id="delete-button" class="btn-lg btn-success">-</button><button data-id="5" id="add-button" data-name="<%=@menuitems[4].name%>" data-price ="<%=@menuitems[4].price%>" class="btn-lg btn-success">+</button>
               </div>
               <p id="quantity">0</p>
               <hr>
@@ -98,7 +103,7 @@
             <div class="caption">
               <h4 class="vege"><%=@menuitems[5].name%> <small><%=@menuitems[5].price%></small></h4>
               <div class="pull-right">
-                <button data-id="6" id="delete-button" class="btn-lg btn-danger">-</button><button data-id="6" id="add-button" data-name="<%=@menuitems[5].name%>" data-price ="<%=@menuitems[5].price%>" class="btn-lg btn-success">+</button>
+                <button data-id="6" id="delete-button" class="btn-lg btn-success">-</button><button data-id="6" id="add-button" data-name="<%=@menuitems[5].name%>" data-price ="<%=@menuitems[5].price%>" class="btn-lg btn-success">+</button>
               </div>
               <p id="quantity">0</p>
               <hr>
