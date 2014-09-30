@@ -25,4 +25,16 @@ class Order < ActiveRecord::Base
     total_amount = self.carts.map{|item| item.menu_item.price * item.quantity}.reduce{|sum,price| sum + price}
     total_amount * self.tip
   end
+
+  def quantity_calculation
+    menuitems = MenuItem.all.sort
+    self.carts.each do |item|
+      menu_item = menuitems[item.menu_item_id-1]
+      quantity = menu_item.quantity
+
+      quantity = quantity - item.quantity if quantity > 0
+      menu_item.quantity = quantity
+      menu_item.save!
+    end
+  end
 end
