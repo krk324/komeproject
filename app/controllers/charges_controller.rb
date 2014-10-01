@@ -21,9 +21,9 @@ class ChargesController < ApplicationController
     )
 
     @order.price = total_amount
+    @order.quantity_calculation
     @order.is_purchased = true
     @order.save!
-    @order.quantity_calculation
     UserMailer.send_order_confirmation(@order.id,current_user.id).deliver
 
   rescue Stripe::CardError => e

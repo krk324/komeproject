@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :orders, only:[:index, :show, :create, :update]
-  resources :carts, except: [:index, :show]
+  resources :carts, except: [:index, :show, :new]
   resources :charges, only:[:new, :create]
   resources :drivers, only:[:index]
 end

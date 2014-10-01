@@ -1,6 +1,6 @@
 MenuItem.create(
-  name: 'HAKUMAI (WHITE RICE)',
-  image_url:'/assets/hakumai.jpg',
+  name: 'Brittle Salmon',
+  image_url:'/assets/brittlesalmon-b5294c00c3878d6766c948f7c9581f74.jpg',
   price: 10,
   description: 'Kagayaki Brand - Premium white rice')
 
