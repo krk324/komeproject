@@ -37,7 +37,7 @@ class Order < ActiveRecord::Base
       quantity = quantity - item.quantity if quantity > 0
 
       if quantity < 0
-        return true
+        return false
       else
         menu_item.quantity = quantity
         new_menuitems << menu_item

@@ -1,32 +1,38 @@
 MenuItem.create(
-  name: 'Brittle Salmon',
-  image_url:'/assets/brittlesalmon-b5294c00c3878d6766c948f7c9581f74.jpg',
-  price: 10,
-  description: 'Kagayaki Brand - Premium white rice')
+  name: 'Brittle Salmon Bowl(W)',
+  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/brittlesalmon-small.jpg',
+  price: 12,
+  description: 'Salmon, Spicy Mayo, Tempura flakes')
 
 MenuItem.create(
-  name: 'GENMAI (BROWN RICE)',
-  image_url:'/assets/genmai.jpeg',
-  price: 10,
-  description: 'Akitakomachi Brand - Premium brown rice')
+  name: 'Yakiniku Beef Bowl(W)',
+  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/yakinikubeef-small.jpg',
+  price: 12,
+  description: 'Japanese style beef, Lettuce')
 
 MenuItem.create(
-  name: 'Tuna & Avocado',
-  image_url:'/assets/tunaavocado.jpg',
-  price: 10,
-  description: 'Tasty Japanese bowl')
+  name: 'Soy Chicken Avocado Bowl(W)',
+  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/chickenavocado-small.jpg',
+  price: 12,
+  description: 'Chicken, Avocado, Tomato')
 
 MenuItem.create(
-  name: 'Katsu Don(Chicken & Egg Bowl)',
-  image_url:'/assets/gyudon.jpg',
-  price: 10,
-  description: 'Tasty Japanese bowl')
+  name: 'Brittle Salmon Bowl(B)',
+  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/brittlesalmon-small.jpg',
+  price: 12,
+  description: 'Salmon, Spicy Mayo, Tempura flakes')
 
 MenuItem.create(
-  name: 'ChukaDon(Vegge Bowl)',
-  image_url:'/assets/chukadon.jpg',
-  price: 10,
-  description: 'Tasty Japanese bowl')
+  name: 'Yakiniku Beef Bowl(B)',
+  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/yakinikubeef-small.jpg',
+  price: 12,
+  description: 'Japanese style beef, Lettuce')
+
+MenuItem.create(
+  name: 'Soy Chicken Avocado Bowl(B)',
+  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/chickenavocado-small.jpg',
+  price: 12,
+  description: 'Chicken, Avocado, Tomato')
 
 ## V1 Rice and topping as one menu
 # MenuItem.create(

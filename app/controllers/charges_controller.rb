@@ -6,9 +6,10 @@ class ChargesController < ApplicationController
     @order = current_user.orders.last
 
     #check inventory before
-    if @order.quantity_calculation
+    if !@order.quantity_calculation
       redirect_to orders_path,
-        :flash => { :error => "We're sorry one or more of your items ordered is out of stock. Please reorder from the order page." }
+        :flash => { :error => "We're sorry one or more of your items ordered
+          is out of stock. Please reorder from the order page. *Payment has not been processed." }
     end
 
 
