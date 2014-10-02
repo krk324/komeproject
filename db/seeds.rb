@@ -16,6 +16,7 @@ MenuItem.create(
   name: 'Soy Chicken Avocado Bowl(W)',
   image_url:'https://s3-us-west-2.amazonaws.com/hackmai/chickenavocado-small.jpg',
   price: 12,
+  quantity: 0,
   description: 'Chicken, Avocado, Tomato')
 
 MenuItem.create(
