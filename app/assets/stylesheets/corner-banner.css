@@ -71,10 +71,10 @@ div.corner h2 {
     border-width: 1px 0;
     border-color: rgba(0,0,0,0.3);
     box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    padding: 4px 34px 4px 80px;
+    padding: 4px 20px 4px 20px;
     position: absolute;
-    right: 0px;
+    right:30px;
     top: 0px;
     color: red;
-    transform: rotate(20deg);
-}
+/*    transform: rotate(25deg);
+*/}
