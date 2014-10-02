@@ -3,9 +3,17 @@ class ChargesController < ApplicationController
   end
 
   def create
-    # Amount in cents
     @order = current_user.orders.last
+
+    #check inventory before
+    if @order.quantity_calculation
+      redirect_to orders_path,
+        :flash => { :error => "We're sorry one or more of your items ordered is out of stock. Please reorder from the order page." }
+    end
+
+
     total_amount = @order.total_amount
+    # Amount in cents
     @amount = (total_amount*100).to_i
 
     customer = Stripe::Customer.create(
@@ -21,7 +29,6 @@ class ChargesController < ApplicationController
     )
 
     @order.price = total_amount
-    @order.quantity_calculation
     @order.is_purchased = true
     @order.save!
     UserMailer.send_order_confirmation(@order.id,current_user.id).deliver

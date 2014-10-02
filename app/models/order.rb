@@ -28,13 +28,21 @@ class Order < ActiveRecord::Base
 
   def quantity_calculation
     menuitems = MenuItem.all.sort
+    new_menuitems = []
+
     self.carts.each do |item|
       menu_item = menuitems[item.menu_item_id-1]
       quantity = menu_item.quantity
 
       quantity = quantity - item.quantity if quantity > 0
-      menu_item.quantity = quantity
-      menu_item.save!
+
+      if quantity < 0
+        return true
+      else
+        menu_item.quantity = quantity
+        new_menuitems << menu_item
+      end
     end
+    new_menuitems.each{|item| item.save!}
   end
 end

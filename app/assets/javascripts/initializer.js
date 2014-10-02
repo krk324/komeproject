@@ -7,7 +7,7 @@ var Hackmai = Hackmai || {};
   $(function() {
     setTimeout(function(){
       $('.flash-alert').slideUp(700);
-    }, 4000);
+    }, 50000);
   });
 
 };
