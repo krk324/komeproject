@@ -9,6 +9,6 @@ class HomeController < ApplicationController
   private
 
   def check_login
-    redirect_to orders_path if logged_in?
+    redirect_to orders_path if current_user
   end
 end
