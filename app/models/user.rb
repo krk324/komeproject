@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
 
   after_create :send_new_user_mail
 
+  def remember_me
+    true
+  end
+
   def role?(r)
     role.include? r.to_s
   end
