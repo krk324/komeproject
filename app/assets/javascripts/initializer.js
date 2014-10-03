@@ -14,14 +14,14 @@ var Hackmai = Hackmai || {};
   function initialize() {
     var chicago = new google.maps.LatLng(41.875696,-87.624207);
     var mapOptions = {
-      zoom: 11,
+      zoom: 30,
       center: chicago
     };
 
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
     var ctaLayer = new google.maps.KmlLayer({
-      url: 'http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml'
+      url: 'https://s3-us-west-2.amazonaws.com/hackmai/03102014-4z87fde9.kml'
     });
     ctaLayer.setMap(map);
   }
