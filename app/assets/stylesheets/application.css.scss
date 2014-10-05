@@ -671,6 +671,10 @@ h4.menu-title{
     background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
 }
 
+.modalblock{
+    display: block;
+}
+
 //font color for alert when address and phone is empty
 #alert-address{
     color: #de2c0d;
@@ -688,9 +692,10 @@ h4.menu-title{
     line-height:1.4em;
     padding:0;
 }
-
-html, body, #map-canvas {
-        height: 80%;
-        width: 100%;
-      }
+//google map
+#map-canvas {
+   display: block;
+   width: 100%;
+   height: 400px;
+}
 

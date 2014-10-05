@@ -66,6 +66,9 @@
 												<a href="javascript:void(0)" id="about-link">About us</a>
 										</li>
 										<li>
+												<a href="javascript:void(0)" id="map-link">Delivery Area</a>
+										</li>
+										<li>
 												<% if user_signed_in? && current_user.role == "driver" %>
 													<a href="javascript:void(0)" id="driver-link">Application</a>
 												<% else %>
@@ -106,6 +109,7 @@
     <div class="modal-content modal-format">
       <!-- About Section -->
       <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
 	              <h2 class="section-heading">About us</h2>
@@ -141,6 +145,7 @@
     <div class="modal-content modal-format">
       <!-- Contact Section -->
       <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
 	            <h2 class="section-heading">Contact Us</h2>
@@ -158,6 +163,7 @@
     <div class="modal-content modal-format">
       <!-- privacy Section -->
 			<a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+			<br />
 	      <div class="row">
 	          <div class="col-lg-12 policy">
 	          	<h4 class="text-center">HACKMAI Privacy Policy</h4>
@@ -243,9 +249,27 @@
     <div class="modal-content modal-format">
       <!-- terms Section -->
       <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
 
+	          </div>
+    		</div>
+  	</div>
+	</div>
+</div>
+
+<!-- Large modal delivery area -->
+<div class="modal fade bs-example-modal-lg" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-format">
+      <!-- terms Section -->
+      <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <br />
+	      <div class="row">
+	          <div class="col-lg-12 text-center">
+
+	          	<div id="map-canvas"></div>
 
 	          </div>
     		</div>
