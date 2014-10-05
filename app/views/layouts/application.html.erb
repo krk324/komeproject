@@ -51,8 +51,7 @@
 										<span class="icon-bar"></span>
 										<span class="icon-bar"></span>
 								</button>
-								<%= image_tag("https://s3-us-west-2.amazonaws.com/hackmai/hackmai-logo.png",size: "140x45")%>
-								<h1 class="hidden">Hackmai</h1>
+								<%=link_to image_tag("https://s3-us-west-2.amazonaws.com/hackmai/hackmai-logo.png",size: "140x45"), 'javascript:void(0)', class: "navbar-brand"%>
 								<!-- Flash message -->
 						</div>
 
@@ -69,11 +68,9 @@
 												<a href="javascript:void(0)" id="map-link">Delivery Area</a>
 										</li>
 										<li>
-												<% if user_signed_in? && current_user.role == "driver" %>
-													<a href="javascript:void(0)" id="driver-link">Application</a>
-												<% else %>
-													<a href="javascript:void(0)" id="order-link">Order</a>
-												<% end %>
+											<% if user_signed_in? && current_user.role == "driver" %>
+												<a href="javascript:void(0)" id="driver-link">Application</a>
+											<% end %>
 										</li>
 								 		<li class="dropdown">
 								 				<% if user_signed_in? %>
