@@ -125,6 +125,7 @@ var Hackmai = Hackmai || {};
       flag2 = 0;
       if (status == google.maps.GeocoderStatus.OK) {
         if (!bounds.contains(results[0].geometry.location)){
+          debugger;
           flag2 = 1;
           alertify.error("We currently don't delivery to your area. Will expand soon!");
         }
