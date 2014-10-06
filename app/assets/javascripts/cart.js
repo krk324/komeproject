@@ -127,7 +127,7 @@ var Hackmai = Hackmai || {};
         if (!bounds.contains(results[0].geometry.location)){
           debugger;
           flag2 = 1;
-          alertify.error("We currently don't delivery to your area. Will expand soon!");
+          alertify.error("We currently don't delivery to your area.");
         }
       }
       else {
