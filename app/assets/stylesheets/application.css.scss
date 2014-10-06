@@ -204,15 +204,16 @@ fieldset[disabled] .btn-xl.active {
 }
 
 //adjust navbar placement. No overlay when navbar collapse.
-.navbar-fixed-top {
-    margin-top: -50px;
-    position: relative;
-}
+// .navbar-fixed-top {
+//     margin-top: -50px;
+//     position: relative;
+// }
 
 .navbar-default {
     border-color: #222;
     background-color: rgba(#fff,0.3);
     margin-bottom: 0px;
+    font-size:12px;
 }
 
 .navbar-default .navbar-brand {
@@ -276,6 +277,7 @@ fieldset[disabled] .btn-xl.active {
 
 #drop-down-list {
     color:black;
+    font-size:12px;
 }
 
 //dropdown menu hover color.
