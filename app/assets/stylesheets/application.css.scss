@@ -639,7 +639,21 @@ h4.menu-title{
 
 //checkout button
 #checkout {
-    margin-top: 5px;
+    font-size: 18px;
+    color: red;
+    background-color: rgba(#fff,.7);
+    border-color: rgba(#fff,.1);
+    position:fixed;
+    z-index: 10000;
+    top:70px;
+    right:0;
+}
+
+@media(min-width:768px) {
+    #checkout {
+        margin-top: 5px;
+        position:relative;
+    }
 }
 
 .modal-format{
