@@ -9,7 +9,7 @@ var Hackmai = Hackmai || {};
   var SW = new google.maps.LatLng(41.867840, -87.634306);
   var NE = new google.maps.LatLng(41.897682, -87.618191);
   var bounds = new google.maps.LatLngBounds(SW,NE);
-  var flag2 = 0;
+  var flag2 = 0; //flag for address check.
   var latitude = 0;
   var longitude = 0;
 
@@ -146,6 +146,10 @@ var Hackmai = Hackmai || {};
       return;
     }
 
+    //increment orderId for tip calculation.
+    var orderId = parseInt($('#order-id').text()) + 1;
+    $('#order-id').text(orderId);
+
     $("#alert-address").remove();
 
     //Calculate total
@@ -182,9 +186,10 @@ var Hackmai = Hackmai || {};
     var tipAmount = parseFloat(event.currentTarget.id);
     var tipValue = (tipAmount-1) * CartItems.total;
     var newCartItemsTotal = tipAmount * CartItems.total;
+    var orderId = $('#order-id').text();
     $.ajax({
         type: "PUT",
-        url: '/orders/1',
+        url: '/orders/' + orderId,
         data: { order: { tip: tipAmount } },
         dataType: 'json'
       });

@@ -9,7 +9,7 @@ class ChargesController < ApplicationController
     if !@order.quantity_calculation
       redirect_to orders_path,
         :flash => { :error => "We're sorry one or more of your items ordered
-          is out of stock. Please reorder from the order page. *Payment has not been processed." }
+          is out of stock. Please order again from the order page. *Payment has not been processed." }
     end
 
 
