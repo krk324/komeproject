@@ -545,6 +545,7 @@ body {
 }
 
 .order-index{
+    padding-top: 50px;
     background-attachment: scroll;
     //background-image: url(http://www.hdwallpapersinn.com/wp-content/uploads/2014/08/Rice.jpg);
     background-position: center center;
@@ -553,6 +554,12 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+@media(min-width:768px) {
+    .order-index {
+        padding: 0px;
+    }
 }
 
 .thumbnail{
@@ -651,8 +658,11 @@ h4.menu-title{
 
 @media(min-width:768px) {
     #checkout {
+        color:#222;
+        border-color: red;
         margin-top: 5px;
         position:relative;
+        top:0px;
     }
 }
 
