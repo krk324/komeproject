@@ -134,7 +134,6 @@ var Hackmai = Hackmai || {};
     geocoder.geocode( { 'address': address }, function(results, status) {
       flag2 = 0;
       if (status == google.maps.GeocoderStatus.OK) {
-        debugger;
         if (!google.maps.geometry.poly.containsLocation(results[0].geometry.location, deliveryArea)){
           flag2 = 1;
           alertify.error("We currently don't delivery to your area.");
