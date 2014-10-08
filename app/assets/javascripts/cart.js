@@ -6,9 +6,19 @@ var Hackmai = Hackmai || {};
 
   //geocoding delivery boundary
   var geocoder = new google.maps.Geocoder();
-  var SW = new google.maps.LatLng(41.867840, -87.634306);
-  var NE = new google.maps.LatLng(41.897682, -87.618191);
-  var bounds = new google.maps.LatLngBounds(SW,NE);
+  var polyCordinates = [
+    new google.maps.LatLng(41.890777,-87.644420),
+    new google.maps.LatLng(41.889212,-87.614422),
+    new google.maps.LatLng(41.883940,-87.615066),
+    new google.maps.LatLng(41.881480,-87.617855),
+    new google.maps.LatLng(41.867484,-87.619143),
+    new google.maps.LatLng(41.861187,-87.618542),
+    new google.maps.LatLng(41.849169,-87.613778),
+    new google.maps.LatLng(41.848401,-87.617555),
+    new google.maps.LatLng(41.847922,-87.641501),
+    new google.maps.LatLng(41.850064,-87.644205)
+  ];
+  var deliveryArea = new google.maps.Polygon({paths: polyCordinates});
   var flag2 = 0; //flag for address check.
   var latitude = 0;
   var longitude = 0;
@@ -124,8 +134,8 @@ var Hackmai = Hackmai || {};
     geocoder.geocode( { 'address': address }, function(results, status) {
       flag2 = 0;
       if (status == google.maps.GeocoderStatus.OK) {
-        if (!bounds.contains(results[0].geometry.location)){
-          debugger;
+        debugger;
+        if (!google.maps.geometry.poly.containsLocation(results[0].geometry.location, deliveryArea)){
           flag2 = 1;
           alertify.error("We currently don't delivery to your area.");
         }

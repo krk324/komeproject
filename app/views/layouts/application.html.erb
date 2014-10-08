@@ -4,7 +4,7 @@
 	<title>Healthy smart Japanese Rice Dishes Right Away | HACKMAI - Chicago</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<!-- Google map autocomplete -->
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAlio4NY_PeOMAuF_8hOla5g-w2WENOoIA&amp;libraries=places&amp;sensor=false&amp;language=en-US"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAlio4NY_PeOMAuF_8hOla5g-w2WENOoIA&amp;libraries=geometry,places&amp;sensor=false&amp;language=en-US"></script>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<script src="http://js.pusher.com/2.2/pusher.min.js"></script>
 	<%= csrf_meta_tags %>
@@ -103,7 +103,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- About Section -->
-      <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <a href="" class="pull-left" data-dismiss="modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
@@ -139,7 +139,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- Contact Section -->
-      <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <a href="" class="pull-left" data-dismiss="modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
@@ -157,7 +157,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- privacy Section -->
-			<a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+			<a href="" class="pull-left" data-dismiss="modal">X</a>
 			<br />
 	      <div class="row">
 	          <div class="col-lg-12 policy">
@@ -243,7 +243,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- terms Section -->
-      <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <a href="" class="pull-left" data-dismiss="modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
@@ -259,11 +259,12 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- terms Section -->
-      <a href="" class="pull-right" data-dismiss="modal">CLOSE</a>
+      <a href="" class="pull-left" data-dismiss="modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
-
+	          	<h2 class="section-heading">Delivery Area</h4>
+	          	<hr />
 	          	<div id="map-canvas"></div>
 
 	          </div>
