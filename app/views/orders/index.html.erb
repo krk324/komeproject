@@ -1,141 +1,158 @@
-<div class="order-index">
+<!-- Display menu only during opening hours -->
+<% if ("11:00".."14:00").include? Time.now.strftime("%H:%M")%>
+  <div class="order-index">
+    <div class="container">
+        <div class="row">
+        <% if user_signed_in? %>
+          <div class="col-sm-6 col-md-5">
+            <h5>Please Enter Your Address: </h5><input type="text" class="form-control" id="address" placeholder="Street Address, City, State" value="<%=current_user.address if current_user%>">
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <h5>Cell Phone Number: </h5><input class="form-control" id="phone-input" type="tel" placeholder="Enter Phone Number" value="<%=current_user.phone if current_user%>">
+          </div>
+          <div class="col-sm-1 col-md-2 pull-right">
+            <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal" disabled>Checkout</button>
+          </div>
+        <% else %>
+          <div class="col-sm-1 col-md-2 pull-right">
+            <br />
+            <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal">To Checkout SignUp/Login</button>
+          </div>
+        <% end %>
+        </div>
+        <h5 class="text-right">Open: 12:00PM - 2:00PM</h5>
+        <hr>
+        <div class="menuname-back"><h4 class="menu-title">玄米(BROWN RICE) ON BOTTOM</h4></div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <div class="corner"><h2><%=@menuitems[0].quantity%>&nbsp;left</h2></div>
+              <img src=<%=@menuitems[0].image_url%> class="img-responsive img-circle">
+              <div class="caption">
+                <h4><%=@menuitems[0].name%> <small><%=@menuitems[0].price%></small></h4>
+                <div class="pull-right">
+                  <button data-id="1" id="delete-button" class="btn-lg btn-success">-</button><button data-id="1" id="add-button" data-name="<%=@menuitems[0].name%>" data-price ="<%=@menuitems[0].price%>" class="btn-lg btn-success">+</button>
+                </div>
+                <p id="quantity">0</p>
+                <hr>
+                <p><%=@menuitems[0].description%></p>
+                <% if @menuitems[0].quantity == 0 %>
+                  <div class="soldout-overlay"><p>Sold out</p></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <div class="corner"><h2><%=@menuitems[1].quantity%>&nbsp;left</h2></div>
+              <img src=<%=@menuitems[1].image_url%> class="img-responsive img-circle">
+              <div class="caption">
+                <h4 class="beef"><%=@menuitems[1].name%> <small><%=@menuitems[1].price%></small></h4>
+                <div class="pull-right">
+                  <button data-id="2" id="delete-button" class="btn-lg btn-success">-</button><button data-id="2" id="add-button" data-name="<%=@menuitems[1].name%>" data-price ="<%=@menuitems[1].price%>" class="btn-lg btn-success">+</button>
+                </div>
+                <p id="quantity">0</p>
+                <hr>
+                <p><%=@menuitems[1].description%></p>
+                <% if @menuitems[1].quantity == 0 %>
+                  <div class="soldout-overlay"><p>Sold out</p></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <div class="corner"><h2><%=@menuitems[2].quantity%>&nbsp;left</h2></div>
+              <img src=<%=@menuitems[2].image_url%> class="img-responsive img-circle">
+              <div class="caption">
+                <h4 class="vege"><%=@menuitems[2].name%> <small><%=@menuitems[2].price%></small></h4>
+                <div class="pull-right">
+                  <button data-id="3" id="delete-button" class="btn-lg btn-success">-</button><button data-id="3" id="add-button" data-name="<%=@menuitems[2].name%>" data-price ="<%=@menuitems[2].price%>" class="btn-lg btn-success">+</button>
+                </div>
+                <p id="quantity">0</p>
+                <hr>
+                <p><%=@menuitems[2].description%></p>
+                <% if @menuitems[2].quantity == 0 %>
+                  <div class="soldout-overlay"><p>Sold out</p></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!--       <div class="menuname-back"><h4 class="menu-title">玄米(Brown Rice)</h4></div>
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail thumbbrown">
+              <div class="corner"><h2><%=@menuitems[3].quantity%>&nbsp;left</h2></div>
+              <img src=<%=@menuitems[3].image_url%> class="img-responsive img-circle">
+              <div class="caption">
+                <h4><%=@menuitems[3].name%> <small><%=@menuitems[3].price%></small></h4>
+                <div class="pull-right">
+                  <button data-id="4" id="delete-button" class="btn-lg btn-success">-</button><button data-id="4" id="add-button" data-name="<%=@menuitems[3].name%>" data-price ="<%=@menuitems[3].price%>" class="btn-lg btn-success">+</button>
+                </div>
+                <p id="quantity">0</p>
+                <hr>
+                <p><%=@menuitems[3].description%></p>
+                <% if @menuitems[3].quantity == 0 %>
+                  <div class="soldout-overlay"><p>Sold out</p></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail thumbbrown">
+              <div class="corner"><h2><%=@menuitems[4].quantity%>&nbsp;left</h2></div>
+              <img src=<%=@menuitems[4].image_url%> class="img-responsive img-circle">
+              <div class="caption">
+                <h4 class="beef"><%=@menuitems[4].name%> <small><%=@menuitems[4].price%></small></h4>
+                <div class="pull-right">
+                  <button data-id="5" id="delete-button" class="btn-lg btn-success">-</button><button data-id="5" id="add-button" data-name="<%=@menuitems[4].name%>" data-price ="<%=@menuitems[4].price%>" class="btn-lg btn-success">+</button>
+                </div>
+                <p id="quantity">0</p>
+                <hr>
+                <p><%=@menuitems[4].description%></p>
+                <% if @menuitems[4].quantity == 0 %>
+                  <div class="soldout-overlay"><p>Sold out</p></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail thumbbrown">
+              <div class="corner"><h2><%=@menuitems[5].quantity%>&nbsp;left</h2></div>
+              <img src=<%=@menuitems[5].image_url%> class="img-responsive img-circle">
+              <div class="caption">
+                <h4 class="vege"><%=@menuitems[5].name%> <small><%=@menuitems[5].price%></small></h4>
+                <div class="pull-right">
+                  <button data-id="6" id="delete-button" class="btn-lg btn-success">-</button><button data-id="6" id="add-button" data-name="<%=@menuitems[5].name%>" data-price ="<%=@menuitems[5].price%>" class="btn-lg btn-success">+</button>
+                </div>
+                <p id="quantity">0</p>
+                <hr>
+                <p><%=@menuitems[5].description%></p>
+                <% if @menuitems[5].quantity == 0 %>
+                  <div class="soldout-overlay"><p>Sold out</p></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div> -->
+<% else %>
+
   <div class="container">
-      <div class="row">
-      <% if user_signed_in? %>
-        <div class="col-sm-6 col-md-5">
-          <h5>Please Enter Your Address: </h5><input type="text" class="form-control" id="address" placeholder="Street Address, City, State" value="<%=current_user.address if current_user%>">
-        </div>
-        <div class="col-sm-4 col-md-3">
-          <h5>Cell Phone Number: </h5><input class="form-control" id="phone-input" type="tel" placeholder="Enter Phone Number" value="<%=current_user.phone if current_user%>">
-        </div>
-        <div class="col-sm-1 col-md-2 pull-right">
-          <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal" disabled>Checkout</button>
-        </div>
-      <% else %>
-        <div class="col-sm-1 col-md-2 pull-right">
-          <br />
-          <button class="page-scroll btn-lg btn-danger pull-right" id="checkout" data-toggle="modal" data-target="#myModal">To Checkout SignUp/Login</button>
-        </div>
-      <% end %>
-      </div>
-      <h5 class="text-right">Open: 12:00PM - 2:00PM</h5>
-      <hr>
-      <div class="menuname-back"><h4 class="menu-title">玄米(BROWN RICE) ON BOTTOM</h4></div>
-      <div class="row">
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="corner"><h2><%=@menuitems[0].quantity%>&nbsp;left</h2></div>
-            <img src=<%=@menuitems[0].image_url%> class="img-responsive img-circle">
-            <div class="caption">
-              <h4><%=@menuitems[0].name%> <small><%=@menuitems[0].price%></small></h4>
-              <div class="pull-right">
-                <button data-id="1" id="delete-button" class="btn-lg btn-success">-</button><button data-id="1" id="add-button" data-name="<%=@menuitems[0].name%>" data-price ="<%=@menuitems[0].price%>" class="btn-lg btn-success">+</button>
-              </div>
-              <p id="quantity">0</p>
-              <hr>
-              <p><%=@menuitems[0].description%></p>
-              <% if @menuitems[0].quantity == 0 %>
-                <div class="soldout-overlay"><p>Sold out</p></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="corner"><h2><%=@menuitems[1].quantity%>&nbsp;left</h2></div>
-            <img src=<%=@menuitems[1].image_url%> class="img-responsive img-circle">
-            <div class="caption">
-              <h4 class="beef"><%=@menuitems[1].name%> <small><%=@menuitems[1].price%></small></h4>
-              <div class="pull-right">
-                <button data-id="2" id="delete-button" class="btn-lg btn-success">-</button><button data-id="2" id="add-button" data-name="<%=@menuitems[1].name%>" data-price ="<%=@menuitems[1].price%>" class="btn-lg btn-success">+</button>
-              </div>
-              <p id="quantity">0</p>
-              <hr>
-              <p><%=@menuitems[1].description%></p>
-              <% if @menuitems[1].quantity == 0 %>
-                <div class="soldout-overlay"><p>Sold out</p></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="corner"><h2><%=@menuitems[2].quantity%>&nbsp;left</h2></div>
-            <img src=<%=@menuitems[2].image_url%> class="img-responsive img-circle">
-            <div class="caption">
-              <h4 class="vege"><%=@menuitems[2].name%> <small><%=@menuitems[2].price%></small></h4>
-              <div class="pull-right">
-                <button data-id="3" id="delete-button" class="btn-lg btn-success">-</button><button data-id="3" id="add-button" data-name="<%=@menuitems[2].name%>" data-price ="<%=@menuitems[2].price%>" class="btn-lg btn-success">+</button>
-              </div>
-              <p id="quantity">0</p>
-              <hr>
-              <p><%=@menuitems[2].description%></p>
-              <% if @menuitems[2].quantity == 0 %>
-                <div class="soldout-overlay"><p>Sold out</p></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-<!--       <div class="menuname-back"><h4 class="menu-title">玄米(Brown Rice)</h4></div>
-      <div class="row">
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail thumbbrown">
-            <div class="corner"><h2><%=@menuitems[3].quantity%>&nbsp;left</h2></div>
-            <img src=<%=@menuitems[3].image_url%> class="img-responsive img-circle">
-            <div class="caption">
-              <h4><%=@menuitems[3].name%> <small><%=@menuitems[3].price%></small></h4>
-              <div class="pull-right">
-                <button data-id="4" id="delete-button" class="btn-lg btn-success">-</button><button data-id="4" id="add-button" data-name="<%=@menuitems[3].name%>" data-price ="<%=@menuitems[3].price%>" class="btn-lg btn-success">+</button>
-              </div>
-              <p id="quantity">0</p>
-              <hr>
-              <p><%=@menuitems[3].description%></p>
-              <% if @menuitems[3].quantity == 0 %>
-                <div class="soldout-overlay"><p>Sold out</p></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail thumbbrown">
-            <div class="corner"><h2><%=@menuitems[4].quantity%>&nbsp;left</h2></div>
-            <img src=<%=@menuitems[4].image_url%> class="img-responsive img-circle">
-            <div class="caption">
-              <h4 class="beef"><%=@menuitems[4].name%> <small><%=@menuitems[4].price%></small></h4>
-              <div class="pull-right">
-                <button data-id="5" id="delete-button" class="btn-lg btn-success">-</button><button data-id="5" id="add-button" data-name="<%=@menuitems[4].name%>" data-price ="<%=@menuitems[4].price%>" class="btn-lg btn-success">+</button>
-              </div>
-              <p id="quantity">0</p>
-              <hr>
-              <p><%=@menuitems[4].description%></p>
-              <% if @menuitems[4].quantity == 0 %>
-                <div class="soldout-overlay"><p>Sold out</p></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail thumbbrown">
-            <div class="corner"><h2><%=@menuitems[5].quantity%>&nbsp;left</h2></div>
-            <img src=<%=@menuitems[5].image_url%> class="img-responsive img-circle">
-            <div class="caption">
-              <h4 class="vege"><%=@menuitems[5].name%> <small><%=@menuitems[5].price%></small></h4>
-              <div class="pull-right">
-                <button data-id="6" id="delete-button" class="btn-lg btn-success">-</button><button data-id="6" id="add-button" data-name="<%=@menuitems[5].name%>" data-price ="<%=@menuitems[5].price%>" class="btn-lg btn-success">+</button>
-              </div>
-              <p id="quantity">0</p>
-              <hr>
-              <p><%=@menuitems[5].description%></p>
-              <% if @menuitems[5].quantity == 0 %>
-                <div class="soldout-overlay"><p>Sold out</p></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
+      <div class="row text-center">
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <%= image_tag('https://s3-us-west-2.amazonaws.com/hackmai/hackmai-logo.png', class: "img-responsive col-centered", size:"370x118") %>
+        <br />
+        <p><strong>Opening Hours: 11:00am - 2:00pm</strong></p>
+
+        <p>Thank you for visiting Hackmai. <br/> Stay tuned for our healthy rice dishes!</p>
+        <br /><br /><br />
       </div>
   </div>
-</div> -->
+
+<% end %>
 
 <!-- CheckOut Modal -->
 <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
