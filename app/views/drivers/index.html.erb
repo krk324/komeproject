@@ -28,7 +28,7 @@
               <td class="active"><strong>Status<strong></td>
               <td class="active"><strong>Address<strong></td>
             </tr>
-            <% Order.all.each do |order|%>
+            <% @orders.each do |order|%>
             <tr>
               <td class="active"><%=link_to order.id, order%></td>
               <td class="active"><%=order.deli_status%></td>

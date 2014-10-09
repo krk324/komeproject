@@ -5,8 +5,10 @@ class Ability
     user ||= User.new
     if user.role? :administrator
         can :manage, :all
-    else
-        can :read, :order
+    elsif user.role? :driver
+        can :manage, :all
+    elsif user.role? :customer
+        cannot :read, Order
     end
     # Define abilities for the passed in user here. For example:
     #
