@@ -1,5 +1,5 @@
 <!-- Display menu only during opening hours -->
-<% if ("11:00".."14:00").include? Time.now.strftime("%H:%M")%>
+<% if ("0:00".."24:00").include? Time.now.strftime("%H:%M")%>
   <div class="order-index">
     <div class="container">
         <div class="row">
@@ -20,7 +20,7 @@
           </div>
         <% end %>
         </div>
-        <h5 class="text-right">Open: 12:00PM - 2:00PM</h5>
+        <h5 class="text-right">Open: 11:00PM - 2:00PM</h5>
         <hr>
         <div class="menuname-back"><h4 class="menu-title">Price includes Tax + Delivery fees and even more... a TIP!</h4></div>
         <div class="row">
@@ -79,65 +79,7 @@
             </div>
           </div>
         </div>
-  <!--       <div class="menuname-back"><h4 class="menu-title">玄米(Brown Rice)</h4></div>
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail thumbbrown">
-              <div class="corner"><h2><%=@menuitems[3].quantity%>&nbsp;left</h2></div>
-              <img src=<%=@menuitems[3].image_url%> class="img-responsive img-circle">
-              <div class="caption">
-                <h4><%=@menuitems[3].name%> <small><%=@menuitems[3].price%></small></h4>
-                <div class="pull-right">
-                  <button data-id="4" id="delete-button" class="btn-lg btn-success">-</button><button data-id="4" id="add-button" data-name="<%=@menuitems[3].name%>" data-price ="<%=@menuitems[3].price%>" class="btn-lg btn-success">+</button>
-                </div>
-                <p id="quantity">0</p>
-                <hr>
-                <p><%=@menuitems[3].description%></p>
-                <% if @menuitems[3].quantity == 0 %>
-                  <div class="soldout-overlay"><p>Sold out</p></div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail thumbbrown">
-              <div class="corner"><h2><%=@menuitems[4].quantity%>&nbsp;left</h2></div>
-              <img src=<%=@menuitems[4].image_url%> class="img-responsive img-circle">
-              <div class="caption">
-                <h4 class="beef"><%=@menuitems[4].name%> <small><%=@menuitems[4].price%></small></h4>
-                <div class="pull-right">
-                  <button data-id="5" id="delete-button" class="btn-lg btn-success">-</button><button data-id="5" id="add-button" data-name="<%=@menuitems[4].name%>" data-price ="<%=@menuitems[4].price%>" class="btn-lg btn-success">+</button>
-                </div>
-                <p id="quantity">0</p>
-                <hr>
-                <p><%=@menuitems[4].description%></p>
-                <% if @menuitems[4].quantity == 0 %>
-                  <div class="soldout-overlay"><p>Sold out</p></div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail thumbbrown">
-              <div class="corner"><h2><%=@menuitems[5].quantity%>&nbsp;left</h2></div>
-              <img src=<%=@menuitems[5].image_url%> class="img-responsive img-circle">
-              <div class="caption">
-                <h4 class="vege"><%=@menuitems[5].name%> <small><%=@menuitems[5].price%></small></h4>
-                <div class="pull-right">
-                  <button data-id="6" id="delete-button" class="btn-lg btn-success">-</button><button data-id="6" id="add-button" data-name="<%=@menuitems[5].name%>" data-price ="<%=@menuitems[5].price%>" class="btn-lg btn-success">+</button>
-                </div>
-                <p id="quantity">0</p>
-                <hr>
-                <p><%=@menuitems[5].description%></p>
-                <% if @menuitems[5].quantity == 0 %>
-                  <div class="soldout-overlay"><p>Sold out</p></div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div> -->
+
 <% else %>
 
   <div class="container">
@@ -160,7 +102,7 @@
     <div class="modal-content">
       <div class="modal-header" style="text-align:left">
         <button type="button" class="btn btn-danger" data-dismiss="modal">x</button>
-        <div id="order-id" style="display: none;"><%=current_user.orders.last.id if current_user.orders.last%></div>
+        <div id="order-id" style="display: none;"><%=get_order_id%></div>
       </div>
       <div class="modal-body">
 

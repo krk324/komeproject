@@ -6,21 +6,37 @@
   <!-- Nav tabs -->
   <div class="row text-center">
     <ul class="nav nav-tabs" role="tablist">
-      <li class="active"><a href="#manual" role="tab" data-toggle="tab">Hackmai Driver's Manual</a></li>
-      <li><a href="#ordersystem" role="tab" data-toggle="tab">Hackmai GPS System</a></li>
+      <li><a href="#manual" role="tab" data-toggle="tab">Hackmai Driver's Manual</a></li>
+      <li class="active"><a href="#ordersystem" role="tab" data-toggle="tab">Hackmai GPS System</a></li>
     </ul>
   </div>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div class="tab-pane active" id="manual">
+    <div class="tab-pane" id="manual">
       <div class="row text-center">
         <p>Manual</p>
       </div>
     </div>
-    <div class="tab-pane" id="ordersystem">
+    <div class="tab-pane active" id="ordersystem">
       <div class="row text-center">
         <p>Orders</p>
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <td class="active"><strong>#<strong></td>
+              <td class="active"><strong>Status<strong></td>
+              <td class="active"><strong>Address<strong></td>
+            </tr>
+            <% Order.all.each do |order|%>
+            <tr>
+              <td class="active"><%=link_to order.id, order%></td>
+              <td class="active"><%=order.deli_status%></td>
+              <td class="active"><%=order.user.address%></td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
       </div>
     </div>
   </div>

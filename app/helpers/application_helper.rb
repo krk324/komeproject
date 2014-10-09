@@ -12,4 +12,10 @@ module ApplicationHelper
     end
     nil
   end
+
+  def get_order_id
+    if current_user
+      current_user.orders.last.id if current_user.orders.last
+    end
+  end
 end
