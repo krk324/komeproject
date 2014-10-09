@@ -3,6 +3,8 @@ var Hackmai = Hackmai || {};
 
   Hackmai.CartApp.initializer();
   Hackmai.showModalApp.initializer();
+  Hackmai.deliStatusApp.initializer();
+
   //Flash alert slideup
   $(function() {
     setTimeout(function(){

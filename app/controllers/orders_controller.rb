@@ -11,13 +11,14 @@ class OrdersController < ApplicationController
   end
 
   def update
+    @order = Order.find(params[:id])
     if @order.update(order_params)
       render :json=>'{}', :status => :ok
     end
   end
 
   def order_params
-    params.require(:order).permit(:tip)
+    params.require(:order).permit(:tip, :deli_status)
   end
 
 end
