@@ -1,1 +1,27 @@
-<p><%=@order.id%></p>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Delivery Information</h3>
+      <table>
+          <tr class="active"><td><strong>order#: </strong><%=@order.id%></td></tr>
+          <tr class="active"><td><strong>status: </strong><%=@order.deli_status%></td></tr>
+          <tr class="active"><td><strong>address: </strong><%=@order.user.address%></td></tr>
+          <tr class="active"><td><strong>name: </strong><%=@order.user.username || @order.user.email%></td></tr>
+      </table>
+  </div>
+    <div class="col-md-6">
+      <h3>Order Information</h3>
+      <hr>
+      <% @order.carts.each do |item|%>
+        <p><%=item.menu_item.name%> x <%=item.quantity%> </p>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h3>Update Delivery Status</h3>
+      <hr>
+    </div>
+  </div>
+
+  <%=link_to "Back to Orders list", drivers_path%>
+</div>
