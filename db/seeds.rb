@@ -1,40 +1,19 @@
 MenuItem.create(
-  name: 'Brittle Salmon Bowl(W)',
+  name: 'Brittle Salmon',
   image_url:'https://s3-us-west-2.amazonaws.com/hackmai/brittlesalmon-small.jpg',
   price: 12,
   quantity: 20,
   description: 'Salmon, Spicy Mayo, Tempura flakes')
 
 MenuItem.create(
-  name: 'Yakiniku Beef Bowl(W)',
+  name: 'Yakiniku Beef',
   image_url:'https://s3-us-west-2.amazonaws.com/hackmai/yakinikubeef-small.jpg',
   price: 12,
   quantity: 20,
   description: 'Japanese style beef, Lettuce')
 
 MenuItem.create(
-  name: 'Soy Chicken Avocado Bowl(W)',
-  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/chickenavocado-small.jpg',
-  price: 12,
-  quantity: 20,
-  description: 'Chicken, Avocado, Tomato')
-
-MenuItem.create(
-  name: 'Brittle Salmon Bowl(B)',
-  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/brittlesalmon-small.jpg',
-  price: 12,
-  quantity: 20,
-  description: 'Salmon, Spicy Mayo, Tempura flakes')
-
-MenuItem.create(
-  name: 'Yakiniku Beef Bowl(B)',
-  image_url:'https://s3-us-west-2.amazonaws.com/hackmai/yakinikubeef-small.jpg',
-  price: 12,
-  quantity: 20,
-  description: 'Japanese style beef, Lettuce')
-
-MenuItem.create(
-  name: 'Soy Chicken Avocado Bowl(B)',
+  name: 'Soy Chicken Avocado',
   image_url:'https://s3-us-west-2.amazonaws.com/hackmai/chickenavocado-small.jpg',
   price: 12,
   quantity: 20,
