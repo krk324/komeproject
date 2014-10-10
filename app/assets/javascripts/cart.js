@@ -187,6 +187,8 @@ var Hackmai = Hackmai || {};
 
     //initialize Tip button after adding template to the modal
     this.initializeTipButton();
+    //hide spinner image.
+    $('.image-loader-overlay').hide();
   },
   initializeTipButton: function(event){
     $("#tip").children().on('click', this.calculateTip.bind(this));
@@ -196,6 +198,7 @@ var Hackmai = Hackmai || {};
     var tipValue = (tipAmount-1) * CartItems.total;
     var newCartItemsTotal = tipAmount * CartItems.total;
     var orderId = $('#order-id').text();
+    $('.image-loader-overlay').show();
     $.ajax({
         type: "PUT",
         url: '/orders/' + orderId,
@@ -204,6 +207,7 @@ var Hackmai = Hackmai || {};
     }).done(function(data){
       $('#tip-amount').text('Tip: $'+ tipValue.toFixed(2));
       $('#total-amount').text('Total: $'+ newCartItemsTotal.toFixed(2));
+      $('.image-loader-overlay').hide();
     });
 
   },
