@@ -10,7 +10,10 @@ var Hackmai = Hackmai || {};
         url: '/orders/' + orderId,
         data: { order: { deli_status: deliStatus } },
         dataType: 'json'
-      });
+    })
+    .done(function(data){
+      $("[id=deli-status]").text('status: '+ deliStatus);
+    });
   },
   initializer: function(event){
     $("#deli-statuses").children().on('click', this.changeDeliStatus.bind(this));

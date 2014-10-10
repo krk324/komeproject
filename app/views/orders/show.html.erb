@@ -6,7 +6,7 @@
       <table>
           <strong>order#: </strong>
           <tr class="active" id="order-id"><td><%=@order.id%></td></tr>
-          <tr class="active"><td><strong>status: </strong><%=@order.deli_status%></td></tr>
+          <tr class="active" id="deli-status"><td><strong>status: </strong><%=@order.deli_status%></td></tr>
           <tr class="active"><td><strong>address: </strong><%=@order.user.address%></td></tr>
           <tr class="active"><td><strong>name: </strong><%=@order.user.username || @order.user.email%></td></tr>
       </table>
@@ -25,7 +25,7 @@
         <button type="button" class="btn btn-default" id="Ontheway">Ontheway</button>
         <button type="button" class="btn btn-default" id="Delivered">Delivered</button>
       </div>
-      <p id="deli-status"><%=@order.deli_status%></p>
+      <p id="deli-status">status:<%=@order.deli_status%></p>
       <hr>
 
     </div>
