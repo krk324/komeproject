@@ -201,9 +201,11 @@ var Hackmai = Hackmai || {};
         url: '/orders/' + orderId,
         data: { order: { tip: tipAmount } },
         dataType: 'json'
-      });
-    $('#tip-amount').text('Tip: $'+ tipValue.toFixed(2));
-    $('#total-amount').text('Total: $'+ newCartItemsTotal.toFixed(2));
+    }).done(function(data){
+      $('#tip-amount').text('Tip: $'+ tipValue.toFixed(2));
+      $('#total-amount').text('Total: $'+ newCartItemsTotal.toFixed(2));
+    });
+
   },
   initializer: function(event){
     $('[id="delete-button"]').on('click', this.deleteItem.bind(this));

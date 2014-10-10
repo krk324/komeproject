@@ -6,17 +6,17 @@ module ApplicationHelper
   def flash_messages(opts = {})
     flash.each do |msg_type, message|
       concat(content_tag(:div, message, class: "alert #{bootstrap_class_for(msg_type)} fade in flash-alert") do
-              concat content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
-              concat message
-            end)
+               concat content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
+               concat message
+      end)
     end
     nil
   end
 
   def get_order_id
-    current_user_last_order = current_user.orders.last
     if current_user
-       current_user_last_order ? current_user_last_order.id : Order.last.id
+      current_user_last_order = current_user.orders.last
+      current_user_last_order ? current_user_last_order.id : Order.last.id
     end
   end
 end
