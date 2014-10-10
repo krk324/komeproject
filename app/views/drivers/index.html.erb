@@ -27,12 +27,14 @@
               <td class="active"><strong>#<strong></td>
               <td class="active"><strong>Status<strong></td>
               <td class="active"><strong>Address<strong></td>
+              <td class="active"><strong>Order_Date<strong></td>
             </tr>
             <% @orders.each do |order|%>
             <tr>
               <td class="active"><%=link_to order.id, order%></td>
               <td class="active"><%=order.deli_status%></td>
               <td class="active"><%=order.user.address%></td>
+              <td class="active"><%=order.created_at.localtime%></td>
             </tr>
             <% end %>
           </table>

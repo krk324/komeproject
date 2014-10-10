@@ -9,6 +9,7 @@
           <tr class="active" id="deli-status"><td><strong>status: </strong><%=@order.deli_status%></td></tr>
           <tr class="active"><td><strong>address: </strong><%=@order.user.address%></td></tr>
           <tr class="active"><td><strong>name: </strong><%=@order.user.username || @order.user.email%></td></tr>
+          <tr class="active"><td><strong>create_date: </strong><%=@order.created_at.localtime%></td></tr>
       </table>
   </div>
     <div class="col-md-6">
