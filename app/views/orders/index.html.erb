@@ -1,5 +1,5 @@
 <!-- Display menu only during opening hours -->
-<% if ("0:00".."24:00").include? Time.now.strftime("%H:%M")%>
+<% if ("00:00".."24:00").include? Time.now.strftime("%H:%M")%>
   <div class="order-index">
     <div class="container">
         <div class="row">
@@ -13,7 +13,7 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <% current_user.orders.pluck(:address).uniq.each do |address| %>
+                <% get_user_address_history.each do |address| %>
                 <li><a id="user-address" tabindex="-1"><%=address%></a></li>
                 <% end %>
               </ul>

@@ -19,4 +19,8 @@ module ApplicationHelper
       current_user_last_order ? current_user_last_order.id : Order.last.id
     end
   end
+
+  def get_user_address_history
+    current_user.orders.pluck(:address).uniq.each
+  end
 end

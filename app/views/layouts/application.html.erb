@@ -83,7 +83,7 @@
 									        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
 									        <%= current_user.username.present? ? current_user.username : current_user.email%>
 													<b class="caret"></b></a>
-									        <ul class="dropdown-menu">
+									        <ul class="dropdown-menu navbar-dropdown">
 									            <li><%= link_to 'Edit profile', edit_user_registration_path, id: "drop-down-list"%></li>
 									            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "drop-down-list" %></li>
 									        </ul>

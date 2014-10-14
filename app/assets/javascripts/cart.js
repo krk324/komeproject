@@ -109,7 +109,7 @@ var Hackmai = Hackmai || {};
   evalInputs: function() {
 
     //check if logout link exist in the navbar.(check if user is logged in)
-    if ($('.dropdown-menu li a').last().attr('data-method') !== 'delete'){
+    if ($('.navbar-dropdown li a').last().attr('data-method') !== 'delete'){
       window.location.href = "/users/sign_up";
       return;
     }
