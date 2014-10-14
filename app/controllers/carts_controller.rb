@@ -9,7 +9,6 @@ class CartsController < ApplicationController
   respond_to :json, :html
 
   def create
-    #items = []
 
     cart_item_params.each do |item|
       @cart_item = @order.carts.new(item)
@@ -18,14 +17,6 @@ class CartsController < ApplicationController
       @cart_item.save!
     end
     render :json=>'{}', :status => :ok
-  end
-
-  def new
-  end
-
-  def destroy
-    @cart_item = Cart.find(params[:id])
-
   end
 
   private

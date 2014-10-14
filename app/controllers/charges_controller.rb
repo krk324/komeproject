@@ -32,6 +32,8 @@ class ChargesController < ApplicationController
     @order.price = total_amount
     @order.is_purchased = true
     @order.save!
+    ## get drivers location
+    #format.js { render :js => "my_function();" }
     UserMailer.send_order_confirmation(@order.id,current_user.id).deliver
 
   rescue Stripe::CardError => e
