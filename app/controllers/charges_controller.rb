@@ -30,6 +30,7 @@ class ChargesController < ApplicationController
     )
 
     @order.price = total_amount
+    @order.address = current_user.address
     @order.is_purchased = true
     @order.save!
     ## get drivers location
