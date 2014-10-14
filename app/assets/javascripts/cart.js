@@ -103,6 +103,9 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
       });}
   },
+  fillAddressText: function(event){
+    $('#address').val(event.currentTarget.text);
+  },
   evalInputs: function() {
 
     //check if logout link exist in the navbar.(check if user is logged in)
@@ -215,6 +218,7 @@ var Hackmai = Hackmai || {};
     $('[id="delete-button"]').on('click', this.deleteItem.bind(this));
     $('[id="add-button"]').on('click', this.addItem.bind(this));
     $('#checkout').on('click', this.evalInputs.bind(this));
+    $('[id="user-address"]').on('click', this.fillAddressText.bind(this));
 
     //apply phoneinput format to the hadlebar templates.
     $('#phone-input').formatter({

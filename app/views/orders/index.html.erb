@@ -14,7 +14,7 @@
               </button>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                 <% current_user.orders.pluck(:address).uniq.each do |address| %>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%=address%></a></li>
+                <li><a id="user-address" tabindex="-1"><%=address%></a></li>
                 <% end %>
               </ul>
             </div>
