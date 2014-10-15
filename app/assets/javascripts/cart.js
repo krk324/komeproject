@@ -88,6 +88,14 @@ var Hackmai = Hackmai || {};
       });
   },
   updateUserInfo: function(address,phone,latitude,longitude){
+      //update order's location data
+      var orderId = $('#order-id').text();
+      $.ajax({
+          type: "PUT",
+          url: '/orders/' + orderId,
+          data: { order: { longitude: longitude, latitude: latitude } },
+          dataType: 'json'
+      });
       if (initAddress !== address) {
       $.ajax({
         type: "PUT",

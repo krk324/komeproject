@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 20141014030409) do
     t.datetime "updated_at"
     t.integer  "driver_id"
     t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
@@ -113,8 +115,6 @@ ActiveRecord::Schema.define(version: 20141014030409) do
     t.string   "phone"
     t.string   "address"
     t.string   "role",                   default: "customer"
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
