@@ -92,7 +92,7 @@ var Hackmai = Hackmai || {};
       $.ajax({
         type: "PUT",
         url: '/users',
-        data: { user: { address: address, latitude: latitude, longitude: longitude } },
+        data: { user: { address: address } },
         dataType: 'json'
       });}
       if (initPhone !== phone) {
