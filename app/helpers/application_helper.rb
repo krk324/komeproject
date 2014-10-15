@@ -12,9 +12,9 @@ module ApplicationHelper
     end
     nil
   end
-
+  # for tip calculation
   def get_order_id
-    if current_user
+    if current_user.orders.exists?
       current_user_last_order = current_user.orders.last
       current_user_last_order ? current_user_last_order.id : Order.last.id
     end
