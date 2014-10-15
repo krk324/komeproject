@@ -14,11 +14,12 @@ module ApplicationHelper
   end
   # for tip calculation
   def get_order_id
-    if current_user.orders.exists?
-      current_user_last_order = current_user.orders.last
-      current_user_last_order ? current_user_last_order.id : Order.last.id
-    else
-      return 0
+    if user_signed_in?
+      if current_user.orders.exists?
+        current_user.orders.last.id
+      else
+        return 0
+      end
     end
   end
 
