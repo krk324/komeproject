@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  devise_for :users, :controllers => { :registrations => "users/registrations" , :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => {
+    :omniauth_callbacks => "users/omniauth_callbacks",
+    :sessions => "users/sessions",
+    :registrations => "users/registrations"
+
+  }
 
   root 'home#index'
   resources :orders, only:[:index, :show, :create, :update]
