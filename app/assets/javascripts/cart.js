@@ -235,7 +235,6 @@ var Hackmai = Hackmai || {};
     $('[id="order-link"]').click(function() {
       location.reload();
       window.location.href = "/orders";
-      //window.location.replace("/orders");
     });
   }
 };

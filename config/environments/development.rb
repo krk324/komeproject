@@ -50,4 +50,13 @@ Rails.application.configure do
     Bullet.enable = true
     Bullet.bullet_logger = true
   end
+
+  # Pusher setting
+  require 'pusher'
+
+  Pusher.app_id = ENV['YOUR_PUSHER_APP_ID']
+  Pusher.key = ENV['YOUR_PUSHER_KEY']
+  Pusher.secret = ENV['YOUR_PUSHER_SECRET']
+  Pusher.url = ENV['PUSHER_URL']
+
 end

@@ -92,6 +92,7 @@ gem 'omniauth-facebook'
 gem 'resque'
 gem 'resque_mailer'
 gem 'devise-async'
+gem 'pusher'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

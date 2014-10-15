@@ -144,6 +144,7 @@ GEM
       activesupport (>= 3.2, < 5)
     hashie (3.3.1)
     hike (1.2.3)
+    httpclient (2.4.0)
     i18n (0.6.11)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
@@ -232,6 +233,10 @@ GEM
     pry-stack_explorer (0.4.9.1)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+    pusher (0.14.1)
+      httpclient (~> 2.3)
+      multi_json (~> 1.0)
+      signature (~> 0.1.6)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -316,6 +321,7 @@ GEM
       rdoc (~> 4.0)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
+    signature (0.1.7)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -393,6 +399,7 @@ DEPENDENCIES
   pry-nav
   pry-rails
   pry-stack_explorer
+  pusher
   quiet_assets
   rack-mini-profiler
   rails (= 4.1.4)

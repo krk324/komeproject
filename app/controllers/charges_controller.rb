@@ -33,12 +33,16 @@ class ChargesController < ApplicationController
     @order.address = current_user.address
     @order.is_purchased = true
     @order.save!
-    ## get drivers location
-    #format.js { render :js => "my_function();" }
+
+    # Send order confirmation
     UserMailer.send_order_confirmation(@order.id,current_user.id).deliver
+
+    # Go check drivers location
+    Pusher['driver_channel'].trigger('my_event', {})
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to charges_path
   end
+
 end
