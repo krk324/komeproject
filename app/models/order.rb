@@ -46,7 +46,4 @@ class Order < ActiveRecord::Base
     new_menuitems.each{|item| item.save!}
   end
 
-  def get_closest_driver
-
-  end
 end

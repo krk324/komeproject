@@ -12,16 +12,6 @@ module ApplicationHelper
     end
     nil
   end
-  # for tip calculation
-  def get_order_id
-    if user_signed_in?
-      if current_user.orders.exists?
-        current_user.orders.last.id
-      else
-        return 0
-      end
-    end
-  end
 
   def get_user_address_history
     current_user.orders.pluck(:address).uniq.each
