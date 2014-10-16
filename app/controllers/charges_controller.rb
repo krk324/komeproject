@@ -38,7 +38,7 @@ class ChargesController < ApplicationController
     UserMailer.send_order_confirmation(@order.id,current_user.id).deliver
 
     # Go check drivers location
-    Pusher['driver_channel'].trigger('my_event', {})
+    #Pusher['driver_channel'].trigger('my_event', {})
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
