@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
         :email, :password,
         :password_confirmation, :current_password,
-    :address, :phone) }
+        :address, :phone, :latitude, :longitude) }
   end
 
   def authenticate_active_admin_user!
