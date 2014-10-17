@@ -214,6 +214,7 @@ fieldset[disabled] .btn-xl.active {
     background-color: rgba(#fff,0.7);
     margin-bottom: 0px;
     font-size:12px;
+    padding:10px;
 }
 
 .navbar-default .navbar-brand {
@@ -450,6 +451,12 @@ aside.clients img {
 footer {
     padding: 25px 0;
     text-align: center;
+    background-color: #282828;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 
 footer span.copyright {
@@ -457,6 +464,7 @@ footer span.copyright {
     text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
+    color: #fff;
 }
 
 footer ul.quicklinks {
@@ -608,7 +616,7 @@ h4.menu-title{
 }
 
 .menuname-back{
-    background-color:#222;
+    background-color:#DE2C0D;
 }
 
 .orderinfo-wrapper {
@@ -660,7 +668,7 @@ h4.menu-title{
     font-size: 18px;
     position:fixed;
     z-index: 1000;
-    top:80px;
+    top: 100px;
     right:15px;
 }
 
