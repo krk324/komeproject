@@ -88,14 +88,6 @@ var Hackmai = Hackmai || {};
       });
   },
   updateUserInfo: function(address,phone,latitude,longitude){
-      //update order's location data
-      var orderId = $('#order-id').text();
-      $.ajax({
-          type: "PUT",
-          url: '/orders/' + orderId,
-          data: { order: { longitude: longitude, latitude: latitude } },
-          dataType: 'json'
-      });
       if (initAddress !== address) {
       $.ajax({
         type: "PUT",
@@ -123,9 +115,11 @@ var Hackmai = Hackmai || {};
     }
 
     if ($('#address').val() === "" || $('#phone-input').val() === "(   )    -    " ){
+      //scroll to the top of the page.
+      window.scroll(0,0);
       //alert under searchbox.
-      $("#alert-address").remove();
-      $('#address').after("<h5 id='alert-address'>Enter your delivery address and phone number</h5>");
+      alertify.error("Oops! Please enter your delivery address and phone number.");
+
       //prevent modal showing up.
       $('#checkout').removeAttr("data-toggle");
     }
