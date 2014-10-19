@@ -221,6 +221,14 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fff;
 }
 
+//order buttons
+#delete-button{
+    font-size: 30px;
+    }
+#add-button{
+    font-size: 30px;
+}
+
 //adjust navbar placement. No overlay when navbar collapse.
 .navbar-fixed-top {
     margin-top: -50px;
@@ -580,6 +588,10 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+#quantity{
+    font-size:30px;
 }
 
 @media(min-width:768px) {
