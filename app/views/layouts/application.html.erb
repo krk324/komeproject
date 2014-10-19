@@ -102,12 +102,14 @@
 <%= flash_messages %>
 <%= yield %>
 
+<!-- Modals pop-up -->
+
 <!-- Large modal About us -->
 <div class="modal fade bs-example-modal-lg" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- About Section -->
-      <a href="" class="pull-left" data-dismiss="modal">X</a>
+      <a href="" class="pull-left" data-dismiss="modal" id="close-modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
@@ -143,7 +145,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- Contact Section -->
-      <a href="" class="pull-left" data-dismiss="modal">X</a>
+      <a href="" class="pull-left" data-dismiss="modal" id="close-modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
@@ -161,7 +163,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- privacy Section -->
-			<a href="" class="pull-left" data-dismiss="modal">X</a>
+			<a href="" class="pull-left" data-dismiss="modal" id="close-modal">X</a>
 			<br />
 	      <div class="row">
 	          <div class="col-lg-12 policy">
@@ -182,14 +184,6 @@
 					      <li>To send periodic emails regarding your order or other products and services.</li>
 				      </ul></p>
 
-				      <h5>How do we protect visitor information?</h5>
-
-							<p>We do not use vulnerability scanning and/or scanning to PCI standards.
-								Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit information you supply is encrypted via Secure Socket Layer (SSL) technology.</p>
-
-							<p>We implement a variety of security measures when a user places an order enters, submits, or accesses their information
-								All transactions are processed through a gateway provider and are not stored or processed on our servers.</p>
-
 							<h5>Do we use 'cookies'?</h5>
 
 							<p>Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.</p>
@@ -206,23 +200,9 @@
 
 							However, you can still place orders .</p>
 
-
-							<h5>Third Party Disclosure</h5>
-
-							<p>No, we do not sell, trade, or otherwise transfer to outside parties your personally identifiable information unless we provide you with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property, or safety.
-
-								However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.</p>
-
 							<h5>Third party links</h5>
 
 							<p>We do not include or offer third party products or services on our website.</p>
-
-							<h5>Google</h5>
-
-							<p>Google's advertising requirements can be summed up by Google's Advertising Principles. They are put in place to provide a positive experience for users. https://support.google.com/adwordspolicy/answer/1316548?hl=en
-
-							We have not enabled Google AdSense on our site but we may do so in the future.</p>
-
 
 							<h5>If at any time you would like to unsubscribe from receiving future emails, you can</h5><p>Email us at unsubscribe@hackmai.com and we will promptly remove you from ALL correspondence. <strong>unsubscribe@hackmai.com</strong></p>
 
@@ -234,7 +214,7 @@
 
 							<p>We reserve the right to make changes at any time to this policy.</p>
 
-							<p>Last Edited on 2014-09-16</p>
+							<p>Last Edited on 2014-10-19</p>
 
 	          </div>
     		</div>
@@ -247,7 +227,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- terms Section -->
-      <a href="" class="pull-left" data-dismiss="modal">X</a>
+      <a href="" class="pull-left" data-dismiss="modal" id="close-modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
@@ -263,7 +243,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- terms Section -->
-      <a href="" class="pull-left" data-dismiss="modal">X</a>
+      <a href="" class="pull-left" data-dismiss="modal" id="close-modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
@@ -282,14 +262,14 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-format">
       <!-- terms Section -->
-      <a href="" class="pull-left" data-dismiss="modal">X</a>
+      <a href="" class="pull-left" data-dismiss="modal" id="close-modal">X</a>
       <br />
 	      <div class="row">
 	          <div class="col-lg-12 text-center">
-	          	<h2 class="section-heading">Large Order</h2>
+	          	<h2 class="section-heading">Large Orders</h2>
 	            <h3 class="section-subheading text-muted">Healthy Japanese Rice Dishes for Meeting?<br /> Contact us day before.</h3>
 	            <h4>* 10 orders minimum *</h4>
-	            <a href="mailto:largeorder@hackmai.com">Send email for order</a>
+	            <a href="mailto:largeorders@hackmai.com"><i class="fa fa-envelope-o fa-fw"></i>Send email for large orders</a>
 	          </div>
     		</div>
   	</div>
