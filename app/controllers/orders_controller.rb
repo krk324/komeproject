@@ -5,10 +5,6 @@ class OrdersController < ApplicationController
     @menuitems = MenuItem.all.sort
   end
 
-  def create
-    logger.info current_user
-  end
-
   def show
     @order =  Order.find(params[:id])
     authorize! :read, @order
