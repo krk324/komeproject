@@ -5,7 +5,7 @@ class ChargesController < ApplicationController
   def create
     @order = current_user.orders.last
 
-    #check inventory before
+    # check inventory before checkout
     if !@order.quantity_calculation
       redirect_to orders_path,
         :flash => { :error => "We're sorry one or more of your items ordered
@@ -13,9 +13,8 @@ class ChargesController < ApplicationController
         return
     end
 
-
+    # Set total_amount and convert to cents
     total_amount = @order.total_amount
-    # Amount in cents
     @amount = (total_amount*100).to_i
 
     customer = Stripe::Customer.create(
@@ -29,7 +28,7 @@ class ChargesController < ApplicationController
       :description => 'Hackmai Stripe customer',
       :currency    => 'usd'
     )
-
+    # set all values to order
     @order.price = total_amount
     @order.address = current_user.address
     @order.is_purchased = true
