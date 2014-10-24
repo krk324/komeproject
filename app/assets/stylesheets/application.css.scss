@@ -684,16 +684,16 @@ h4.menu-title{
 } //hover
 
 .btn-danger {
-    background-color: white;
-    border-color:#DE2C0D;
-    color:black;
+    background-color:#DE2C0D;
+
+    color:#fff;
 } //button
 
 .btn-danger:hover,
 .btn-danger:focus {
     background-color: white;
     border-color:#111;
-    color:red;
+    color:#DE2C0D;
 } //hover
 
 .btn-danger:disabled,
@@ -717,7 +717,6 @@ h4.menu-title{
         font-size: 18px;
         top:0px;
         right:0px;
-        color:#222;
         margin-top: 23px;
         position:relative;
     }
