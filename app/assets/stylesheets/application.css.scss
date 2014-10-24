@@ -230,17 +230,17 @@ fieldset[disabled] .btn-xl.active {
 }
 
 //adjust navbar placement. No overlay when navbar collapse.
-.navbar-fixed-top {
-    margin-top: -50px;
-    position: relative;
-}
+// .navbar-fixed-top {
+//     margin-top: -50px;
+//     position: relative;
+// }
 
 .navbar-default {
     border-color: #222;
-    background-color: rgba(#fff,0.7);
+    background-color: rgba(#fff,0.9);
     margin-bottom: 0px;
-    font-size:12px;
-    padding:10px;
+    font-size:18px;
+    padding:0px;
 }
 
 .navbar-default .navbar-brand {
@@ -304,7 +304,7 @@ fieldset[disabled] .btn-xl.active {
 
 #drop-down-list {
     color:black;
-    font-size:12px;
+    font-size:18px;
 }
 
 //dropdown menu hover color.
@@ -312,6 +312,11 @@ fieldset[disabled] .btn-xl.active {
 
 @media(min-width:768px) {
     .navbar-default {
+        border-color: #222;
+        background-color: rgba(#fff,0.7);
+        margin-bottom: 0px;
+        font-size:12px;
+        padding:0px;
         border: 0;
         border-color: #222;
         -webkit-transition: padding .3s;
@@ -338,6 +343,10 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink .navbar-brand {
         font-size: 1.5em;
+    }
+    #drop-down-list {
+        color:black;
+        font-size:12px;
     }
 }
 
@@ -578,8 +587,9 @@ body {
         }
 }
 
+// format order page.
 .order-index{
-    padding-top: 50px;
+    padding-top: 30px;
     background-attachment: scroll;
     //background-image: url(http://www.hdwallpapersinn.com/wp-content/uploads/2014/08/Rice.jpg);
     background-position: center center;
@@ -590,14 +600,14 @@ body {
     -o-background-size: cover;
 }
 
-#quantity{
-    font-size:30px;
-}
-
 @media(min-width:768px) {
     .order-index {
-        padding: 0px;
+        padding: 50px;
     }
+}
+
+#quantity{
+    font-size:30px;
 }
 
 .thumbnail{
@@ -695,15 +705,16 @@ h4.menu-title{
 
 //checkout button
 #checkout {
-    font-size: 18px;
+    font-size: 12px;
     position:fixed;
-    z-index: 1000;
-    top: 100px;
-    right:15px;
+    z-index: 10000;
+    top: 6px;
+    right:65px;
 }
 
 @media(min-width:768px) {
     #checkout {
+        font-size: 18px;
         top:0px;
         right:0px;
         color:#222;
