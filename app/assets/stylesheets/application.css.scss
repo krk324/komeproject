@@ -374,10 +374,10 @@ header .intro-text {
 }
 
 header .intro-text .intro-lead-in {
-    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-bottom: 0px;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 22px;
-    font-style: italic;
+    font-size: 20px;
     line-height: 22px;
 }
 
@@ -409,8 +409,7 @@ header .intro-text .intro-desc{
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
         //font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 40px;
-        font-style: italic;
+        font-size: 20px;
         line-height: 40px;
     }
 
@@ -728,7 +727,7 @@ h4.menu-title{
 }
 
 #list ol{
-    margin-left: 15px;
+    margin-left: 5px;
     display:inline-block;
     text-align:left;
 }
