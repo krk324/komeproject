@@ -31,6 +31,8 @@ class ChargesController < ApplicationController
     # set all values to order
     @order.price = total_amount
     @order.address = current_user.address
+    @order.latitude = current_user.latitude
+    @order.longitude = current_user.longitude
     @order.is_purchased = true
     @order.save!
 

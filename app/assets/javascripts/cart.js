@@ -89,19 +89,33 @@ var Hackmai = Hackmai || {};
   },
   updateUserInfo: function(address,phone,latitude,longitude){
       if (initAddress !== address) {
-      $.ajax({
-        type: "PUT",
-        url: '/users',
-        data: { user: { address: address } },
-        dataType: 'json'
-      });}
+        $.ajax({
+          type: "PUT",
+          url: '/users',
+          data: { user: { address: address } },
+          dataType: 'json'
+        });
+        $.ajax({
+          type: "PUT",
+          url: '/users',
+          data: { user: { latitude: latitude } },
+          dataType: 'json'
+        });
+        $.ajax({
+          type: "PUT",
+          url: '/users',
+          data: { user: { longitude: longitude } },
+          dataType: 'json'
+        });
+      }
       if (initPhone !== phone) {
-      $.ajax({
-        type: "PUT",
-        url: '/users',
-        data: { user: { phone: phone } },
-        dataType: 'json'
-      });}
+        $.ajax({
+          type: "PUT",
+          url: '/users',
+          data: { user: { phone: phone } },
+          dataType: 'json'
+        });
+      }
   },
   fillAddressText: function(event){
     $('#address').val(event.currentTarget.text);
@@ -159,10 +173,6 @@ var Hackmai = Hackmai || {};
     if (flag2 === 1){
       return;
     }
-
-    //increment orderId for tip calculation.
-    var orderId = parseInt($('#order-id').text()) + 1;
-    $('#order-id').text(orderId);
 
     $("#alert-address").remove();
 
