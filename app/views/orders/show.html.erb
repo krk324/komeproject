@@ -12,8 +12,6 @@
           <tr class="active"><td><strong>create_date: </strong><%=@order.created_at.localtime%></td></tr>
       </table>
       <br />
-      <a href="http://maps.google.com/maps?t=m&q=loc:<%=@order.latitude%>+<%=@order.longitude%>" class="btn btn-success">
-      Navigate me to customer!</a>
   </div>
     <div class="col-md-6">
       <h3>Order Information</h3>
@@ -34,6 +32,6 @@
 
     </div>
   </div>
-
+  <a href="http://maps.google.com/maps?t=m&q=loc:<%=@order.latitude%>+<%=@order.longitude%>" class="btn btn-success">Navigate me to customer!</a>
   <%=link_to "Back to Orders list", drivers_path%>
 </div>
