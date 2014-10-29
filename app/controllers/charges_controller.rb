@@ -7,10 +7,10 @@ class ChargesController < ApplicationController
 
     # check inventory before checkout
     if !@order.quantity_calculation
-      redirect_to orders_path,
-        :flash => { :error => "We're sorry one or more of your items ordered
-          is out of stock. Please order again from the order page. *Payment has not been processed." }
-        return
+      redirect_to orders_path
+      raise "We're sorry one or more of your items ordered
+          is out of stock. Please order again from the order page. *Payment has not been processed."
+      return
     end
 
     # Set total_amount and convert to cents
@@ -45,6 +45,8 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to charges_path
+  rescue => e
+    flash[:error] = e.message
   end
 
 end
