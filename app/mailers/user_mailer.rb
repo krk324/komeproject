@@ -9,7 +9,6 @@ class UserMailer < ActionMailer::Base
   #
   def send_welcome_mail(user_id)
     @user = User.find(user_id)
-    @username = check_username(@user)
     mail(:to => "<#{@user.email}>", :subject => "Welcome to HACKMAI!")
   end
 
@@ -23,9 +22,5 @@ class UserMailer < ActionMailer::Base
     @order = Order.find(order_id)
     @user = User.find(user_id)
     mail(:to => "<#{@user.email}>", :subject => "HACKMAI - We're Sorry Out of Stock")
-  end
-
-  def check_username(user)
-    user.username ? user.username : user.email
   end
 end
