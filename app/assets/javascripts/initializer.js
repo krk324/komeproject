@@ -57,7 +57,7 @@ var Hackmai = Hackmai || {};
     $("#mapModal").on("shown.bs.modal", function(e) {
       google.maps.event.trigger(map, "resize");
       map.setCenter(chicago);
-      map.setZoom(14);
+      map.setZoom(12);
   });
   }
 
