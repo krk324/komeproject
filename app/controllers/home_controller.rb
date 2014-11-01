@@ -9,6 +9,10 @@ class HomeController < ApplicationController
   private
 
   def check_login
-    redirect_to orders_path if current_user
+    if user_signed_in?
+      redirect_to orders_path if current_user.role == 'customer'
+      redirect_to drivers_path if current_user.role =='driver'
+      redirect_to admin_root_path if current_user.role == 'administrator'
+    end
   end
 end
