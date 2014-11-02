@@ -1,21 +1,21 @@
 MenuItem.create(
   name: 'Brittle Salmon',
   image_url:'https://s3-us-west-2.amazonaws.com/hackmai/brittlesalmon-small.jpg',
-  price: 12,
+  price: 11.99,
   quantity: 20,
   description: 'Salmon, Spicy Mayo, Tempura flakes')
 
 MenuItem.create(
   name: 'Yakiniku Beef',
   image_url:'https://s3-us-west-2.amazonaws.com/hackmai/yakinikubeef-small.jpg',
-  price: 12,
+  price: 11.99,
   quantity: 20,
   description: 'Japanese style beef, Lettuce')
 
 MenuItem.create(
   name: 'Soy Chicken Avocado',
   image_url:'https://s3-us-west-2.amazonaws.com/hackmai/chickenavocado-small.jpg',
-  price: 12,
+  price: 11.99,
   quantity: 20,
   description: 'Chicken, Avocado, Tomato')
 
