@@ -4,7 +4,9 @@
 
     <!-- Find image that fits smartphone -->
     <%= link_to image_tag('http://i.stack.imgur.com/Vk9SO.png', class: "img-responsive"), user_omniauth_authorize_path(:facebook)%>
-    <hr>
+
+    <br>
+    <p style="text-align:center">or</p>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>

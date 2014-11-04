@@ -5,7 +5,6 @@
 #  id             :integer          not null, primary key
 #  code           :string(255)
 #  discount_value :decimal(, )
-#  order_id       :integer
 #  created_at     :datetime
 #  updated_at     :datetime
 #
