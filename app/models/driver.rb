@@ -1,5 +1,5 @@
 class Driver < ActiveRecord::Base
-  def self.assign_initial_order_to_driver(order)
+  def self.assign_order_to_free_driver(order)
     drivers = User.all.where(role:'driver')
     drivers_distances = []
 

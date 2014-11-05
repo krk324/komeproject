@@ -35,14 +35,6 @@ p.large {
     font-size: 16px;
 }
 
-// li{
-//     font-size: 16px;
-// }
-
-// ol{
-//     list-style-position:inside;
-// }
-
 a,
 a:hover,
 a:focus,
@@ -228,12 +220,6 @@ fieldset[disabled] .btn-xl.active {
 #add-button{
     font-size: 30px;
 }
-
-//adjust navbar placement. No overlay when navbar collapse.
-// .navbar-fixed-top {
-//     margin-top: -50px;
-//     position: relative;
-// }
 
 .navbar-default {
     border-color: #222;
@@ -586,21 +572,17 @@ body {
         }
 }
 
-.signup-divider{
-    text-align: center;
-}
+// format order page //
 
-// format order page.
 .order-index{
     padding-top: 30px;
     background-attachment: scroll;
-    //background-image: url(http://www.hdwallpapersinn.com/wp-content/uploads/2014/08/Rice.jpg);
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    // background-position: center center;
+    // background-repeat: none;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // background-size: cover;
+    // -o-background-size: cover;
 }
 
 @media(min-width:768px) {
