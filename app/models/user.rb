@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   end
 
   def send_new_user_mail
-    UserMailer.send_welcome_mail(self.id).deliver
+    UserMailer.send_welcome_mail(self.id).deliver!
   end
 
   def self.from_omniauth(auth)

@@ -38,7 +38,7 @@ class ChargesController < ApplicationController
     @order.save!
 
     # Send order confirmation
-    UserMailer.send_order_confirmation(@order.id,current_user.id).deliver
+    UserMailer.send_order_confirmation(@order.id,current_user.id).deliver!
 
     # Go check drivers location
     #Pusher['driver_channel'].trigger('my_event', {})
