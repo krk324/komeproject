@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   #
   def send_welcome_mail(user_id)
     @user = User.find(user_id)
-    mail(:to => "<#{@user.email}>", :subject => "Welcome to HACKMAI!")
+    mail(:to => "<#{@user.email}>", :subject => "Welcome to HACKMAI, #{@user.username}!")
   end
 
   def send_order_confirmation(order_id,user_id)
