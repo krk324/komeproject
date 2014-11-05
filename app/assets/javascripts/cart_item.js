@@ -1,7 +1,7 @@
 var CartItem = function(id,quantity,price,name){
     this.menu_item_id = id;
     this.quantity = parseInt(quantity);
-    this.price = parseInt(price);
+    this.price = parseFloat(price).toFixed(2);
     this.name = name;
   };
 
