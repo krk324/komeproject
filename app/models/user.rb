@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  validates_presence_of :username
   after_create :send_new_user_mail
 
   def remember_me

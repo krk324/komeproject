@@ -11,12 +11,15 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
+      <div><i class="fa fa-user fa-fw"></i>&nbsp;<%= f.label :username,'Your Full Name' %><br />
+      <%= f.text_field :username, autofocus: true %></div>
+
       <div>
       <%= f.label :email do %>
         <i class="fa fa-envelope-o fa-fw"></i>
         <%= User.human_attribute_name :email %>
       <%- end -%><br />
-        <%= f.email_field :email, autofocus: true %></div>
+        <%= f.email_field :email %></div>
 
       <div>
       <%= f.label :password do %>
