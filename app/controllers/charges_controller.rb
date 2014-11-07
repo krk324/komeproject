@@ -10,7 +10,7 @@ class ChargesController < ApplicationController
       redirect_to orders_path
       raise "We're sorry one or more of your items ordered
           is out of stock. Please order again from the order page. *Payment has not been processed."
-      UserMailer.send_order_error(@order.id,current_user.id).deliver
+      UserMailer.send_order_error(@order.id,current_user.id).deliver!
       return
     end
 
