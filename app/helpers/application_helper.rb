@@ -16,4 +16,10 @@ module ApplicationHelper
   def get_user_address_history
     current_user.orders.pluck(:address).uniq.each
   end
+
+  def check_weekdays
+    t = Time.now
+    t.saturday? || t.sunday? ? false : true
+  end
+
 end
