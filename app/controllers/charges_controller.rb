@@ -34,6 +34,7 @@ class ChargesController < ApplicationController
     @order.address = current_user.address
     @order.latitude = current_user.latitude
     @order.longitude = current_user.longitude
+    @order.phone = current_user.phone
     @order.is_purchased = true
     @order.save!
 
