@@ -39,7 +39,7 @@ ActiveAdmin.register Order do
       table_for(order.carts) do |t|
         t.column("Product") {|item| auto_link item.menu_item}
         t.column("Price") {|item| auto_link item.menu_item.price}
-        t.column("Quantity") {|item| auto_link item.menu_item.quantity}
+        t.column("Quantity") {|item| auto_link item.quantity}
 
         tr :class => "odd" do
           td "Total:", :style => "text-align: right;"
