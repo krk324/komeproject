@@ -29,13 +29,16 @@
               <td class="active"><strong>Phone#<strong></td>
               <td class="active"><strong>Order Date<strong></td>
             </tr>
-            <% @orders.each do |order|%>
+            <% @orders.each do |order| %>
             <tr>
               <td class="active"><%=link_to order.id, order%></td>
               <td class="active"><%=order.deli_status%></td>
               <td class="active"><%=order.address%></td>
               <td class="active"><a href="tel://<%=order.phone%>"><%=order.phone%></a></td>
               <td class="active"><%=order.created_at.localtime%></td>
+              <% order.carts.each do |item| %>
+                <td class="active"><% item.menu_item.name %>: <% item.quantity %></td>
+              <% end %>
             </tr>
             <% end %>
           </table>
