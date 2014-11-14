@@ -34,7 +34,7 @@
               <td class="active"><%=link_to order.id, order%></td>
               <td class="active"><%=order.deli_status%></td>
               <td class="active"><%=order.address%></td>
-              <td class="active"><a href="tel://<%=order.phone%>"<%=order.phone%></a></td>
+              <td class="active"><a href="tel://<%=order.phone%>"><%=order.phone%></a></td>
               <td class="active"><%=order.created_at.localtime%></td>
             </tr>
             <% end %>
