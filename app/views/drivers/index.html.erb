@@ -37,7 +37,7 @@
               <td class="active"><a href="tel://<%=order.phone%>"><%=order.phone%></a></td>
               <td class="active"><%=order.created_at.localtime%></td>
               <% order.carts.each do |item| %>
-                <td class="active"><% item.menu_item.name %>: <% item.quantity %></td>
+                <td class="active"><%=item.menu_item.name%>: <%=item.quantity%></td>
               <% end %>
             </tr>
             <% end %>
