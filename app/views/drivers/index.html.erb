@@ -38,12 +38,12 @@
             <tr>
               <td class="active" id='<%=order.id%>'><%=order.id%></td>
               <td class="active">
+              <div id="deli-status"><strong><%=order.deli_status%></strong></div>
               <div class="btn-group" id="deli-statuses">
                 <button type="button" class="btn btn-default" id="Pending">Pending</button>
                 <button type="button" class="btn btn-default" id="Ontheway">Ontheway</button>
                 <button type="button" class="btn btn-default" id="Delivered">Delivered</button>
               </div>
-              <div id="deli-status"><strong><%=order.deli_status%></strong></div>
               </td>
               <td class="active"><a href="http://maps.google.com/maps?t=m&q=loc:<%=order.address%>"><%=order.address%></a></td>
               <td class="active"><%=order.user.username%></td>

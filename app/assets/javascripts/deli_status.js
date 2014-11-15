@@ -13,7 +13,7 @@ var Hackmai = Hackmai || {};
         dataType: 'json'
     })
     .done(function(data){
-      that.parent().next().html("<strong>"+deliStatus+"</strong>");
+      that.parent().prev().html("<strong>"+deliStatus+"</strong>");
     });
   },
   initializer: function(event){
