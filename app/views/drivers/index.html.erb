@@ -41,12 +41,12 @@
               <td class="active"><%=order.address%></td>
               <td class="active"><%=order.user.username%></td>
               <td class="active"><a href="tel://<%=order.phone%>"><%=order.phone%></a></td>
-              <td class="active"><%=order.created_at.localtime%></td>
               <td class="active">
                 <% order.carts.each do |item| %>
                  <%=item.menu_item.name%>: <%=item.quantity%><br />
                 <% end %>
               </td>
+              <td class="active"><%=order.created_at.localtime%></td>
             </tr>
             <% end %>
           </table>
