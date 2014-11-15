@@ -38,7 +38,7 @@
             <tr>
               <td class="active"><%=link_to order.id, order%></td>
               <td class="active"><%=order.deli_status%></td>
-              <td class="active"><a href="http://maps.google.com/maps?t=m&q=loc:<%=order.address%>">order.address</a></td>
+              <td class="active"><a href="http://maps.google.com/maps?t=m&q=loc:<%=order.address%>"><%=order.address%></a></td>
               <td class="active"><%=order.user.username%></td>
               <td class="active"><a href="tel://<%=order.phone%>"><%=order.phone%></a></td>
               <td class="active">
