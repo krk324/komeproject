@@ -31,19 +31,26 @@
               <td class="active"><strong>Address<strong></td>
               <td class="active"><strong>Name<strong></td>
               <td class="active"><strong>Phone#<strong></td>
-              <td class="active"><strong>Order Date<strong></td>
               <td class="active"><strong>Order Items<strong></td>
+              <td class="active"><strong>Order Date<strong></td>
             </tr>
             <% @orders.each do |order| %>
             <tr>
-              <td class="active"><%=link_to order.id, order%></td>
-              <td class="active"><%=order.deli_status%></td>
+              <td class="active" id='<%=order.id%>'><%=order.id%></td>
+              <td class="active">
+              <div class="btn-group" id="deli-statuses">
+                <button type="button" class="btn btn-default" id="Pending">Pending</button>
+                <button type="button" class="btn btn-default" id="Ontheway">Ontheway</button>
+                <button type="button" class="btn btn-default" id="Delivered">Delivered</button>
+              </div>
+              <div id="deli-status"><strong><%=order.deli_status%></strong></div>
+              </td>
               <td class="active"><a href="http://maps.google.com/maps?t=m&q=loc:<%=order.address%>"><%=order.address%></a></td>
               <td class="active"><%=order.user.username%></td>
               <td class="active"><a href="tel://<%=order.phone%>"><%=order.phone%></a></td>
               <td class="active">
                 <% order.carts.each do |item| %>
-                 <%=item.menu_item.name%>: <%=item.quantity%><br />
+                 <%=item.menu_item.name%> x <%=item.quantity%><br />
                 <% end %>
               </td>
               <td class="active"><%=order.created_at.localtime%></td>
