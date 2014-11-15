@@ -1,3 +1,6 @@
+<head>
+  <meta http-equiv="refresh" content="30">
+</head>
 <div class="container">
   <div class="row text-center">
     <h2>Welcome Hackmai Driver! We are grateful to have you.</h2>
@@ -26,19 +29,24 @@
               <td class="active"><strong>#<strong></td>
               <td class="active"><strong>Status<strong></td>
               <td class="active"><strong>Address<strong></td>
+              <td class="active"><strong>Name<strong></td>
               <td class="active"><strong>Phone#<strong></td>
               <td class="active"><strong>Order Date<strong></td>
+              <td class="active"><strong>Order Items<strong></td>
             </tr>
             <% @orders.each do |order| %>
             <tr>
               <td class="active"><%=link_to order.id, order%></td>
               <td class="active"><%=order.deli_status%></td>
               <td class="active"><%=order.address%></td>
+              <td class="active"><%=order.user.username%></td>
               <td class="active"><a href="tel://<%=order.phone%>"><%=order.phone%></a></td>
-              <td class="active"><%=order.created_at.localtime%></td>
-              <% order.carts.each do |item| %>
-                <td class="active"><%=item.menu_item.name%>: <%=item.quantity%></td>
-              <% end %>
+              <td class="active"><%=order.created_at%></td>
+              <td class="active">
+                <% order.carts.each do |item| %>
+                 <%=item.menu_item.name%>: <%=item.quantity%><br />
+                <% end %>
+              </td>
             </tr>
             <% end %>
           </table>
@@ -52,7 +60,7 @@
 $(function() {
 
     // check whether browser supports geolocation api
-    navigator.geolocation.watchPosition(positionSuccess, positionError, { enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(positionSuccess, positionError, { enableHighAccuracy: true });
 
     function positionSuccess(position) {
         var lat = position.coords.latitude;

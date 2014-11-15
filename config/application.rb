@@ -16,6 +16,7 @@ Bundler.require(*Rails.groups)
 module Hackmai
   class Application < Rails::Application
     config.serve_static_assets = true
+    config.active_record.default_timezone = :local
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
