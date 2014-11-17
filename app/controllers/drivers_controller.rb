@@ -1,7 +1,7 @@
 class DriversController < ApplicationController
 
   def index
-    @orders = Order.order('created_at DESC').where(is_purchased: true, created_at: Date.today)
+    @orders = Order.order('created_at DESC').where(is_purchased: true)
     authorize! :read, @orders
   end
 
