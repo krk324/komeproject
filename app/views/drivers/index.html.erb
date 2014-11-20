@@ -64,34 +64,34 @@
 </div>
 <script>
 // Get Driver's current geo location.
-$(function() {
+// $(function() {
 
-    // check whether browser supports geolocation api
-    navigator.geolocation.getCurrentPosition(positionSuccess, positionError, { enableHighAccuracy: true });
+//     // check whether browser supports geolocation api
+//     navigator.geolocation.watchPosition(positionSuccess, positionError, { enableHighAccuracy: true });
 
-    function positionSuccess(position) {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        var acr = position.coords.accuracy;
+//     function positionSuccess(position) {
+//         var lat = position.coords.latitude;
+//         var lng = position.coords.longitude;
+//         var acr = position.coords.accuracy;
 
-        $.ajax({
-          type: "PUT",
-          url: '/users',
-          data: { user: { latitude: lat, longitude: lng } },
-          dataType: 'json'
-        });
-      }
+//         $.ajax({
+//           type: "PUT",
+//           url: '/users',
+//           data: { user: { latitude: lat, longitude: lng } },
+//           dataType: 'json'
+//         });
+//       }
 
 
-    // handle geolocation api errors
-    function positionError(error) {
-        var errors = {
-            1: "Authorization fails", // permission denied
-            2: "Can\'t detect your location", //position unavailable
-            3: "Connection timeout" // timeout
-        };
-        //showError("Error:" + errors[error.code]);
-    }
+//     // handle geolocation api errors
+//     function positionError(error) {
+//         var errors = {
+//             1: "Authorization fails", // permission denied
+//             2: "Can\'t detect your location", //position unavailable
+//             3: "Connection timeout" // timeout
+//         };
+//         //showError("Error:" + errors[error.code]);
+//     }
 
-});
+// });
 </script>
