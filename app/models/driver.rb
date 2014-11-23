@@ -33,4 +33,24 @@ class Driver < ActiveRecord::Base
 
     rm * c # Delta in meters
   end
+
+  def self.send_ontheway_sms(phone_number)
+    @client = Twilio::REST::Client.new
+    phone_number = phone_number.tr('() ','').tr('-','')
+    @client.messages.create(
+      from: '+12244125310',
+      to: '+1'+ phone_number,
+      body: 'Hackmai driver is on the way! The driver will be there in about 20 mins average.'
+    )
+  end
+
+  def self.send_arrived_sms(phone_number,latitude,longitude)
+    @client = Twilio::REST::Client.new
+    phone_number = phone_number.tr('() ','').tr('-','')
+    @client.messages.create(
+      from: '+12244125310',
+      to: '+1' + phone_number,
+      body: "Driver has just arrived! Please come to the driver and grab your rice dish. Driver\'s location: http://maps.google.com/maps?t=m&q=loc:#{latitude}+#{longitude}"
+    )
+  end
 end

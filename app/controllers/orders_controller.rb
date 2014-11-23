@@ -14,11 +14,16 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     if @order.update(order_params)
       render :json=>'{}', :status => :ok
+      if order_params['deli_status'] == 'Ontheway'
+        Driver.send_ontheway_sms(@order.phone)
+      elsif order_params['deli_status'] == 'Delivered'
+        Driver.send_arrived_sms(@order.phone,current_user.latitude,current_user.longitude)
+      end
     end
   end
 
   def order_params
-    params.require(:order).permit(:tip, :deli_status, :latitude, :longitude)
+    params.require(:order).permit(:deli_status, :latitude, :longitude)
   end
 
 end

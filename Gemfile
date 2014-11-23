@@ -93,6 +93,7 @@ gem 'resque'
 gem 'resque_mailer'
 gem 'devise-async'
 gem 'pusher'
+gem 'twilio-ruby'
 
 gem 'newrelic_rpm'
 
