@@ -40,7 +40,7 @@ class Driver < ActiveRecord::Base
     @client.messages.create(
       from: '+12244125310',
       to: '+1'+ phone_number,
-      body: 'Hackmai driver is on the way! The driver will be there in about 20 mins average.'
+      body: 'HACKMAI driver is on the way! The driver will be there in about 20 mins average.'
     )
   end
 
@@ -50,7 +50,7 @@ class Driver < ActiveRecord::Base
     @client.messages.create(
       from: '+12244125310',
       to: '+1' + phone_number,
-      body: "Driver has just arrived! Please come to the driver and grab your rice dish. Driver\'s location: http://maps.google.com/maps?t=m&q=loc:#{latitude}+#{longitude}"
+      body: "HACKMAI driver has just arrived! Please come near the driver and grab your rice dish. Driver\'s location: http://maps.google.com/maps?t=m&q=loc:#{latitude}+#{longitude}"
     )
   end
 end
