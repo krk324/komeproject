@@ -50,7 +50,7 @@ class Driver < ActiveRecord::Base
     @client.messages.create(
       from: '+12244125310',
       to: '+1' + phone_number,
-      body: "HACKMAI driver has just arrived! Please come near the driver and grab your rice dish. Driver\'s location: http://maps.google.com/maps?t=m&q=loc:#{latitude}+#{longitude}"
+      body: "HACKMAI driver has just arrived! Please come near the driver(find the car with HACKMAI logo on the side) and grab your rice dish. Driver\'s location: http://maps.google.com/maps?t=m&q=loc:#{latitude}+#{longitude}"
     )
   end
 end
